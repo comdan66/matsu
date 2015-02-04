@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tw">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta http-equiv="Content-Language" content="zh-tw">
+    <title>OA's Flickr</title>
+
+    <meta name="robots" content="index,follow">
+
+    <meta property="og:site_name" content="OA's Flickr" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:image" content="http://comdan66.github.io/flickr/img/og.png" />
+    <meta property="og:title" content="OA's Flickr" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:description" content="這是一個簡單快速搜尋 flickr 的前端工具，借由輸入想搜尋的圖片關鍵字而撈取出 flickr 上面的熱門照片! ..." />
+    <meta property="og:url" content="http://comdan66.github.io/flickr/" />
+
+    <meta name="description" content="這是一個簡單快速搜尋 flickr 的前端工具，借由輸入想搜尋的圖片關鍵字而撈取出 flickr 上面的熱門照片! ..." />
+    <meta name="keywords" content="吳政賢 | OA Wu | OA's Flickr | Flickr API | jQuery | javascript | scss | sass | html | css" />
+    <meta name="author" content="吳政賢(OA Wu)" />
+
+    <link href="./css/frame.css" rel="stylesheet" type="text/css">
+    <link href="./css/din_tao_20.css" rel="stylesheet" type="text/css">
+
+    <script src="./res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=zh-TW" language="javascript" type="text/javascript" /></script>
+
+    <script src="./js/ga.js" language="javascript" type="text/javascript" /></script>
+    <script src="./js/frame.js" language="javascript" type="text/javascript" /></script>
+    <script src="./js/din_tao_20.js" language="javascript" type="text/javascript" /></script>
+
+  </head>
+  <body lang="zh-tw">
+    <div id='header'>
+      <div class='l'>
+        <a href=''>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 32 32">
+            <path d="M15.974 0h0.052c-0.010 0.002-0.018 0.004-0.026 0.004s-0.016-0.002-0.026-0.004zM30.848 13.668c1.542 1.542 1.542 4.046 0 5.59l-0.742 0.742h-2.106v8c0 2.208-1.792 4-4 4h-16c-2.208 0-4-1.792-4-4v-8h-2.106l-0.742-0.742c-1.542-1.544-1.542-4.048 0-5.59l12.578-12.576c0.638-0.638 1.44-0.984 2.27-1.088 0.83 0.104 1.632 0.45 2.27 1.088l12.578 12.576zM24 16h3.144c-0.084-0.34-0.224-0.668-0.488-0.936l-9.782-9.782c-0.25-0.25-0.556-0.388-0.874-0.476-0.318 0.088-0.624 0.228-0.872 0.476l-9.782 9.782c-0.266 0.268-0.406 0.596-0.49 0.936h3.144v10c0 1.106 0.894 2 2 2h2v-10h8v10h2c1.106 0 2-0.894 2-2v-10z" fill="#000000"></path>
+          </svg></a>
+        <a href=''>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 32 32">
+            <path d="M32 8c0-4.416-3.586-8-8-8-2.984 0-5.562 1.658-6.938 4.086 0-0.002 0.004-0.004 0.004-0.006-0.367-0.035-0.723-0.111-1.098-0.111-6.629 0-12 5.371-12 12 0 2.527 0.789 4.867 2.121 6.797l-6.089 9.234 9.289-6.062c1.91 1.281 4.207 2.031 6.68 2.031 6.629 0 12-5.371 12-12 0-0.346-0.070-0.67-0.102-1.008 2.453-1.367 4.133-3.955 4.133-6.961zM15.969 23.969c-4.414 0-8-3.586-8-8 0-4.412 3.586-8 8-8 0.012 0 0.023 0.004 0.031 0.004 0-0.008 0.004-0.014 0.004-0.020 0 0.016-0.004 0.031-0.004 0.047 0 0.695 0.117 1.355 0.281 1.998l-3.172 3.174c-1.562 1.562-1.562 4.094 0 5.656s4.094 1.562 5.656 0l3.141-3.141c0.66 0.18 1.344 0.305 2.059 0.309-0.016 4.402-3.594 7.973-7.996 7.973zM24 12c-2.203 0-4-1.795-4-4s1.797-4 4-4 4 1.795 4 4-1.797 4-4 4z" fill="#000000"></path>
+          </svg>
+        </a>
+        <a href=''>asd</a>
+      </div>
+      <div class='r'>
+        <a href="">dasd</a>
+      </div>
+    </div>
+
+    <div class='buttons'>
+      <button class='all'>全部</button>
+      <button class='path'>路徑</button>
+      <button class='marker'></button>
+    </div>
+
+    <div id='container'>
+      <div class='map-container'>
+        <div id='map'></div><i></i><i></i><i></i><i></i>
+      </div>
+    </div>
+
+  </body>
+</html>

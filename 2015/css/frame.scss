@@ -1,0 +1,105 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+
+@import "_oa";
+
+@include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
+
+* {
+  vertical-align: top;
+
+  @include selection(rgba(150, 180, 230, 1.0000), rgba(237, 239, 244, 1.0000));
+  @include font-smoothing(antialiased);
+
+  &, &:after, &:before {
+    @include box-sizing(border-box);
+  }
+}
+
+html {
+  height: 100%;
+
+  $headerHeight: 32px;
+  body {
+    position: relative;
+    padding-top: $headerHeight;
+    margin: 0;
+
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+
+    color: rgba(50, 50, 50, 0.7);
+    text-align: center;
+    font-size: medium;
+    font-family: Monaco;
+
+    background: $mainBackgroundColor $mainBackgroundImage;
+
+    @include font-smoothing(antialiased);
+    @include box-shadow(none);
+
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 5px 10px 0 10px;
+      z-index: 99999;
+
+      display: inline-block;
+      width: 100%;
+      height: $headerHeight;
+
+      color: rgba(255, 255, 255, .8);
+
+      @include opacity(.9);
+      @include background-image(linear-gradient(top, rgba(75, 75, 75, 0.9) 0%, rgba(65, 65, 65, 0.9) 20%, rgba(45, 45, 45, 0.9) 90%, rgba(30, 30, 30, 0.9) 100%));
+      @include box-shadow(0 0 5px rgba(0, 0, 0, 0.8));
+
+      &:after {
+        content: "";
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: 0;
+
+        border-bottom: 1px solid rgba(0, 0, 0, 0.14902);
+
+        @include box-shadow(0 0 15px rgba(0, 0, 0, .8));
+      }
+
+      @include split-right(150px);
+
+      .l, .r {
+        a {
+          @include a(rgba(255, 255, 255, .7), rgba(255, 255, 255, 1));
+        }
+      }
+      .l {
+        text-align: left;
+
+        a {
+          margin-right: 10px;
+          white-space: normal;
+
+          svg {
+            cursor: pointer;
+
+            @include svg-color(rgba(255, 255, 255, .7), rgba(255, 255, 255, 1));
+          }
+        }
+      }
+      .r {
+        text-align: right;
+      }
+    }
+    #container {
+    }
+  }
+}
