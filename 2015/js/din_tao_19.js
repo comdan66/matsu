@@ -21,16 +21,19 @@ $(function() {
   }
 
   function initialize () {
+    var w = $(window).width ();
+    var zoom = w < 961 ? w < 641 ? w < 376 ? 15 : 16 : 16 : 16;
+    var latLng = w < 961 ? w < 641 ? w < 376 ? new google.maps.LatLng (23.568396231491233, 120.3010703338623) : new google.maps.LatLng (23.569396231491233, 120.3020703338623) : new google.maps.LatLng (23.569396231491233, 120.3010703338623) : new google.maps.LatLng (23.569396231491233, 120.3010703338623);
 
     var mapOptions = {
-      zoom: 17,
+      zoom: zoom,
       scaleControl: true,
       navigationControl: false,
       mapTypeControl: false,
       zoomControl: true,
       scrollwheel: true,
       streetViewControl: false,
-      center: new google.maps.LatLng (23.568596231491233, 120.3035703338623),
+      center: latLng,
     };
 
     map = new google.maps.Map ($map.get (0), mapOptions);
@@ -95,7 +98,6 @@ $(function() {
         clearInterval (window.ni_interval);
       }
     };
-
   }
 
   google.maps.event.addDomListener (window, 'load', initialize);
