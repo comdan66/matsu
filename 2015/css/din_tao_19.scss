@@ -7,10 +7,22 @@
 
 html {
   body {
+    .buttons {
+      margin-top: 10px;
+      height: 30px;
+      text-align: left;
+      padding-left: 10px;
 
+      .pm {
+        @include button('gray');
+      }
+      .ni {
+        @include button('gray');
+      }
+    }
     #container {
       padding: 10px;
-      height: 100%;
+      height: calc(100% - 40px);
 
       .map-container {
         position: relative;
