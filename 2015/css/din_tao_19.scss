@@ -83,4 +83,27 @@ html {
     border-bottom: 1px solid rgba(39, 40, 34, .7);
     padding: 5px;
   }
+
+  .delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    width: 32px;
+    border-left: 1px solid rgba(39, 40, 34, .5);
+    border-bottom: 1px solid rgba(39, 40, 34, .5);
+    color: rgba(250, 250, 250, 0.7);
+    background-color: rgba(39, 40, 34, .2);
+    text-align: center;
+    cursor: pointer;
+    @include transition(all .3s);
+    @include border-radius(0 0 0 2px);
+
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+      background-color: rgba(39, 40, 34, .3);
+    }
+  }
 }
