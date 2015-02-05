@@ -6,6 +6,7 @@
 $(function() {
   var $map = $('#map');
   var map  = null;
+  var info_bubble = $('#_info_bubble').html ();
 
   function initialize () {
     var d = Math.min ($(window).width (), $(window).height ());
@@ -28,7 +29,7 @@ $(function() {
     var lineSymbol = {
       path: google.maps.SymbolPath.CIRCLE,
       scale: 8,
-      strokeColor: '#393'
+      strokeColor: 'rgba(163, 28, 34, .8)'
     };
 
     var pm_point = [
@@ -38,12 +39,12 @@ $(function() {
       {
         info: 'dasdad',
         latLng: new google.maps.LatLng (23.567633723355957, 120.30456237494946),
-        infoWindow: new InfoBubble ({padding: 0, arrowStyle: 0, borderWidth: 2, shadowStyle: 1, borderRadius: 6, minWidth: 'auto', maxWidth: 'auto', minHeight: 'auto', maxHeight: 'auto', borderColor: '#c8c8c8', content: 'asasasasasasa', backgroundClassName: 'infowindow'})
+        infoWindow: new InfoBubble ({padding: 0, arrowStyle: 0, margin: 0, borderWidth: 1, shadowStyle: 1, borderRadius: 3, minWidth: 'auto', maxWidth: 'auto', minHeight: 'auto', maxHeight: 'auto', borderColor: 'rgba(39, 40, 34, .7)', content: '', backgroundClassName: ''})
       },
       {
-        info: 'xxxxxx',
+        info: 'ssssssssssx',
         latLng: new google.maps.LatLng (23.564535998777593, 120.30400179326534),
-        infoWindow: new InfoBubble ({padding: 0, arrowStyle: 0, borderWidth: 2, shadowStyle: 1, borderRadius: 6, minWidth: 'auto', maxWidth: 'auto', minHeight: 'auto', maxHeight: 'auto', borderColor: '#c8c8c8', content: 'asasasasasasa', backgroundClassName: 'infowindow'})
+        infoWindow: new InfoBubble ({padding: 0, arrowStyle: 0, margin: 0, borderWidth: 1, shadowStyle: 1, borderRadius: 2, minWidth: 'auto', maxWidth: 'auto', minHeight: 'auto', maxHeight: 'auto', borderColor: '#c8c8c8', content: '', backgroundClassName: ''})
       }
     ];
 
@@ -54,22 +55,22 @@ $(function() {
       {
         info: 'dasdasdad',
         latLng: new google.maps.LatLng (23.56951383445304, 120.2983295917511),
-        infoWindow: new InfoBubble ({padding: 0, arrowStyle: 0, borderWidth: 2, shadowStyle: 1, borderRadius: 6, minWidth: 'auto', maxWidth: 'auto', minHeight: 'auto', maxHeight: 'auto', borderColor: '#c8c8c8', content: 'asasasasasasa', backgroundClassName: 'infowindow'})
+        infoWindow: new InfoBubble ({padding: 0, arrowStyle: 0, borderWidth: 2, shadowStyle: 1, borderRadius: 2, minWidth: 'auto', maxWidth: 'auto', minHeight: 'auto', maxHeight: 'auto', borderColor: '#c8c8c8', content: '', backgroundClassName: 'info_bubble'})
       },
       {
         info: 'dasasddad',
         latLng: new google.maps.LatLng (23.56835344215955, 120.3036618232727),
-        infoWindow: new InfoBubble ({padding: 0, arrowStyle: 0, borderWidth: 2, shadowStyle: 1, borderRadius: 6, minWidth: 'auto', maxWidth: 'auto', minHeight: 'auto', maxHeight: 'auto', borderColor: '#c8c8c8', content: 'asasasasasasa', backgroundClassName: 'infowindow'})
+        infoWindow: new InfoBubble ({padding: 0, arrowStyle: 0, borderWidth: 2, shadowStyle: 1, borderRadius: 2, minWidth: 'auto', maxWidth: 'auto', minHeight: 'auto', maxHeight: 'auto', borderColor: '#c8c8c8', content: '', backgroundClassName: 'info_bubble'})
       },
       {
         info: 'daewqsdad',
         latLng: new google.maps.LatLng (23.56732088107499, 120.30003547668457),
-        infoWindow: new InfoBubble ({padding: 0, arrowStyle: 0, borderWidth: 2, shadowStyle: 1, borderRadius: 6, minWidth: 'auto', maxWidth: 'auto', minHeight: 'auto', maxHeight: 'auto', borderColor: '#c8c8c8', content: 'asasasasasasa', backgroundClassName: 'infowindow'})
+        infoWindow: new InfoBubble ({padding: 0, arrowStyle: 0, borderWidth: 2, shadowStyle: 1, borderRadius: 2, minWidth: 'auto', maxWidth: 'auto', minHeight: 'auto', maxHeight: 'auto', borderColor: '#c8c8c8', content: '', backgroundClassName: 'info_bubble'})
       },
       {
         info: 'dasrefdad',
         latLng: new google.maps.LatLng (23.56951383445304, 120.2983295917511),
-        infoWindow: new InfoBubble ({padding: 0, arrowStyle: 0, borderWidth: 2, shadowStyle: 1, borderRadius: 6, minWidth: 'auto', maxWidth: 'auto', minHeight: 'auto', maxHeight: 'auto', borderColor: '#c8c8c8', content: 'asasasasasasa', backgroundClassName: 'infowindow'})
+        infoWindow: new InfoBubble ({padding: 0, arrowStyle: 0, borderWidth: 2, shadowStyle: 1, borderRadius: 2, minWidth: 'auto', maxWidth: 'auto', minHeight: 'auto', maxHeight: 'auto', borderColor: '#c8c8c8', content: '', backgroundClassName: 'info_bubble'})
       },
     ];
 
@@ -81,11 +82,13 @@ $(function() {
         });
 
       google.maps.event.addListener (t.marker, 'click', function (e) {
-        window.pm_markers.forEach (function (u) { u.infoWindow.open (map, t.marker); });
+        window.pm_markers.forEach (function (u) { u.infoWindow.close (); });
+        t.infoWindow.setContent (_.template (info_bubble, t) (t));
         t.infoWindow.open (map, t.marker);
       });
       google.maps.event.addListener (t.marker, 'mouseover', function (e) {
-        window.pm_markers.forEach (function (u) { u.infoWindow.open (map, t.marker); });
+        window.pm_markers.forEach (function (u) { u.infoWindow.close (); });
+        t.infoWindow.setContent (_.template (info_bubble, t) (t));
         t.infoWindow.open (map, t.marker);
       });
       return t;
@@ -97,11 +100,13 @@ $(function() {
           position: t.latLng
         });
       google.maps.event.addListener (t.marker, 'click', function (e) {
-        window.ni_markers.forEach (function (u) { u.infoWindow.open (map, t.marker); });
+        window.ni_markers.forEach (function (u) { u.infoWindow.close (); });
+        t.infoWindow.setContent (_.template (info_bubble, t) (t));
         t.infoWindow.open (map, t.marker);
       });
       google.maps.event.addListener (t.marker, 'mouseover', function (e) {
-        window.ni_markers.forEach (function (u) { u.infoWindow.open (map, t.marker); });
+        window.ni_markers.forEach (function (u) { u.infoWindow.close (); });
+        t.infoWindow.setContent (_.template (info_bubble, t) (t));
         t.infoWindow.open (map, t.marker);
       });
       return t;
@@ -109,6 +114,7 @@ $(function() {
 
     window.pm_line = new google.maps.Polyline ({
       path: pm_point,
+      strokeColor: 'rgba(15, 36, 141, .5)',
       icons: [{
         icon: lineSymbol,
         offset: '100%'
@@ -173,11 +179,13 @@ $(function() {
     $(this).addClass ('active').siblings ().removeClass ('active');
     window.pm (map);
     window.ni (null);
-
   });
   $('.buttons .ni').click (function () {
     $(this).addClass ('active').siblings ().removeClass ('active');
     window.pm (null);
     window.ni (map);
   });
+  setTimeout (function () {
+    $('.buttons .pm').click ();
+  }, 500);
 });
