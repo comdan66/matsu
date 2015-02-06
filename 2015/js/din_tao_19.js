@@ -6,7 +6,20 @@
 $(function() {
   var $map = $('#map');
   var map  = null;
-  var info_bubble = $('#_info_bubble').html ();
+  var _info_bubble = $('#_info_bubble').html ();
+  var _items = $('#_items').html ();
+  var _item = $('#_item').html ();
+
+  function setInfoWindow (t) {
+    var items = t.items ? t.items.map (function (u) { return _.template (_item, u) (u); }).join ('') : [];
+    t._items = items.length ? _.template (_items, {items: items}) ({items: items}) : '';
+
+    var obj = $(_.template (_info_bubble, t) (t));
+    obj.find ('.delete').click (function () { t.infoWindow.close (); });
+
+    t.infoWindow.setContent (obj.get (0));
+    t.infoWindow.open (map, t.marker);
+  }
 
   function initialize () {
     var d = Math.min ($(window).width (), $(window).height ());
@@ -37,12 +50,22 @@ $(function() {
     ];
     var pm_markers = [
       {
-        info: 'dasdad',
-        latLng: new google.maps.LatLng (23.567633723355957, 120.30456237494946)
+        latLng: new google.maps.LatLng (23.567633723355957, 120.30456237494946),
+        src: 'http://upload.wikimedia.org/wikipedia/commons/d/d3/Nelumno_nucifera_open_flower_-_botanic_garden_adelaide2.jpg',
+        title: 'dasdad',
+        items: [
+          {item: 'aa'},
+          {item: 'sss'},
+        ]
       },
       {
-        info: 'ssssssssssx',
-        latLng: new google.maps.LatLng (23.564535998777593, 120.30400179326534)
+        latLng: new google.maps.LatLng (23.564535998777593, 120.30400179326534),
+        src: 'http://upload.wikimedia.org/wikipedia/commons/d/d3/Nelumno_nucifera_open_flower_-_botanic_garden_adelaide2.jpg',
+        title: 'dasdad',
+        items: [
+          {item: 'aa'},
+          {item: 'sss'},
+        ]
       }
     ];
 
@@ -51,23 +74,42 @@ $(function() {
     ];
     var ni_markers = [
       {
-        info: 'dasdasdad',
-        latLng: new google.maps.LatLng (23.56951383445304, 120.2983295917511)
+        latLng: new google.maps.LatLng (23.56951383445304, 120.2983295917511),
+        src: 'http://upload.wikimedia.org/wikipedia/commons/d/d3/Nelumno_nucifera_open_flower_-_botanic_garden_adelaide2.jpg',
+        title: 'dasdad',
+        items: [
+          {item: 'aa'},
+          {item: 'sss'},
+        ]
       },
       {
-        info: 'dasasddad',
-        latLng: new google.maps.LatLng (23.56835344215955, 120.3036618232727)
+        latLng: new google.maps.LatLng (23.56835344215955, 120.3036618232727),
+        src: 'http://upload.wikimedia.org/wikipedia/commons/d/d3/Nelumno_nucifera_open_flower_-_botanic_garden_adelaide2.jpg',
+        title: 'dasdad',
+        items: [
+          {item: 'aa'},
+          {item: 'sss'},
+        ]
       },
       {
-        info: 'daewqsdad',
-        latLng: new google.maps.LatLng (23.56732088107499, 120.30003547668457)
+        latLng: new google.maps.LatLng (23.56732088107499, 120.30003547668457),
+        src: 'http://upload.wikimedia.org/wikipedia/commons/d/d3/Nelumno_nucifera_open_flower_-_botanic_garden_adelaide2.jpg',
+        title: 'dasdad',
+        items: [
+          {item: 'aa'},
+          {item: 'sss'},
+        ]
       },
       {
-        info: 'dasrefdad',
-        latLng: new google.maps.LatLng (23.56951383445304, 120.2983295917511)
+        latLng: new google.maps.LatLng (23.56951383445304, 120.2983295917511),
+        src: 'http://upload.wikimedia.org/wikipedia/commons/d/d3/Nelumno_nucifera_open_flower_-_botanic_garden_adelaide2.jpg',
+        title: 'dasdad',
+        items: [
+          {item: 'aa'},
+          {item: 'sss'},
+        ]
       },
     ];
-
 
     window.pm_markers = pm_markers.map (function (t, i) {
       t.marker = new google.maps.Marker ({
@@ -78,21 +120,11 @@ $(function() {
 
       google.maps.event.addListener (t.marker, 'click', function (e) {
         window.pm_markers.forEach (function (u) { u.infoWindow.close (); });
-        
-        var obj = $(_.template (info_bubble, t) (t));
-        obj.find ('.delete').click (function () { t.infoWindow.close (); });
-        
-        t.infoWindow.setContent (obj.get (0));
-        t.infoWindow.open (map, t.marker);
+        setInfoWindow (t);
       });
       google.maps.event.addListener (t.marker, 'mouseover', function (e) {
         window.pm_markers.forEach (function (u) { u.infoWindow.close (); });
-        
-        var obj = $(_.template (info_bubble, t) (t));
-        obj.find ('.delete').click (function () { t.infoWindow.close (); });
-        
-        t.infoWindow.setContent (obj.get (0));
-        t.infoWindow.open (map, t.marker);
+        setInfoWindow (t);
       });
       return t;
     });
@@ -103,24 +135,14 @@ $(function() {
           position: t.latLng
         });
       t.infoWindow = new InfoBubble ({padding: 0, arrowStyle: 0, margin: 0, borderWidth: 1, shadowStyle: 1, borderRadius: 2, minWidth: 'auto', maxWidth: 'auto', minHeight: 'auto', maxHeight: 'auto', borderColor: 'rgba(39, 40, 34, .7)', content: '', backgroundClassName: ''});
-      
+
       google.maps.event.addListener (t.marker, 'click', function (e) {
         window.ni_markers.forEach (function (u) { u.infoWindow.close (); });
-        
-        var obj = $(_.template (info_bubble, t) (t));
-        obj.find ('.delete').click (function () { t.infoWindow.close (); });
-        
-        t.infoWindow.setContent (obj.get (0));
-        t.infoWindow.open (map, t.marker);
+        setInfoWindow (t);
       });
       google.maps.event.addListener (t.marker, 'mouseover', function (e) {
         window.ni_markers.forEach (function (u) { u.infoWindow.close (); });
-        
-        var obj = $(_.template (info_bubble, t) (t));
-        obj.find ('.delete').click (function () { t.infoWindow.close (); });
-        
-        t.infoWindow.setContent (obj.get (0));
-        t.infoWindow.open (map, t.marker);
+        setInfoWindow (t);
       });
       return t;
     });
