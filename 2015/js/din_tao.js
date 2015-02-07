@@ -24,7 +24,7 @@ $(function() {
     t.infoWindow.open (map, t.marker);
   }
 
-  function setMapData (key, points, markers, speed) {
+  function setMapData (key, points, markers, speed, lineColor) {
     keys.push (key);
 
     window['markers_' + key] = markers.map (function (t, i) {
@@ -52,7 +52,7 @@ $(function() {
 
     window['line_' + key] = new google.maps.Polyline ({
       path: points,
-      strokeColor: 'rgba(15, 36, 141, .5)',
+      strokeColor: lineColor,
       icons: [{
         icon: lineSymbol,
         offset: '100%'
@@ -75,7 +75,7 @@ $(function() {
           var icons = window['line_' + key].get ('icons');
           icons[0].offset = (count * speed) + '%';
           window['line_' + key].set('icons', icons);
-          count = (count + 1) % 400;
+          count = (count + 1) % (100 / speed);
         }, 100);
       }
     };
@@ -141,10 +141,10 @@ $(function() {
       }
     ];
 
-    setMapData ('pm19', points, markers, 1/4);
+    setMapData ('pm19', points, markers, 1/4, 'rgba(15, 36, 141, .5)');
 
     points = [
-      new google.maps.LatLng (23.56951383445304, 120.2983295917511), new google.maps.LatLng (23.56835344215955, 120.3036618232727), new google.maps.LatLng (23.56732088107499, 120.30003547668457), new google.maps.LatLng (23.56951383445304, 120.2983295917511),
+      new google.maps.LatLng (23.56763126487333, 120.30456840991974), new google.maps.LatLng (23.56455812564072, 120.30400447547436), new google.maps.LatLng (23.565014184045875, 120.3018520027399), new google.maps.LatLng (23.56653416241937, 120.30212827026844), new google.maps.LatLng (23.566360223205546, 120.30328162014484), new google.maps.LatLng (23.566949034172648, 120.30337683856487), new google.maps.LatLng (23.56776955444828, 120.30354581773281), new google.maps.LatLng (23.568108209636982, 120.30359342694283), new google.maps.LatLng (23.568833457375963, 120.30385427176952), new google.maps.LatLng (23.569314700063604, 120.3040836006403), new google.maps.LatLng (23.569534731254187, 120.30413389205933), new google.maps.LatLng (23.570462791716615, 120.30453018844128), new google.maps.LatLng (23.57148795286885, 120.3049023449421), new google.maps.LatLng (23.57165758307919, 120.30444703996181), new google.maps.LatLng (23.571918788590605, 120.30450738966465), new google.maps.LatLng (23.572032489650912, 120.30445642769337), new google.maps.LatLng (23.572133284022065, 120.30410036444664), new google.maps.LatLng (23.572470084164493, 120.3041747957468), new google.maps.LatLng (23.572981428714794, 120.30432365834713), new google.maps.LatLng (23.57309574345011, 120.30441217124462), new google.maps.LatLng (23.573313924523525, 120.30443631112576), new google.maps.LatLng (23.573402426038683, 120.30446045100689), new google.maps.LatLng (23.573403655225984, 120.30440546572208), new google.maps.LatLng (23.573658711339892, 120.30433841049671), new google.maps.LatLng (23.573997351342427, 120.30413791537285), new google.maps.LatLng (23.574138707164984, 120.30397564172745), new google.maps.LatLng (23.57446321039066, 120.3041660785675), new google.maps.LatLng (23.574970859661608, 120.30442155897617), new google.maps.LatLng (23.575251725303506, 120.30457109212875), new google.maps.LatLng (23.575322402558605, 120.30471593141556), new google.maps.LatLng (23.575291673321928, 120.30500024557114), new google.maps.LatLng (23.57530642335643, 120.30514039099216), new google.maps.LatLng (23.57540414229315, 120.30530534684658), new google.maps.LatLng (23.575490798647866, 120.30542202293873), new google.maps.LatLng (23.57551599658425, 120.30552260577679), new google.maps.LatLng (23.57605068336267, 120.30586257576942), new google.maps.LatLng (23.576216620195996, 120.30594438314438), new google.maps.LatLng (23.577083790383526, 120.30611604452133), new google.maps.LatLng (23.577648584895428, 120.30609928071499), new google.maps.LatLng (23.579586321699608, 120.30591554939747), new google.maps.LatLng (23.579780524001553, 120.30465893447399), new google.maps.LatLng (23.579765159905843, 120.30447386205196), new google.maps.LatLng (23.57934909951058, 120.30314683914185), new google.maps.LatLng (23.579173948137367, 120.30250445008278), new google.maps.LatLng (23.578701345546822, 120.30099906027317), new google.maps.LatLng (23.578592566816308, 120.3009856492281), new google.maps.LatLng (23.576856396912493, 120.30163206160069), new google.maps.LatLng (23.576227068063666, 120.30187346041203), new google.maps.LatLng (23.57659274290842, 120.30298724770546), new google.maps.LatLng (23.575679475761397, 120.30260570347309), new google.maps.LatLng (23.57541090272003, 120.30247762799263), new google.maps.LatLng (23.575101766479737, 120.3027968108654), new google.maps.LatLng (23.57473608748244, 120.30322462320328), new google.maps.LatLng (23.574540648541902, 120.3025621175766), new google.maps.LatLng (23.57449639817536, 120.30253730714321), new google.maps.LatLng (23.57378162977209, 120.30278272926807), new google.maps.LatLng (23.573018304446737, 120.30305832624435), new google.maps.LatLng (23.572737434027516, 120.30213631689548), new google.maps.LatLng (23.57348601074824, 120.30186407268047), new google.maps.LatLng (23.57310987913627, 120.30060075223446), new google.maps.LatLng (23.5738559953677, 120.30033387243748), new google.maps.LatLng (23.574078477311378, 120.30104130506516), new google.maps.LatLng (23.574516065006776, 120.30251048505306), new google.maps.LatLng (23.574554784072518, 120.30253127217293), new google.maps.LatLng (23.575289214982693, 120.30223086476326), new google.maps.LatLng (23.57530396501746, 120.30218929052353), new google.maps.LatLng (23.574422647531318, 120.29932335019112), new google.maps.LatLng (23.575335923420464, 120.29899209737778), new google.maps.LatLng (23.576218463937412, 120.30185803771019), new google.maps.LatLng (23.5762608699828, 120.30187346041203), new google.maps.LatLng (23.577196257819583, 120.30152477324009), new google.maps.LatLng (23.576326015475114, 120.29865950345993), new google.maps.LatLng (23.57711206089564, 120.29842011630535), new google.maps.LatLng (23.576845949094896, 120.29758527874947), new google.maps.LatLng (23.57661855521192, 120.29684834182262), new google.maps.LatLng (23.576460608418184, 120.29651172459126), new google.maps.LatLng (23.57608018325948, 120.29584050178528), new google.maps.LatLng (23.575421350651823, 120.29510624706745), new google.maps.LatLng (23.574667868262665, 120.29423385858536), new google.maps.LatLng (23.574617472059526, 120.2942419052124), new google.maps.LatLng (23.574517294183643, 120.29428951442242), new google.maps.LatLng (23.57420508289002, 120.29432840645313), new google.maps.LatLng (23.573480479408815, 120.29424458742142), new google.maps.LatLng (23.573398738476744, 120.29421843588352), new google.maps.LatLng (23.57350629232416, 120.2937899529934), new google.maps.LatLng (23.57289661449203, 120.29365986585617), new google.maps.LatLng (23.573087753713793, 120.29251791536808), new google.maps.LatLng (23.573458354048768, 120.29260642826557), new google.maps.LatLng (23.574470585454662, 120.29289476573467), new google.maps.LatLng (23.574172509621732, 120.29379263520241), new google.maps.LatLng (23.574202624530432, 120.2938275039196), new google.maps.LatLng (23.574629149230258, 120.29422111809254), new google.maps.LatLng (23.574672170376676, 120.29420837759972), new google.maps.LatLng (23.575213621028453, 120.29359079897404), new google.maps.LatLng (23.576016266808022, 120.29447391629219), new google.maps.LatLng (23.576398535890796, 120.29486954212189), new google.maps.LatLng (23.57675253327713, 120.29528059065342), new google.maps.LatLng (23.57688835493762, 120.29549315571785), new google.maps.LatLng (23.576979312351142, 120.29566548764706), new google.maps.LatLng (23.575511694497898, 120.29655799269676), new google.maps.LatLng (23.575805465213932, 120.29710650444031), new google.maps.LatLng (23.575917933745014, 120.29738210141659), new google.maps.LatLng (23.57605006878143, 120.29785484075546), new google.maps.LatLng (23.575096235208374, 120.29819816350937), new google.maps.LatLng (23.575331006743586, 120.29896929860115), new google.maps.LatLng (23.573653794600204, 120.29957346618176), new google.maps.LatLng (23.573194693221286, 120.29801979660988), new google.maps.LatLng (23.57386398505729, 120.29761008918285), new google.maps.LatLng (23.57381850527932, 120.29750749468803), new google.maps.LatLng (23.57348969830773, 120.29713600873947), new google.maps.LatLng (23.57319960997815, 120.29682219028473), new google.maps.LatLng (23.57273620483398, 120.29827326536179), new google.maps.LatLng (23.572570878199752, 120.29881238937378), new google.maps.LatLng (23.5721468052123, 120.30011862516403), new google.maps.LatLng (23.571950133217058, 120.30082270503044), new google.maps.LatLng (23.571602883506305, 120.30168034136295), new google.maps.LatLng (23.57119970392912, 120.30256479978561), new google.maps.LatLng (23.57081619049967, 120.30354984104633), new google.maps.LatLng (23.569277208678724, 120.30284509062767), new google.maps.LatLng (23.569663185046963, 120.30181311070919), new google.maps.LatLng (23.56882854045562, 120.30143491923809), new google.maps.LatLng (23.56883898891112, 120.30130349099636), new google.maps.LatLng (23.56874802585886, 120.30118681490421), new google.maps.LatLng (23.568641697346287, 120.30116803944111), new google.maps.LatLng (23.56855257800646, 120.30123308300972), new google.maps.LatLng (23.568516930253562, 120.30130214989185), new google.maps.LatLng (23.56765154735343, 120.30116267502308), new google.maps.LatLng (23.567189966500507, 120.30113853514194), new google.maps.LatLng (23.5667197792769, 120.3010842204094), new google.maps.LatLng (23.566543996431655, 120.30207730829716), new google.maps.LatLng (23.567505267578287, 120.3022462874651), new google.maps.LatLng (23.56758701217861, 120.30251450836658), new google.maps.LatLng (23.56762081632175, 120.3027505427599), new google.maps.LatLng (23.567621430942456, 120.30299663543701), new google.maps.LatLng (23.5677185409776, 120.3030040115118), new google.maps.LatLng (23.567753574327064, 120.30352838337421), new google.maps.LatLng (23.567347309823013, 120.30343987047672), new google.maps.LatLng (23.567293837699395, 120.30361957848072), new google.maps.LatLng (23.5670522909387, 120.30361756682396), new google.maps.LatLng (23.566827953218592, 120.30356794595718), new google.maps.LatLng (23.566728384025513, 120.30349619686604), new google.maps.LatLng (23.566605458991706, 120.3034532815218), new google.maps.LatLng (23.566574113089672, 120.30350491404533), new google.maps.LatLng (23.56641492496193, 120.30439272522926), new google.maps.LatLng (23.566196117799723, 120.3043632209301), new google.maps.LatLng (23.566063358220266, 120.30503377318382), new google.maps.LatLng (23.565783087556348, 120.3049398958683), new google.maps.LatLng (23.56517214460681, 120.30482724308968), new google.maps.LatLng (23.56534977318188, 120.30378185212612), new google.maps.LatLng (23.564641101344396, 120.30356794595718), new google.maps.LatLng (23.56462757938144, 120.30357532203197), new google.maps.LatLng (23.56435775446613, 120.30493721365929), new google.maps.LatLng (23.56513403740716, 120.30505388975143), new google.maps.LatLng (23.565515723536738, 120.30515514314175), new google.maps.LatLng (23.566040616982544, 120.30523762106895), new google.maps.LatLng (23.5665464549346, 120.30534692108631), new google.maps.LatLng (23.566992672458696, 120.30543476343155), new google.maps.LatLng (23.567159849983693, 120.30451074242592), new google.maps.LatLng (23.567632494114637, 120.30458852648735),
     ];
     markers = [
       {
@@ -158,33 +158,10 @@ $(function() {
       },
       {
         latLng: new google.maps.LatLng (23.56835344215955, 120.3036618232727),
-        src: 'http://upload.wikimedia.org/wikipedia/commons/d/d3/Nelumno_nucifera_open_flower_-_botanic_garden_adelaide2.jpg',
-        title: 'dasdad',
-        items: [
-          {item: 'aa'},
-          {item: 'sss'},
-        ]
-      },
-      {
-        latLng: new google.maps.LatLng (23.56732088107499, 120.30003547668457),
-        src: 'http://upload.wikimedia.org/wikipedia/commons/d/d3/Nelumno_nucifera_open_flower_-_botanic_garden_adelaide2.jpg',
-        title: 'dasdad',
-        items: [
-          {item: 'aa'},
-          {item: 'sss'},
-        ]
-      },
-      {
-        latLng: new google.maps.LatLng (23.56951383445304, 120.2983295917511),
-        src: 'http://upload.wikimedia.org/wikipedia/commons/d/d3/Nelumno_nucifera_open_flower_-_botanic_garden_adelaide2.jpg',
-        title: 'dasdad',
-        items: [
-          {item: 'aa'},
-          {item: 'sss'},
-        ]
+        
       },
     ];
-    setMapData ('ni19', points, markers, 2);
+    setMapData ('ni19', points, markers, 1/4, 'rgba(166, 27, 74, .6)');
     
     $loading.fadeOut (function () {
       $(this).hide ();
@@ -204,4 +181,8 @@ $(function() {
   $('.buttons .ni19').click (function () {
     turnOn ('ni19');
   });
+
+  setTimeout (function () {
+    $('.buttons .ni19').click ();
+  }, 500);
 });
