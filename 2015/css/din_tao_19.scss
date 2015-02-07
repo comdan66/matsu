@@ -15,9 +15,11 @@ html {
 
       .pm {
         @include button('gray');
+        padding: 5px;
       }
       .ni {
         @include button('gray');
+        padding: 5px;
       }
     }
     #container {

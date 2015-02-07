@@ -56,6 +56,10 @@ $(function() {
         items: [
           {item: 'aa'},
           {item: 'sss'},
+          {item: 'sss'},
+          {item: 'sss'},
+          {item: 'sss'},
+          {item: 'sss'},
         ]
       },
       {
