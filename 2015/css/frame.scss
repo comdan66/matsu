@@ -41,6 +41,21 @@ html {
     @include font-smoothing(antialiased);
     @include box-shadow(none);
 
+    #loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding-top: 100px;
+      background: $mainBackgroundColor $mainBackgroundImage;
+      z-index: 9999;
+      
+      .loading {
+        @include loading();
+      }
+    }
+
     #header {
       position: fixed;
       top: 0;
@@ -74,7 +89,7 @@ html {
         @include box-shadow(0 0 15px rgba(0, 0, 0, .8));
       }
 
-      @include split-right(150px);
+      @include split-right(80px);
 
       .l, .r {
         a {

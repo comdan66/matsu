@@ -8,23 +8,23 @@
 html {
   body {
     .buttons {
-      margin-top: 10px;
-      height: 30px;
+      margin-top: 5px;
       text-align: left;
-      padding-left: 10px;
+      @include clearfix();
 
-      .pm {
+      button {
+        float: left;
+        
         @include button('gray');
+
         padding: 5px;
-      }
-      .ni {
-        @include button('gray');
-        padding: 5px;
+        margin: 0 5px;
+        margin-top: 5px;
       }
     }
     #container {
       padding: 10px;
-      height: calc(100% - 40px);
+      height: calc(100% - 33px);
 
       .map-container {
         position: relative;
