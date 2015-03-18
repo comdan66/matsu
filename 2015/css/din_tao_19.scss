@@ -105,9 +105,10 @@ html {
       @include text-shadow(1px 1px 1px rgba(53, 53, 53, 0.5));
       @include background-image(
                     linear-gradient(
-                        rgba(0,0,0, .0) 0%,
-                        rgba(0,0,0, .36) 50%,
-                        rgba(0,0,0, .8) 100%
+                        red 0%,
+                        red 50%,
+                        green 51%,
+                        green 100%
                     ));
 
     }
