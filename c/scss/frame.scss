@@ -171,18 +171,58 @@ html {
   .r {
     text-align: right;
 
-    $a: 20px;
-    $b: 100px;
-    $c: 20px;
-    $d: $a * 3 + $c *2;
+    $optionWidth: 30px;
+    $lineHeight: 10px;
+    $lineSpace: 10px;
+    $optionHeight: $lineHeight * 3 + $lineSpace *2;
 
     .option {
       position: relative;
-      // border: 1px solid rgba(255, 0, 0, .3);
+      margin-top: 100px + $lineHeight + $lineSpace;
       background-color: rgba(0, 128, 0, 0.2);
-      margin-top: 100px;
-      width: $b;
+      width: $optionWidth;
+      display: inline-block;
+      height: $lineHeight;
+      background-color: rgba(0, 0, 255, 0.2);
+      @include transition(all .5s ease);
+
+      &:before, &:after {
+        content: " ";
+        position: absolute;
+        top: -($lineHeight + $lineSpace);
+        left: 0;
+
+        display: block;
+        width: 100%;
+        height: $lineHeight;
+
+        background-color: rgba(0, 0, 255, 0.2);
+        border: 1px solid rgba(255, 0, 0, .3);
+        @include simple-transform(1, 0, 0, 0, 0, 0, 0, 0);
         @include transition(all .5s ease);
+      }
+      &:after {
+        top: $lineHeight + $lineSpace;
+      }
+
+      &:hover {
+        // @include opacity(0);
+        background-color: transparent;
+
+        &:before {
+          @include simple-transform(1, -45deg, 0, $optionHeight / 2 - $lineHeight / 2, 0, 0, $optionWidth / 2, $optionHeight / 2 - $lineHeight / 2 + $lineHeight / 2);
+        }
+        &:after {
+            @include simple-transform(1, 45deg, 0, -($optionHeight / 2 - $lineHeight / 2), 0, 0, $optionWidth / 2, -($optionHeight / 2 - $lineHeight));
+        }
+      }
+    }
+  }
+}
+
+
+/*
+
 
       &:hover {
         @include border-radius(50%);
@@ -231,10 +271,8 @@ html {
           background-color: red;
         }
       }
-    }
-  }
-}
-/*
+
+
 .menu-ico {
   width: 30px;
   height: 30px;
