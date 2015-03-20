@@ -49,11 +49,26 @@ html {
   top: $navbarHeight;
   right: 0;
   z-index: 99999;
-
-  background-color: rgba(70, 70, 70, 1);
+  border-left: 6px solid rgba(85, 80, 140, 1);
+  padding-left: 2px;
+  // background-color: rgba(70, 70, 70, 1);
   @include transition(all .5s cubic-bezier(0.325, 0.825, 0.470, 1));
   @include box-shadow(-2px 0 4px rgba(100, 100, 100, 1));
+  @include background-image(linear-gradient(
+    top, rgba(190, 110, 100, .93) 0%, rgba(200, 90, 90, .93) 100%));
+  // @include background-image(linear-gradient(
+  //   top, rgba(215, 20, 0, .4) 0%, rgba(215, 50, 50, .7) 100%));
 
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    border-left: 2px solid rgba(230, 200, 200, 1);
+  }
   &.close {
     right: 0 - ($rightSlideWidth + 5px);
 
@@ -72,8 +87,87 @@ html {
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     text-align: left;
+    -webkit-overflow-scrolling: touch;
+
+    .sub_item, .item {
+      position: relative;
+      display: block;
+      padding: 10px 5px;
+      padding-left: 25px;
+      // border-bottom: 2px solid rgba(101, 59, 54, .4);
+
+      color: rgba(240, 240, 240, 1);
+      font-weight: bold;
+      font-size: larger;
+      letter-spacing: 4px;
+      text-decoration: none;
+      background-color: rgba(200, 90, 90, .25);
+      @include text-shadow(0 0 5px rgba(0, 0, 0, .4));
+      @include box-shadow(inset 0 -1px 2px rgba(100, 60, 55, .4));
+      @include overflow-docx3();
+      @include transition(all .3s);
+
+      &:not(:first-child) {
+        @include box-shadow(inset 0 -1px 2px rgba(100, 60, 55, .4), inset 0 1px 2px rgba(230, 200, 200, .3));
+      }
+      &:before {
+        z-index: -1;
+        content: " ";
+        position: absolute;
+        top: 4px;
+        left: 0;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        @include opacity(0);
+        @include transition(all .5s);
+      }
+      &:after {
+        content: " ";
+        position: absolute;
+        top: calc(50% - 6px);
+        left: 5px;
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border: 4px solid rgba(85, 80, 140, 1);
+        background-color: rgba(230, 230, 230, 1);
+        @include opacity(0);
+        @include border-radius(50%);
+        @include transition(all .5s);
+        @include box-shadow(inset 0 -1px 2px rgba(100, 60, 55, .4), 0 0 2px rgba(39, 40, 34, .3));
+      }
+      &.active, &:hover {
+        color: rgba(255, 255, 255, 1);
+        @include text-shadow(1px 1px 2px rgba(0, 0, 0, .6));
+
+        &:before {
+          @include opacity(1);
+          @include background-image(radial-gradient(50% 50%, rgba(255, 255, 255, .3) 0px, transparent 100%));
+        }
+        &:after {
+          @include opacity(1);
+        }
+      }
+    }
+    .sub_item {
+      padding: 10px 5px;
+      padding-left: 40px;
+      font-size: medium;
+      background-color: transparent;
+      background-color: rgba(150, 40, 40, .25);
+      @include box-shadow(none);
+
+      &:not(:first-child) {
+        @include box-shadow(none);
+      }
+      border-top: 1px solid rgba(101, 59, 54, .2);
+
+      &:after {
+        left: 20px;
+      }
+    }
   }
 
 
@@ -118,21 +212,8 @@ html {
     left: 0;
     border-bottom: 2px solid rgba(255, 255, 255, .85);
   }
-  // &:after {
-  //   position: absolute;
-  //   content: " ";
-  //   width: 100%;
-  //   height: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   border-bottom: 6px solid rgba(50, 60, 135, 1);
-
-  //   @include box-shadow(0 2px 10px rgba(0, 0, 0, .8));
-  // }
   border-bottom: 6px solid rgba(50, 60, 135, 1);
   @include box-shadow(0 2px 10px rgba(0, 0, 0, .8));
-
-
   @include clearfix ();
 
   .l, .c, .r {
@@ -158,12 +239,12 @@ html {
           &:before {
             font-size: x-large;
             font-family: 'icomoon';
-            color: rgba(50, 60, 135, .9);
+            color: rgba(50, 60, 135, 1);
             @include transition(all .3s);
           }
           &:hover {
             &:before {
-              color: rgba(50, 60, 135, 1);
+              color: rgba(40, 50, 125, 1);
             }
           }
         }
@@ -176,7 +257,7 @@ html {
       padding-top: 4px;
       font-size: large;
       letter-spacing: 4px;
-      @include text-shadow(0 1px 5px rgba(0, 0, 0, .4));
+      @include text-shadow(0 1px 5px rgba(0, 0, 0, .4), 0 0 2px rgba(40, 50, 125, 1));
       @include background-image(radial-gradient(50% 50%, rgba(255, 255, 255, .3) 0px, transparent 100%));
     }
     .r {
@@ -194,13 +275,14 @@ html {
       width: calc(100% - 2px);
       a {
         @include a(rgba(220, 220, 220, 1), rgba(255, 255, 255, 1), false) {
-          color: rgba(220, 220, 220, 1);
-          @include text-shadow(0 1px 5px rgba(0, 0, 0, .4));
+          color: rgba(240, 240, 240, 1);
+          @include text-shadow(0 0 5px rgba(0, 0, 0, .4));
 
-          &:after {
+          &:before {
+            z-index: -1;
             content: " ";
             position: absolute;
-            top: 0;
+            top: 4px;
             left: 0;
             display: inline-block;
             width: 100%;
@@ -211,11 +293,11 @@ html {
           }
           &.active, &:hover {
             color: rgba(255, 255, 255, 1);
-            @include text-shadow(1px 2px 5px rgba(0, 0, 0, .6));
+            @include text-shadow(1px 1px 2px rgba(0, 0, 0, .6));
 
-            &:after {
+            &:before {
               @include opacity(1);
-              @include background-image(radial-gradient(50% 50%, rgba(255, 255, 255, .7) 0px, transparent 100%));
+              @include background-image(radial-gradient(50% 50%, rgba(255, 255, 255, .6) 0px, transparent 100%));
             }
           }
         }
@@ -256,14 +338,13 @@ html {
     padding: 0 10px;
     padding-bottom: 18px;
     background: url(data:image/gif;base64,R0lGODlhAgACAIAAAP///8nJySH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0MjhCMDc2ODA2RDgxMUUyQTMzM0ExMUI2QUUxMTc4NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0MjhCMDc2OTA2RDgxMUUyQTMzM0ExMUI2QUUxMTc4NyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQyOEIwNzY2MDZEODExRTJBMzMzQTExQjZBRTExNzg3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQyOEIwNzY3MDZEODExRTJBMzMzQTExQjZBRTExNzg3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAIAAgAAAgNMAAUAOw==) repeat-x center bottom;
-
     @include clearfix ();
 
     $borderRadius: 12px;
     .item {
       position: relative;
       display: inline-block;
-      padding: 1px 20px 5px 20px;
+      padding: 3px 20px 5px 20px;
       float: left;
       border: 2px solid rgba(50, 60, 135, 1);
       @include border-radius(0 $borderRadius 0 $borderRadius);
@@ -271,13 +352,14 @@ html {
         top, rgba(215, 20, 0, .7) 0%, rgba(215, 50, 50, 1) 100%));
 
       @include a(rgba(220, 220, 220, 1), rgba(255, 255, 255, 1), false) {
-        color: rgba(220, 220, 220, 1);
+        color: rgba(240, 240, 240, 1);
         @include text-shadow(0 0 5px rgba(0, 0, 0, .4));
 
-        &:after {
+        &:before {
+          z-index: -1;
           content: " ";
           position: absolute;
-          top: 0;
+          top: 2px;
           left: 0;
           display: inline-block;
           width: 100%;
@@ -288,11 +370,11 @@ html {
         }
         &.active, &:hover {
           color: rgba(255, 255, 255, 1);
-          @include text-shadow(1px 1px 5px rgba(0, 0, 0, .8));
+          @include text-shadow(1px 1px 2px rgba(0, 0, 0, .6));
 
-          &:after {
+          &:before {
             @include opacity(1);
-            @include background-image(radial-gradient(50% 50%, rgba(255, 255, 255, .7) 0px, transparent 100%));
+            @include background-image(radial-gradient(65% 65%, rgba(250, 150, 30, .8) 0px, transparent 100%));
           }
         }
       }
@@ -300,6 +382,10 @@ html {
 
       & + .item {
         margin-left: 15px;
+      }
+      .value {
+        // border: 1px solid blue;
+        display: block;
       }
     }
   }
