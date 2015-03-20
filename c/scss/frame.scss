@@ -52,7 +52,7 @@ html {
 
   background-color: rgba(70, 70, 70, 1);
   @include transition(all .5s cubic-bezier(0.325, 0.825, 0.470, 1));
-  @include box-shadow(-2px 0 4px rgba(100, 100, 100, 0.5));
+  @include box-shadow(-2px 0 4px rgba(100, 100, 100, 1));
 
   &.close {
     right: 0 - ($rightSlideWidth + 5px);
@@ -66,6 +66,17 @@ html {
     left: 0;
   }
 
+  .items {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    text-align: left;
+  }
+
+
 }
 
 #slide_cover {
@@ -78,8 +89,6 @@ html {
   z-index: 99998;
 
   background-color: rgba(0, 0, 0, .3);
-  // @include opacity(0.3);
-  @include filter(blur(5px));
   @include transition(all .4s);
 }
 
@@ -92,8 +101,8 @@ html {
   left: 0px;
   top: 0;
   height: $navbarHeight;
-  // @include background-image(linear-gradient(
-  //   top, rgba(215, 20, 0, .7) 0%, rgba(215, 50, 50, 1) 100%));
+  @include background-image(linear-gradient(
+    top, rgba(215, 20, 0, .7) 0%, rgba(215, 50, 50, 1) 100%));
 
   padding: 0 10px;
 
@@ -121,70 +130,120 @@ html {
     @include box-shadow(0 2px 10px rgba(0, 0, 0, .8));
   }
 
-  @include split-right(400px);
-  .l, .r {
+  // @include split-right(400px);
+  @include clearfix ();
+
+  .l, .c, .r {
+    float: left;
+    width: calc(100% / 3);
+    // border: 1px solid blue;
     height: 100%;
   }
-  .l {
-    text-align: left;
-    @include clearfix();
 
-    a {
-      @include a(rgba(220, 220, 220, 1), rgba(255, 255, 255, 1), false) {
-        color: rgba(220, 220, 220, 1);
-        @include text-shadow(0 1px 5px rgba(0, 0, 0, .4));
+  @media screen and (min-width: 0px) and (max-width: 480px) {
+    .l {
+      width: 40px;
+      a {
+        display: none;
 
-        &:after {
-          content: " ";
-          position: absolute;
-          top: 0;
-          left: 0;
+        &.home {
+          margin-top: 3px;
           display: inline-block;
-          width: 100%;
-          height: 100%;
-          @include transition(all .3s);
-          @include opacity(.5);
-          @include background-image(radial-gradient(50% 50%, rgba(255, 255, 255, .3) 0px, transparent 100%));
-        }
-        &.active, &:hover {
-          color: rgba(255, 255, 255, 1);
-          @include text-shadow(1px 2px 5px rgba(0, 0, 0, .6));
+          width: 25px;
+          height: 25px;
+          text-decoration: none;
+          @include text-shadow(0 0 1px rgba(255, 255, 255, 1), 0 0 1px rgba(255, 255, 255, 1));
 
-          &:after {
-            @include opacity(1);
-            @include background-image(radial-gradient(50% 50%, rgba(255, 255, 255, .7) 0px, transparent 100%));
+          &:before {
+            font-size: x-large;
+            font-family: 'icomoon';
+            color: rgba(50, 60, 135, .9);
+            @include transition(all .3s);
+          }
+          &:hover {
+            &:before {
+              color: rgba(50, 60, 135, 1);
+            }
           }
         }
       }
+    }
+    .c {
+      width: calc(100% - 80px);
+      color: rgba(255, 255, 255, 1);
+      font-weight: bold;
+      padding-top: 4px;
+      font-size: large;
+      letter-spacing: 4px;
+      @include text-shadow(0 1px 5px rgba(0, 0, 0, .4));
+      @include background-image(radial-gradient(50% 50%, rgba(255, 255, 255, .3) 0px, transparent 100%));
+    }
+    .r { width: 40px; }
+  }
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .l {
+      // width: 1px;
+    }
+  }
+  @media screen and (min-width: 769px) {
 
-      position: relative;
-      float: left;
-      display: inline-block;
-      padding: 4px 15px;
-      margin-top: 3px;
+    .l {
 
-      & + a {
-        margin-left: 5px;
+      a {
+        @include a(rgba(220, 220, 220, 1), rgba(255, 255, 255, 1), false) {
+          color: rgba(220, 220, 220, 1);
+          @include text-shadow(0 1px 5px rgba(0, 0, 0, .4));
+
+          &:after {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            @include transition(all .3s);
+            @include opacity(.5);
+            @include background-image(radial-gradient(50% 50%, rgba(255, 255, 255, .3) 0px, transparent 100%));
+          }
+          &.active, &:hover {
+            color: rgba(255, 255, 255, 1);
+            @include text-shadow(1px 2px 5px rgba(0, 0, 0, .6));
+
+            &:after {
+              @include opacity(1);
+              @include background-image(radial-gradient(50% 50%, rgba(255, 255, 255, .7) 0px, transparent 100%));
+            }
+          }
+        }
+
+        position: relative;
+        float: left;
+        display: inline-block;
+        padding: 4px 15px;
+        margin-top: 3px;
+
+        & + a {
+          margin-left: 5px;
+        }
       }
     }
   }
+
   .r {
-    text-align: right;
+    text-align: center;
+    #option {
+      @include option();
+      margin-top: 5px;
+    }
+  }
+}
 
-    $optionWidth: 30px;
-    $lineHeight: 10px;
-    $lineSpace: 10px;
-    $optionHeight: $lineHeight * 3 + $lineSpace *2;
 
-    .option {
-      position: relative;
-      margin-top: 100px + $lineHeight + $lineSpace;
-      background-color: rgba(0, 128, 0, 0.2);
-      width: $optionWidth;
-      display: inline-block;
-      height: $lineHeight;
-      background-color: rgba(0, 0, 255, 0.2);
-      @include transition(all .5s ease);
+
+
+
+/*
 
       &:before, &:after {
         content: " ";
@@ -216,13 +275,6 @@ html {
             @include simple-transform(1, 45deg, 0, -($optionHeight / 2 - $lineHeight / 2), 0, 0, $optionWidth / 2, -($optionHeight / 2 - $lineHeight));
         }
       }
-    }
-  }
-}
-
-
-/*
-
 
       &:hover {
         @include border-radius(50%);
