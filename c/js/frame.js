@@ -28,4 +28,6 @@ $(function () {
       $option.removeClass ('close');
     }
   });
+
+  $('#sub_items .item').OAripple ().OAjelly ();
 });

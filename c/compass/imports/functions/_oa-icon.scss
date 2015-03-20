@@ -3,7 +3,7 @@
  * @copyright   Copyright (c) 2015 OA Wu Design
  */
 
-@mixin option ($optionWidth: 30px, $lineHeight: 6px, $lineSpace: 2px, $lineBorderWidth: 1px, $lineBorderColor: rgba(255, 255, 255, .85), $lineBorderRadius: 1px, $lineColor: rgba(50, 60, 135, 1)) {
+@mixin option ($optionWidth: 30px, $lineHeight: 6px, $lineSpace: 2px, $lineBorderWidth: 1px, $lineBorderColor: rgba(255, 255, 255, .85), $lineBorderRadius: 2px, $lineColor: rgba(50, 60, 135, 1)) {
 
   $optionHeight: $lineHeight * 3 + $lineSpace * 2;
 
