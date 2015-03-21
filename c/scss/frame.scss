@@ -108,7 +108,7 @@ html {
       position: relative;
       display: block;
       padding: 10px 5px;
-      padding-left: 25px;
+      padding-left: 30px;
       color: rgba(230, 230, 230, 1);
       font-weight: bold;
       font-size: larger;
@@ -125,19 +125,7 @@ html {
       &:not(:first-child) {
         @include box-shadow(inset 0 -1px 2px rgba(100, 60, 55, .4), inset 0 1px 2px rgba(230, 200, 200, .3));
       }
-      &:before {
-        z-index: -1;
-        content: " ";
-        position: absolute;
-        top: 4px;
-        left: 0;
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-        @include opacity(0);
-        @include transition(all .5s);
-      }
-      &:after {
+      &:before, &:after {
         content: " ";
         position: absolute;
         top: calc(50% - 6px);
@@ -152,13 +140,16 @@ html {
         @include transition(all .5s);
         @include box-shadow(inset 0 -1px 2px rgba(100, 60, 55, .4), 0 0 2px rgba(39, 40, 34, .3));
       }
+      &:after {
+        left: auto;
+        right: 5px;
+      }
       &.active, &:hover {
         color: rgba(255, 255, 255, 1);
         @include text-shadow(1px 1px 2px rgba(0, 0, 0, .6));
 
         &:before {
           @include opacity(1);
-          @include background-image(radial-gradient(50% 50%, rgba(255, 255, 255, .3) 0px, transparent 100%));
         }
         &:after {
           @include opacity(1);
@@ -167,7 +158,7 @@ html {
     }
     .sub_item {
       padding: 10px 5px;
-      padding-left: 40px;
+      padding-left: 45px;
       font-size: medium;
       background-color: transparent;
       background-color: rgba(150, 40, 40, .25);
@@ -177,20 +168,21 @@ html {
       &:not(:first-child) {
         @include box-shadow(none);
       }
-
-      &:after {
-        left: 20px;
-      }
-
       &.hide {
         height: 0;
         padding: 0;
         border-width: 0;
       }
+      &:before {
+        left: 20px;
+        @include rotate(45deg);
+        @include border-radius(0);
+      }
+      &:after {
+        display: none;
+      }
     }
   }
-
-
 }
 
 #slide_cover {
@@ -419,5 +411,52 @@ html {
   }
   #container {
     margin-top: 8px;
+  }
+}
+
+#footer {
+  position: relative;
+  margin: 50px auto;
+  width: 100%;
+  text-align: center;
+
+  .split-line {
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    width: 100%;
+    height: 2px;
+    @include opacity(.6);
+
+    hr {
+      margin-top: 0;
+    }
+  }
+  .content {
+    background-color: rgba(233, 234, 237, 1);
+    display: inline-block;
+    margin: 0 auto;
+    padding: 5px 10px;
+    background: $mainBackgroundColor $mainBackgroundImage;
+    line-height: 20px;
+    font-size: small;
+
+    & > div {
+      &:first-child {
+        font-size: large;
+        font-weight: bold;
+      }
+      &:not(:first-child) {
+        margin-top: 5px;
+      }
+    }
+    b {
+      color: rgba(50, 50, 50, 0.9);
+      font-weight: normal;
+    }
+    a {
+      // font-weight: bold;
+      @include a(rgba(70, 80, 150, .8), rgba(70, 80, 150, 1), true);
+    }
   }
 }

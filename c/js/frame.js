@@ -31,12 +31,12 @@ $(function () {
 
   $('#sub_items .item').OAripple ().OAjelly ();
 
-  $subItem = $('#right_slide .items .sub_item').addClass ('hide');
+  // $subItem = $('#right_slide .items .sub_item').addClass ('hide');
 
-  $('#right_slide .items .item').click (function () {
-    $subItem.addClass ('hide');
-    $(this).nextUntil ('.item').removeClass ('hide');
-    return false;
-  });
+  // $('#right_slide .items .item').click (function () {
+  //   $subItem.addClass ('hide');
+  //   $(this).nextUntil ('.item').removeClass ('hide');
+  //   return false;
+  // });
 
 });
