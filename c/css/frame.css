@@ -186,12 +186,13 @@ html body {
   display: block;
   padding: 10px 5px;
   padding-left: 25px;
-  color: #f0f0f0;
+  color: #e6e6e6;
   font-weight: bold;
   font-size: larger;
   letter-spacing: 4px;
   text-decoration: none;
   background-color: rgba(200, 90, 90, 0.25);
+  cursor: pointer;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: inset 0 -1px 2px rgba(100, 60, 55, 0.4);
   -webkit-box-shadow: inset 0 -1px 2px rgba(100, 60, 55, 0.4);
@@ -235,8 +236,8 @@ html body {
   height: 14px;
   border: 4px solid #55508c;
   background-color: #e6e6e6;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -271,10 +272,10 @@ html body {
   font-size: medium;
   background-color: transparent;
   background-color: rgba(150, 40, 40, 0.25);
+  border-top: 1px solid rgba(101, 59, 54, 0.2);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-  border-top: 1px solid rgba(101, 59, 54, 0.2);
 }
 #right_slide .items .sub_item:not(:first-child) {
   -moz-box-shadow: none;
@@ -283,6 +284,11 @@ html body {
 }
 #right_slide .items .sub_item:after {
   left: 20px;
+}
+#right_slide .items .sub_item.hide {
+  height: 0;
+  padding: 0;
+  border-width: 0;
 }
 
 #slide_cover {

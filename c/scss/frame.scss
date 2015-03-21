@@ -109,14 +109,14 @@ html {
       display: block;
       padding: 10px 5px;
       padding-left: 25px;
-      // border-bottom: 2px solid rgba(101, 59, 54, .4);
-
-      color: rgba(240, 240, 240, 1);
+      color: rgba(230, 230, 230, 1);
       font-weight: bold;
       font-size: larger;
       letter-spacing: 4px;
       text-decoration: none;
       background-color: rgba(200, 90, 90, .25);
+      cursor: pointer;
+
       @include text-shadow(0 0 5px rgba(0, 0, 0, .4));
       @include box-shadow(inset 0 -1px 2px rgba(100, 60, 55, .4));
       @include overflow-docx3();
@@ -147,7 +147,7 @@ html {
         height: 14px;
         border: 4px solid rgba(85, 80, 140, 1);
         background-color: rgba(230, 230, 230, 1);
-        @include opacity(0);
+        @include opacity(.2);
         @include border-radius(50%);
         @include transition(all .5s);
         @include box-shadow(inset 0 -1px 2px rgba(100, 60, 55, .4), 0 0 2px rgba(39, 40, 34, .3));
@@ -171,15 +171,21 @@ html {
       font-size: medium;
       background-color: transparent;
       background-color: rgba(150, 40, 40, .25);
+      border-top: 1px solid rgba(101, 59, 54, .2);
       @include box-shadow(none);
 
       &:not(:first-child) {
         @include box-shadow(none);
       }
-      border-top: 1px solid rgba(101, 59, 54, .2);
 
       &:after {
         left: 20px;
+      }
+
+      &.hide {
+        height: 0;
+        padding: 0;
+        border-width: 0;
       }
     }
   }
