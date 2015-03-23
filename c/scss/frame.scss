@@ -420,7 +420,7 @@ html {
 }
 @media screen and (min-width: 769px) {
   #sub_items {
-    margin: 15px auto 0 auto;
+    margin: 0 auto;
     padding: 0 10px;
     padding-bottom: 18px;
     background: url(data:image/gif;base64,R0lGODlhAgACAIAAAP///8nJySH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0MjhCMDc2ODA2RDgxMUUyQTMzM0ExMUI2QUUxMTc4NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0MjhCMDc2OTA2RDgxMUUyQTMzM0ExMUI2QUUxMTc4NyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQyOEIwNzY2MDZEODExRTJBMzMzQTExQjZBRTExNzg3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQyOEIwNzY3MDZEODExRTJBMzMzQTExQjZBRTExNzg3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAIAAgAAAgNMAAUAOw==) repeat-x center bottom;
@@ -428,18 +428,21 @@ html {
 
     $borderRadius: 12px;
     a {
-      position: relative;
-      display: inline-block;
-      padding: 3px 20px 5px 20px;
-      float: left;
-      border: 2px solid rgba(50, 60, 135, 1);
-      @include border-radius(0 $borderRadius 0 $borderRadius);
-      @include background-image(linear-gradient(
-        top, rgba(215, 20, 0, .7) 0%, rgba(215, 50, 50, 1) 100%));
-
       @include a(rgba(220, 220, 220, 1), rgba(255, 255, 255, 1), false) {
+        position: relative;
+        display: inline-block;
+        padding: 3px 20px 5px 20px;
+        float: left;
+        border: 2px solid rgba(50, 60, 135, 1);
         color: rgba(240, 240, 240, 1);
+        margin-top: 15px;
+        margin-right: 15px;
+
+        @include border-radius(0 $borderRadius 0 $borderRadius);
+        @include opacity(.75);
         @include text-shadow(0 0 5px rgba(0, 0, 0, .4));
+        @include background-image(linear-gradient(
+          top, rgba(215, 20, 0, .7) 0%, rgba(215, 50, 50, 1) 100%));
 
         &:after {
           content: " ";
@@ -456,6 +459,7 @@ html {
         &.active, &:hover {
           color: rgba(255, 255, 255, 1);
           @include text-shadow(1px 1px 2px rgba(0, 0, 0, .6));
+          @include opacity(1);
 
           &:after {
             @include opacity(1);
@@ -465,8 +469,8 @@ html {
       }
       @include box-shadow(2px 2px 3px rgba(0, 0 , 0 , .375), inset 0 0 1px rgba(255, 255, 255, 1), inset 0 0 1px rgba(255, 255, 255, 1), inset 0 0 1px rgba(255, 255, 255, 1), inset 0 0 1px rgba(255, 255, 255, 1));
 
-      & + a {
-        margin-left: 15px;
+      &:last-child {
+        margin-right: 0;
       }
       & > div {
         position: relative;

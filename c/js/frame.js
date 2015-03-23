@@ -12,7 +12,7 @@ $(function () {
   var $option = $('#option');
 
   var overflow = $('body').css ('overflow');
-  var now = document.URL.replace(/^.*[\\\/]/, '');
+  var now = document.URL.replace (/^.*[\\\/]/, '');
   var timer = null;
 
   var menu = [
@@ -32,7 +32,7 @@ $(function () {
     ]},
 
     {'titles': ['藝閣遊行'], 'sub': [
-      {'name': 'i-ko.html', 'titles': ['藝閣文化']},
+      {'name': 'i-ko.html', 'titles': ['藝閣', '文化']},
       {'name': 'i-ko_map-19an.html', 'titles': ['十九下午', '繞境地圖']},
       {'name': 'i-ko_map-19ni.html', 'titles': ['十九晚間', '繞境地圖']},
       {'name': 'i-ko_map-20an.html', 'titles': ['二十下午', '繞境地圖']},
@@ -98,8 +98,11 @@ $(function () {
   });
 
   $('#sub_items a').OAripple ().OAjelly ().click (function (e) {
+    $(this).siblings ().removeClass ('active');
     clearTimeout (timer);
-    timer = setTimeout (function () {window.location.assign ($(this).attr ('href'));}, 500);
+    timer = setTimeout (function () {
+      window.location.assign ($(this).attr ('href'));
+    }.bind ($(this)), 500);
     return false;
   });
 
