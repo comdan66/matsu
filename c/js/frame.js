@@ -25,21 +25,21 @@ $(function () {
 
     {'titles': ['百年藝陣'], 'sub': [
       {'name': 'din-tao.html', 'titles': ['藝陣', '文化']},
-      {'name': 'map-19an_din-tao.html', 'titles': ['十九下午', '繞境地圖']},
-      {'name': 'map-19ni_din-tao.html', 'titles': ['十九晚間', '繞境地圖']},
-      {'name': 'map-20an_din-tao.html', 'titles': ['二十下午', '繞境地圖']},
-      {'name': 'map-20ni_din-tao.html', 'titles': ['二十晚間', '繞境地圖']}
+      {'name': 'din-tao_map-19an.html', 'titles': ['十九下午', '繞境地圖']},
+      {'name': 'din-tao_map-19ni.html', 'titles': ['十九晚間', '繞境地圖']},
+      {'name': 'din-tao_map-20an.html', 'titles': ['二十下午', '繞境地圖']},
+      {'name': 'din-tao_map-20ni.html', 'titles': ['二十晚間', '繞境地圖']}
     ]},
 
     {'titles': ['藝閣遊行'], 'sub': [
       {'name': 'i-ko.html', 'titles': ['藝閣文化']},
-      {'name': 'map-19an_i-ko.html', 'titles': ['十九下午', '繞境地圖']},
-      {'name': 'map-19ni_i-ko.html', 'titles': ['十九晚間', '繞境地圖']},
-      {'name': 'map-20an_i-ko.html', 'titles': ['二十下午', '繞境地圖']},
-      {'name': 'map-20ni_i-ko.html', 'titles': ['二十晚間', '繞境地圖']},
-      {'name': 'map-21ni_i-ko.html', 'titles': ['廿一晚間', '繞境地圖']},
-      {'name': 'map-22ni_i-ko.html', 'titles': ['廿二晚間', '繞境地圖']},
-      {'name': 'map-23ni_i-ko.html', 'titles': ['廿三晚間', '繞境地圖']}
+      {'name': 'i-ko_map-19an.html', 'titles': ['十九下午', '繞境地圖']},
+      {'name': 'i-ko_map-19ni.html', 'titles': ['十九晚間', '繞境地圖']},
+      {'name': 'i-ko_map-20an.html', 'titles': ['二十下午', '繞境地圖']},
+      {'name': 'i-ko_map-20ni.html', 'titles': ['二十晚間', '繞境地圖']},
+      {'name': 'i-ko_map-21ni.html', 'titles': ['廿一晚間', '繞境地圖']},
+      {'name': 'i-ko_map-22ni.html', 'titles': ['廿二晚間', '繞境地圖']},
+      {'name': 'i-ko_map-23ni.html', 'titles': ['廿三晚間', '繞境地圖']}
     ]},
 
     {'titles': ['網站聲明'], 'sub': [
