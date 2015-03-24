@@ -64,7 +64,7 @@ $(function () {
     return t;
   });
 
-  menu.forEach (function (t) {
+  var subs = menu.map (function (t) {
     $items.append ($('<a />').addClass ('item').addClass (t.active ? 'active' : null).attr ('href', t.name).text (t.titles.join (' ')));
     $headerLeft.append ($('<a />').addClass (t.active ? 'active' : null).attr ('href', t.name).text (t.titles.join (' ')));
 
@@ -74,8 +74,21 @@ $(function () {
       if (t.active)
         t.sub.forEach (function (u) {
           $subItems.append ($('<a />').addClass (u.active ? 'active' : null).attr ('href', u.name).append (u.titles.map (function (v) {return $('<div />').text (v);})));});
+
+      return t.sub;
+    } else {
+      return null;
     }
-  });
+  })
+  .filter (function (t) { return t; })
+  .reduce (function (t, u) { return t.concat (u); });
+
+  var index = subs.map (function (t) { return t.active; }).indexOf (true);
+  var next = subs[index + 1] ? subs[index + 1] : {'name': subs[0].name, 'titles': ['回首頁'], 'active': false};
+  var prev = subs[index - 1] ? subs[index - 1] : {'name': subs[subs.length - 1].name, 'titles': subs[subs.length - 1].titles, 'active': false};
+
+  $('#pagination .l').append ($('<a />').attr ('href', prev.name).append ($('<div />').addClass ('a')).append ($('<div />').addClass ('v').append ($('<div />').text ('上一頁')).append ($('<div />').text (prev.titles.join (' ')))));
+  $('#pagination .r').append ($('<a />').attr ('href', next.name).append ($('<div />').addClass ('a')).append ($('<div />').addClass ('v').append ($('<div />').text ('下一頁')).append ($('<div />').text (next.titles.join (' ')))));
 
   $option.click (function () {
     if ($rightSlide.hasClass ('close')) {
@@ -106,4 +119,11 @@ $(function () {
     return false;
   });
 
+  $('#pagination a').OAripple ().OAjelly ().click (function (e) {
+    clearTimeout (timer);
+    timer = setTimeout (function () {
+      window.location.assign ($(this).attr ('href'));
+    }.bind ($(this)), 550);
+    return false;
+  });
 });

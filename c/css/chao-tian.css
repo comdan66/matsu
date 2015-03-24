@@ -59,6 +59,7 @@
  * @copyright   Copyright (c) 2015 OA Wu Design
  */
 #container .unit {
+  background-color: rgba(0, 0, 255, 0.2);
   position: relative;
   display: block;
   width: 100%;
