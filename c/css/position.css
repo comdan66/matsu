@@ -1,0 +1,102 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+#container {
+  border: 1px solid rgba(255, 0, 0, 0.3);
+}
+#container .title {
+  text-align: left;
+  font-weight: bold;
+  font-size: large;
+}
+#container .title:not(:first-child) {
+  margin-top: 20px;
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #container .title {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 769px) {
+  #container .title {
+    margin-bottom: 15px;
+  }
+}
+#container .values {
+  text-align: right;
+  padding-left: 40px;
+  margin: 0;
+}
+#container .values li {
+  text-align: left;
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #container .values li {
+    margin-top: 15px;
+  }
+}
+@media screen and (min-width: 769px) {
+  #container .values li {
+    margin-top: 10px;
+  }
+}
+#container .values li b {
+  color: #bc4846;
+}
