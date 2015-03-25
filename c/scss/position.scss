@@ -6,20 +6,20 @@
 @import "_oa";
 
 #container {
-  border: 1px solid rgba(255, 0, 0, .3);
+  padding: 30px 15px;
 
   .title {
     text-align: left;
     font-weight: bold;
     font-size: large;
     &:not(:first-child) {
-      margin-top: 20px;
+      margin-top: 40px;
     }
     @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
     @media screen and (min-width: #{$mediaMobileWidth}) {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
   }
   .values {
@@ -31,15 +31,49 @@
       text-align: left;
 
       @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
-        margin-top: 15px;
+        margin-top: 20px;
       }
       @media screen and (min-width: #{$mediaMobileWidth}) {
-        margin-top: 10px;
+        margin-top: 15px;
       }
 
       b {
         color: rgba(188, 72, 70, 1);
       }
+      a {
+        @include a(rgba(100, 110, 170, .8), rgba(100, 110, 170, 1));
+        &:before {
+          font-family: 'icomoon';
+          font-size: large;
+          margin-right: 2px;
+        }
+        
+        & + a {
+          margin-left: 10px;
+        }
+      }
     }
   }
 }
+
+  .fancybox-title {
+    font-size: 16px;
+    line-height: 20px;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0);
+    @include text-shadow(1px 1px 1px rgba(53, 53, 53, 0.5));
+
+    @include background-image(
+                  linear-gradient(
+                      rgba(0,0,0, .0) 10%,
+                      rgba(0,0,0, .7) 100%
+                  ));
+  }
+  .fancybox-type-iframe, .fancybox-type-image {
+    z-index: 999999 !important;
+  }
+  .fancybox-overlay {
+    z-index: 999998 !important;
+  }

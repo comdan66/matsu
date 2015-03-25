@@ -59,7 +59,7 @@
  * @copyright   Copyright (c) 2015 OA Wu Design
  */
 #container {
-  border: 1px solid rgba(255, 0, 0, 0.3);
+  padding: 30px 15px;
 }
 #container .title {
   text-align: left;
@@ -67,16 +67,16 @@
   font-size: large;
 }
 #container .title:not(:first-child) {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
   #container .title {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
 }
 @media screen and (min-width: 769px) {
   #container .title {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 }
 #container .values {
@@ -89,14 +89,61 @@
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
   #container .values li {
-    margin-top: 15px;
+    margin-top: 20px;
   }
 }
 @media screen and (min-width: 769px) {
   #container .values li {
-    margin-top: 10px;
+    margin-top: 15px;
   }
 }
 #container .values li b {
   color: #bc4846;
+}
+#container .values li a {
+  display: inline-block;
+  color: rgba(100, 110, 170, 0.8);
+  font-weight: bold;
+  text-decoration: none;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-bottom: 1px solid transparent;
+}
+#container .values li a:hover {
+  color: #646eaa;
+  border-bottom: 1px solid #646eaa;
+}
+#container .values li a:before {
+  font-family: 'icomoon';
+  font-size: large;
+  margin-right: 2px;
+}
+#container .values li a + a {
+  margin-left: 10px;
+}
+
+.fancybox-title {
+  font-size: 16px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  background-color: transparent;
+  text-shadow: 1px 1px 1px rgba(53, 53, 53, 0.5);
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIxMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuNyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.7)));
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.7) 100%);
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.7) 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.fancybox-type-iframe, .fancybox-type-image {
+  z-index: 999999 !important;
+}
+
+.fancybox-overlay {
+  z-index: 999998 !important;
 }

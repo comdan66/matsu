@@ -1,9 +1,5 @@
 var gulp = require ('gulp'),
-    notify = require('gulp-notify'),
-    uglifyJS = require ('gulp-uglify'),
-    livereload = require('gulp-livereload'),
-    minifyHTML = require('gulp-minify-html'),
-    del = require('del');
+    livereload = require('gulp-livereload');
 
 gulp.task ('default', function () {
   livereload.listen ();
