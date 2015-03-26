@@ -24,7 +24,7 @@ $(function () {
     ]},
 
     {'titles': ['百年藝陣'], 'sub': [
-      {'name': 'din-tao.html', 'titles': ['藝陣', '文化']},
+      {'name': 'din-tao.html', 'titles': ['陣頭隊伍', '路關總覽']},
       {'name': 'din-tao_map-19an.html', 'titles': ['十九下午', '繞境地圖']},
       {'name': 'din-tao_map-19ni.html', 'titles': ['十九晚間', '繞境地圖']},
       {'name': 'din-tao_map-20an.html', 'titles': ['二十下午', '繞境地圖']},
@@ -32,7 +32,7 @@ $(function () {
     ]},
 
     {'titles': ['藝閣遊行'], 'sub': [
-      {'name': 'i-ko.html', 'titles': ['藝閣', '文化']},
+      {'name': 'i-ko.html', 'titles': ['藝閣路關', '路關總覽']},
       {'name': 'i-ko_map-19an.html', 'titles': ['十九下午', '繞境地圖']},
       {'name': 'i-ko_map-19ni.html', 'titles': ['十九晚間', '繞境地圖']},
       {'name': 'i-ko_map-20an.html', 'titles': ['二十下午', '繞境地圖']},
@@ -43,7 +43,7 @@ $(function () {
     ]},
 
     {'titles': ['網站聲明'], 'sub': [
-      {'name': 'reference.html', 'titles': ['資料引用']},
+      {'name': 'reference.html', 'titles': ['參考資料']},
       {'name': 'disclaimer.html', 'titles': ['分享聲明']},
       {'name': 'developer.html', 'titles': ['開發人員']}
     ]}

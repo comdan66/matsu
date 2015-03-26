@@ -138,10 +138,10 @@
     margin-top: 40px;
     font-size: small;
     font-style: italic;
-    color: rgba(50, 50, 50, 0.5);
+    color: rgba(50, 50, 50, 0.7);
 
     a {
-      @include a(rgba(100, 110, 170, .6), rgba(100, 110, 170, .8));
+      @include a(rgba(100, 110, 170, .7), rgba(100, 110, 170, .9));
       font-size: small;
       font-style: italic;
       margin: 0 3px;
@@ -152,6 +152,14 @@
       font-family: 'icomoon';
       margin-right: 5px;
       color: rgba(50, 50, 50, 0.3);
+    }
+    & + .note {
+      margin-top: 2px;
+      font-size: smaller;
+
+      &:before {
+        content: "";
+      }
     }
   }
 }

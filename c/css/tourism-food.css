@@ -183,11 +183,11 @@
   margin-top: 40px;
   font-size: small;
   font-style: italic;
-  color: rgba(50, 50, 50, 0.5);
+  color: rgba(50, 50, 50, 0.7);
 }
 #container .reference a {
   display: inline-block;
-  color: rgba(100, 110, 170, 0.6);
+  color: rgba(100, 110, 170, 0.7);
   font-weight: bold;
   text-decoration: none;
   -moz-transition: all 0.3s;
@@ -200,12 +200,19 @@
   margin: 0 3px;
 }
 #container .reference a:hover {
-  color: rgba(100, 110, 170, 0.8);
-  border-bottom: 1px solid rgba(100, 110, 170, 0.8);
+  color: rgba(100, 110, 170, 0.9);
+  border-bottom: 1px solid rgba(100, 110, 170, 0.9);
 }
 #container .reference:before {
   content: "\e609";
   font-family: 'icomoon';
   margin-right: 5px;
   color: rgba(50, 50, 50, 0.3);
+}
+#container .reference + .reference {
+  margin-top: 2px;
+  font-size: smaller;
+}
+#container .reference + .reference:before {
+  content: "";
 }
