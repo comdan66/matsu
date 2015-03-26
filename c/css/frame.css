@@ -657,7 +657,7 @@ html body {
   }
   #pagination .c > div:not(:first-child) {
     margin-top: 5px;
-    font-size: x-small;
+    font-size: small;
   }
   #pagination .c > div:not(:first-child) b {
     color: rgba(50, 50, 50, 0.9);
@@ -933,18 +933,7 @@ html body {
     float: left;
     overflow: hidden;
   }
-}
-@media screen and (min-width: 769px) and (min-width: 769px) and (max-width: 899px) {
-  #pagination .c {
-    margin-top: 0;
-  }
-}
-@media screen and (min-width: 769px) {
-  #pagination .c > div {
-    font-size: small;
-  }
   #pagination .c > div:first-child {
-    font-size: medium;
     font-weight: bold;
   }
   #pagination .c > div:not(:first-child) {

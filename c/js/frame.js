@@ -89,6 +89,7 @@ $(function () {
 
   $('#pagination .l').append ($('<a />').attr ('href', prev.name).append ($('<div />').addClass ('a')).append ($('<div />').addClass ('v').append ($('<div />').text ('上一頁')).append ($('<div />').text (prev.titles.join (' ')))));
   $('#pagination .r').append ($('<a />').attr ('href', next.name).append ($('<div />').addClass ('a')).append ($('<div />').addClass ('v').append ($('<div />').text ('下一頁')).append ($('<div />').text (next.titles.join (' ')))));
+  $('a.icon-home').attr ('href', subs[0].name);
 
   $option.click (function () {
     if ($rightSlide.hasClass ('close')) {
@@ -119,7 +120,7 @@ $(function () {
     return false;
   });
 
-  $('#pagination a').OAripple ().OAjelly ().click (function (e) {
+  $('#pagination .l a, #pagination .r a').OAripple ().OAjelly ().click (function (e) {
     clearTimeout (timer);
     timer = setTimeout (function () {
       window.location.assign ($(this).attr ('href'));

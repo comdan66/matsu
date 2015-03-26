@@ -392,7 +392,7 @@ html {
         }
         &:not(:first-child) {
           margin-top: 5px;
-          font-size: x-small;
+          font-size: small;
 
           b {
             color: rgba(50, 50, 50, 0.9);
@@ -575,18 +575,13 @@ html {
     .c {
       float: both;
       margin-top: 10px;
-      @media screen and (min-width: #{$mediaMobileWidth}) and (max-width: #{900px - 1px}) {
-        margin-top: 0;
-      }
       width: calc(100% - 440px);
       float: left;
       overflow: hidden;
 
       & > div {
-      font-size: small;
 
         &:first-child {
-          font-size: medium;
           font-weight: bold;
         }
         &:not(:first-child) {
