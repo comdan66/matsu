@@ -20,8 +20,8 @@ gulp.task ('reload', function () {
 });
 
 gulp.task ('minify', function () {
-  // gulp.run ('js-uglify');
-  // gulp.run ('res-uglify');
+  gulp.run ('js-uglify');
+  gulp.run ('res-uglify');
   gulp.run ('minify-html');
 
 });
