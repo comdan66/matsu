@@ -19,8 +19,8 @@ $(function () {
     {'titles': ['北港媽祖'], 'sub': [
       {'name': 'chao-tian.html', 'titles': ['朝天宮']},
       {'name': '03-19.html', 'titles': ['三月十九']},
-      {'name': 'position.html', 'titles': ['交通位置']},
-      {'name': 'food.html', 'titles': ['小吃美食']}
+      {'name': 'position.html', 'titles': ['交通資訊']},
+      {'name': 'tourism-food.html', 'titles': ['旅遊美食']}
     ]},
 
     {'titles': ['百年藝陣'], 'sub': [
@@ -43,7 +43,7 @@ $(function () {
     ]},
 
     {'titles': ['網站聲明'], 'sub': [
-      {'name': 'resource.html', 'titles': ['資料引用']},
+      {'name': 'reference.html', 'titles': ['資料引用']},
       {'name': 'disclaimer.html', 'titles': ['分享聲明']},
       {'name': 'developer.html', 'titles': ['開發人員']}
     ]}

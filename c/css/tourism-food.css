@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2015 OA Wu Design
@@ -97,6 +98,25 @@
     margin-top: 15px;
   }
 }
+#container .values li i {
+  position: relative;
+  color: #db4948;
+  display: inline-block;
+  margin-left: 3px;
+  margin-top: -8px;
+}
+#container .values li i:before, #container .values li i:after {
+  font-size: x-small;
+}
+#container .values li i:before {
+  font-family: 'icomoon';
+  font-style: italic;
+}
+#container .values li i:after {
+  content: '推薦';
+  margin-left: 3px;
+  font-style: italic;
+}
 #container .values li b {
   color: #bc4846;
 }
@@ -122,4 +142,32 @@
 }
 #container .values li a + a {
   margin-left: 10px;
+}
+#container .reference {
+  text-align: right;
+  margin-top: 40px;
+  font-size: small;
+  font-style: italic;
+  color: rgba(50, 50, 50, 0.5);
+}
+#container .reference a {
+  display: inline-block;
+  color: rgba(100, 110, 170, 0.6);
+  font-weight: bold;
+  text-decoration: none;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-bottom: 1px solid transparent;
+  font-size: small;
+  font-style: italic;
+  margin: 0 3px;
+}
+#container .reference a:hover {
+  color: rgba(100, 110, 170, 0.8);
+  border-bottom: 1px solid rgba(100, 110, 170, 0.8);
+}
+#container .reference:before {
+  content: "--";
 }
