@@ -48,60 +48,92 @@
       margin-left: 5px;
     }
   }
+  .sub_title {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 0px;
+
+    @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
+      margin-bottom: 15px;
+    }
+    @media screen and (min-width: #{$mediaMobileWidth}) {
+      margin-bottom: 10px;
+    }
+    &:before, &:after {
+      content: '';
+
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border: 3px solid rgba(30, 40, 170, .6);
+      background-color: rgba(255, 255, 255, 1);
+      margin-right: 6px;
+      @include opacity(.2);
+      @include rotate(45deg);
+      @include border-radius(50%);
+    }
+    &:after {
+      margin-left: 3px;
+    }
+  }
+
   .values {
     text-align: left;
-    padding-left: 40px;
     margin: 0;
+    line-height: 22px;
+    text-indent: 33px;
+
+    b {
+      color: rgba(188, 72, 70, 1);
+    }
 
     li {
       text-align: left;
+      text-indent: 0;
 
       @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
-        margin-top: 20px;
+        margin-top: 10px;
       }
       @media screen and (min-width: #{$mediaMobileWidth}) {
-        margin-top: 15px;
+        margin-top: 5px;
       }
-
-      i {
-        position: relative;
-        color: rgba(219, 73, 72, 1);
-        display: inline-block;
-        margin-left: 3px;
-        margin-top: -8px;
-
-        &:before, &:after {
-          font-size: x-small;
+    }
+    & > ul {
+      & > li {
+        &:not(:first-child) {
+          margin-top: 10px;
         }
-        &:before {
-          font-family: 'icomoon';
-          font-style: italic;
-        }
+      }
+    }
+    & ~ .sub_title {
+
+      @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
+        margin-top: 25px;
+      }
+      @media screen and (min-width: #{$mediaMobileWidth}) {
+        margin-top: 20px;
+      }
+    }
+    span {
+      &:first-child {
+        font-weight: bold;
         &:after {
-          content: '推薦';
-          margin-left: 3px;
-          font-style: italic;
+          content: "：";
         }
+        margin-right: 5px;
       }
-
-      b {
-        color: rgba(188, 72, 70, 1);
-      }
-      a {
-        @include a(rgba(100, 110, 170, .8), rgba(100, 110, 170, 1));
-        &:before {
-          font-family: 'icomoon';
-          font-size: large;
-          margin-right: 2px;
-        }
-
-        & + a {
-          margin-left: 10px;
+      &:not(:first-child) {
+        & + span {
+          &:before {
+            content: "\e608";
+            font-family: 'icomoon';
+            margin: 0 5px;
+          }
         }
       }
     }
   }
-  .reference {
+  .note {
     text-align: right;
     margin-top: 40px;
     font-size: small;

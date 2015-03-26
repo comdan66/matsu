@@ -65,7 +65,19 @@
 #container .title {
   text-align: left;
   font-weight: bold;
-  font-size: large;
+  margin-top: 0px;
+}
+@media screen and (min-width: 0px) and (max-width: 559px) {
+  #container .title {
+    font-size: larger;
+    letter-spacing: 2px;
+  }
+}
+@media screen and (min-width: 560px) {
+  #container .title {
+    font-size: x-large;
+    letter-spacing: 3px;
+  }
 }
 #container .title:not(:first-child) {
   margin-top: 40px;
@@ -80,8 +92,31 @@
     margin-bottom: 20px;
   }
 }
+#container .title:before, #container .title:after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 4px solid rgba(30, 40, 170, 0.6);
+  background-color: white;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+#container .title:before {
+  margin-right: 7px;
+}
+#container .title:after {
+  margin-left: 5px;
+}
 #container .values {
-  text-align: right;
+  text-align: left;
   padding-left: 40px;
   margin: 0;
 }
@@ -169,5 +204,8 @@
   border-bottom: 1px solid rgba(100, 110, 170, 0.8);
 }
 #container .reference:before {
-  content: "--";
+  content: "\e609";
+  font-family: 'icomoon';
+  margin-right: 5px;
+  color: rgba(50, 50, 50, 0.3);
 }

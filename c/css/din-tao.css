@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2015 OA Wu Design
@@ -114,30 +115,100 @@
 #container .title:after {
   margin-left: 5px;
 }
+#container .sub_title {
+  text-align: left;
+  font-weight: bold;
+  margin-top: 0px;
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #container .sub_title {
+    margin-bottom: 15px;
+  }
+}
+@media screen and (min-width: 769px) {
+  #container .sub_title {
+    margin-bottom: 10px;
+  }
+}
+#container .sub_title:before, #container .sub_title:after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 3px solid rgba(30, 40, 170, 0.6);
+  background-color: white;
+  margin-right: 6px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+#container .sub_title:after {
+  margin-left: 3px;
+}
 #container .values {
   text-align: left;
-  padding-left: 40px;
   margin: 0;
+  line-height: 22px;
+  text-indent: 33px;
+}
+#container .values b {
+  color: #bc4846;
 }
 #container .values li {
   text-align: left;
+  text-indent: 0;
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
   #container .values li {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 }
 @media screen and (min-width: 769px) {
   #container .values li {
-    margin-top: 15px;
+    margin-top: 5px;
   }
 }
-#container .values li b {
-  color: #bc4846;
+#container .values > ul > li:not(:first-child) {
+  margin-top: 10px;
 }
-#container .values li a {
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #container .values ~ .sub_title {
+    margin-top: 25px;
+  }
+}
+@media screen and (min-width: 769px) {
+  #container .values ~ .sub_title {
+    margin-top: 20px;
+  }
+}
+#container .values span:first-child {
+  font-weight: bold;
+  margin-right: 5px;
+}
+#container .values span:first-child:after {
+  content: "：";
+}
+#container .values span:not(:first-child) + span:before {
+  content: "\e608";
+  font-family: 'icomoon';
+  margin: 0 5px;
+}
+#container .note {
+  text-align: right;
+  margin-top: 40px;
+  font-size: small;
+  font-style: italic;
+  color: rgba(50, 50, 50, 0.5);
+}
+#container .note a {
   display: inline-block;
-  color: rgba(100, 110, 170, 0.8);
+  color: rgba(100, 110, 170, 0.6);
   font-weight: bold;
   text-decoration: none;
   -moz-transition: all 0.3s;
@@ -145,16 +216,17 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border-bottom: 1px solid transparent;
+  font-size: small;
+  font-style: italic;
+  margin: 0 3px;
 }
-#container .values li a:hover {
-  color: #646eaa;
-  border-bottom: 1px solid #646eaa;
+#container .note a:hover {
+  color: rgba(100, 110, 170, 0.8);
+  border-bottom: 1px solid rgba(100, 110, 170, 0.8);
 }
-#container .values li a:before {
+#container .note:before {
+  content: "\e609";
   font-family: 'icomoon';
-  font-size: large;
-  margin-right: 2px;
-}
-#container .values li a + a {
-  margin-left: 10px;
+  margin-right: 5px;
+  color: rgba(50, 50, 50, 0.3);
 }

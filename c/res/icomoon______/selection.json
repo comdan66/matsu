@@ -4,39 +4,6 @@
 		{
 			"icon": {
 				"paths": [
-					"M128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"
-				],
-				"attrs": [
-					{}
-				],
-				"isMulticolor": false,
-				"tags": [
-					"minus"
-				],
-				"grid": 24,
-				"colorPermutations": {
-					"6868681": [
-						0
-					]
-				}
-			},
-			"attrs": [
-				{}
-			],
-			"properties": {
-				"order": 1,
-				"id": 0,
-				"prevSize": 24,
-				"code": 58889,
-				"name": "minus"
-			},
-			"setIdx": 0,
-			"setId": 8,
-			"iconIdx": 0
-		},
-		{
-			"icon": {
-				"paths": [
 					"M567.168 311.168c-16.683 16.683-16.683 43.648 0 60.331l97.835 97.835h-323.669c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667h323.669l-97.835 97.835c-16.683 16.683-16.683 43.648 0 60.331 8.32 8.32 19.243 12.501 30.165 12.501s21.845-4.181 30.165-12.501l200.832-200.832-200.832-200.832c-16.683-16.683-43.648-16.683-60.331 0z"
 				],
 				"attrs": [
@@ -63,7 +30,7 @@
 				"code": 58888,
 				"name": "arrow-right"
 			},
-			"setIdx": 1,
+			"setIdx": 0,
 			"setId": 7,
 			"iconIdx": 0
 		},
@@ -90,7 +57,7 @@
 				"code": 58880,
 				"name": "chevron-right"
 			},
-			"setIdx": 2,
+			"setIdx": 1,
 			"setId": 6,
 			"iconIdx": 0
 		},
@@ -117,7 +84,7 @@
 				"code": 58881,
 				"name": "chevron-left"
 			},
-			"setIdx": 2,
+			"setIdx": 1,
 			"setId": 6,
 			"iconIdx": 1
 		},
@@ -143,7 +110,7 @@
 				"code": 58882,
 				"name": "home"
 			},
-			"setIdx": 2,
+			"setIdx": 1,
 			"setId": 6,
 			"iconIdx": 2
 		},
@@ -170,7 +137,7 @@
 				"code": 58884,
 				"name": "link-external"
 			},
-			"setIdx": 2,
+			"setIdx": 1,
 			"setId": 6,
 			"iconIdx": 3
 		},
@@ -196,7 +163,7 @@
 				"code": 58885,
 				"name": "link"
 			},
-			"setIdx": 2,
+			"setIdx": 1,
 			"setId": 6,
 			"iconIdx": 4
 		},
@@ -222,7 +189,7 @@
 				"code": 58886,
 				"name": "map"
 			},
-			"setIdx": 2,
+			"setIdx": 1,
 			"setId": 6,
 			"iconIdx": 5
 		},
@@ -248,7 +215,7 @@
 				"code": 58887,
 				"name": "location"
 			},
-			"setIdx": 2,
+			"setIdx": 1,
 			"setId": 6,
 			"iconIdx": 6
 		},
@@ -284,7 +251,7 @@
 				"code": 58883,
 				"name": "fire"
 			},
-			"setIdx": 3,
+			"setIdx": 2,
 			"setId": 5,
 			"iconIdx": 0
 		},
@@ -312,7 +279,7 @@
 				"ligatures": "eye, views",
 				"name": "eye"
 			},
-			"setIdx": 7,
+			"setIdx": 6,
 			"setId": 0,
 			"iconIdx": 206
 		}
