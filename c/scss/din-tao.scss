@@ -83,6 +83,11 @@
     line-height: 22px;
     text-indent: 33px;
 
+    &.path {
+      padding-left: 30px;
+      text-indent: 0;
+    }
+
     b {
       color: rgba(188, 72, 70, 1);
     }
@@ -115,8 +120,10 @@
       }
     }
     span {
+
       &:first-child {
         font-weight: bold;
+
         &:after {
           content: "：";
         }
@@ -127,22 +134,36 @@
           &:before {
             content: "\e608";
             font-family: 'icomoon';
-            margin: 0 5px;
+            margin: 0 4px;
+            margin-left: 1px;
           }
         }
       }
+
+      &:after {
+        @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
+          content: '';
+        }
+        @media screen and (min-width: #{$mediaMobileWidth}) {
+          content: attr(title);
+        }
+        font-size: smaller;
+        color: rgba(50, 50, 50, 0.6);
+        text-indent: 0;
+      }
+    }
+    & + .values {
+      margin-top: 12px;
     }
   }
   .note {
     text-align: right;
     margin-top: 40px;
-    font-size: small;
     font-style: italic;
     color: rgba(50, 50, 50, 0.7);
 
     a {
       @include a(rgba(100, 110, 170, .7), rgba(100, 110, 170, .9));
-      font-size: small;
       font-style: italic;
       margin: 0 3px;
     }
@@ -155,7 +176,7 @@
     }
     & + .note {
       margin-top: 2px;
-      font-size: smaller;
+      font-size: small;
 
       &:before {
         content: "";

@@ -157,6 +157,10 @@
   line-height: 22px;
   text-indent: 33px;
 }
+#container .values.path {
+  padding-left: 30px;
+  text-indent: 0;
+}
 #container .values b {
   color: #bc4846;
 }
@@ -197,12 +201,30 @@
 #container .values span:not(:first-child) + span:before {
   content: "\e608";
   font-family: 'icomoon';
-  margin: 0 5px;
+  margin: 0 4px;
+  margin-left: 1px;
+}
+#container .values span:after {
+  font-size: smaller;
+  color: rgba(50, 50, 50, 0.6);
+  text-indent: 0;
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #container .values span:after {
+    content: '';
+  }
+}
+@media screen and (min-width: 769px) {
+  #container .values span:after {
+    content: attr(title);
+  }
+}
+#container .values + .values {
+  margin-top: 12px;
 }
 #container .note {
   text-align: right;
   margin-top: 40px;
-  font-size: small;
   font-style: italic;
   color: rgba(50, 50, 50, 0.7);
 }
@@ -216,7 +238,6 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border-bottom: 1px solid transparent;
-  font-size: small;
   font-style: italic;
   margin: 0 3px;
 }
@@ -232,7 +253,7 @@
 }
 #container .note + .note {
   margin-top: 2px;
-  font-size: smaller;
+  font-size: small;
 }
 #container .note + .note:before {
   content: "";
