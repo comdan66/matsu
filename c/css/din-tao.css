@@ -151,6 +151,31 @@
 #container .sub_title:after {
   margin-left: 3px;
 }
+#container .time {
+  *zoom: 1;
+}
+#container .time:after {
+  display: table;
+  content: "";
+  line-height: 0;
+  clear: both;
+}
+#container .time .l, #container .time .r {
+  float: left;
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #container .time .l, #container .time .r {
+    width: 100%;
+  }
+  #container .time .r {
+    margin-top: 25px;
+  }
+}
+@media screen and (min-width: 769px) {
+  #container .time .l, #container .time .r {
+    width: 50%;
+  }
+}
 #container .values {
   text-align: left;
   margin: 0;

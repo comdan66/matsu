@@ -76,7 +76,25 @@
       margin-left: 3px;
     }
   }
-
+  .time {
+    @include clearfix();
+    .l, .r {
+      float: left;
+    }
+    @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
+      .l, .r {
+        width: 100%;
+      }
+      .r {
+        margin-top: 25px;
+      }
+    }
+    @media screen and (min-width: #{$mediaMobileWidth}) {
+      .l, .r {
+        width: 50%;
+      }
+    }
+  }
   .values {
     text-align: left;
     margin: 0;
