@@ -111,7 +111,7 @@ $(function () {
     }
   });
 
-  $('#sub_items a').OAripple ().OAjelly ().click (function (e) {
+  $('#sub_items a').OAjelly ().click (function (e) {
     $(this).siblings ().removeClass ('active');
     clearTimeout (timer);
     timer = setTimeout (function () {
@@ -120,7 +120,7 @@ $(function () {
     return false;
   });
 
-  $('#pagination .l a, #pagination .r a').OAripple ().OAjelly ().click (function (e) {
+  $('#pagination .l a, #pagination .r a').OAjelly ().click (function (e) {
     clearTimeout (timer);
     timer = setTimeout (function () {
       window.location.assign ($(this).attr ('href'));

@@ -975,10 +975,10 @@ html body {
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
-    -moz-transition: background-color 0.4s, border 0.4s, color 0.4s, text-shadow 0.4s;
-    -o-transition: background-color 0.4s, border 0.4s, color 0.4s, text-shadow 0.4s;
-    -webkit-transition: background-color 0.4s, border 0.4s, color 0.4s, text-shadow 0.4s;
-    transition: background-color 0.4s, border 0.4s, color 0.4s, text-shadow 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.125);
   }
   #pagination .l a:hover, #pagination .r a:hover {
