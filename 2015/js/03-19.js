@@ -31,4 +31,10 @@ $(function () {
 
     timer = setTimeout (change, time + Math.floor (Math.random () * (2000)));
   });
+
+  $('#loading').fadeOut (function () {
+    $(this).hide (function () {
+      $(this).remove ();
+    });
+  });
 });

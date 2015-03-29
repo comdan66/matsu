@@ -450,5 +450,11 @@ $(function () {
       ];
   $precaution.append ($('<ol />').addClass ('values').append (precautions.map (function (t) {
     return $('<li />').text (t);
-  })))
+  })));
+
+  $('#loading').fadeOut (function () {
+    $(this).hide (function () {
+      $(this).remove ();
+    });
+  });
 });

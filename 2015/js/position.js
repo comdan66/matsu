@@ -27,4 +27,10 @@ $(function () {
       }
     }
   });
+
+  $('#loading').fadeOut (function () {
+    $(this).hide (function () {
+      $(this).remove ();
+    });
+  });
 });
