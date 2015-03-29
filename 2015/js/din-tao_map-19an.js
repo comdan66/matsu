@@ -9,6 +9,21 @@ $(function () {
   var $container = $('#container');
   var keys = [];
 
+  var _info_bubble = $('#_info_bubble').html ();
+  var _items = $('#_items').html ();
+  var _item = $('#_item').html ();
+
+  function setInfoWindow (t) {
+    var items = t.items ? t.items.map (function (u) { return _.template (_item, u) (u); }).join ('') : [];
+    t._items = items.length ? _.template (_items, {items: items}) ({items: items}) : '';
+
+    var obj = $(_.template (_info_bubble, t) (t));
+    obj.find ('.delete').click (function () { t.infoWindow.close (); });
+
+    t.infoWindow.setContent (obj.get (0));
+    t.infoWindow.open (map, t.marker);
+  }
+
   function setMapData (key, lineSymbols, points, markers, speed, lineColor) {
     keys.push (key);
 
@@ -66,16 +81,16 @@ $(function () {
       }
     };
   }
-  var circlePath = function (cx, cy, r) {
+  function circlePath (cx, cy, r) {
     return 'M ' + cx + ' ' + cy + ' m -' + r + ', 0 a ' + r + ',' + r + ' 0 1,0 ' + (r * 2) + ',0 a ' + r + ',' + r + ' 0 1,0 -' + (r * 2) + ',0';
-  };
-  var turnOn = function (key) {
+  }
+  function turnOn (key) {
     keys.forEach (function (k) {
       window['func_' + k] (k == key ? map : null);
     });
-  };
+  }
 
-  var initialize = function () {
+  function initialize () {
     var h = ($subItems.is (':visible') ? parseFloat ($subItems.height ()) + parseFloat ($subItems.css ('padding-top')) + parseFloat ($subItems.css ('padding-bottom')) : 0) + parseFloat ($container.css ('margin-top')) * 2;
 
     $container.css ({height: 'calc(100% - ' + h + 'px)'});
@@ -172,7 +187,7 @@ $(function () {
         $(this).remove ();
       });
     });
-  };
+  }
 
   google.maps.event.addDomListener (window, 'load', initialize);
 });

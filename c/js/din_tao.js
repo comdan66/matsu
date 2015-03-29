@@ -34,7 +34,7 @@ $(function() {
         });
       t.infoWindow = new InfoBubble ({
                       margin: 0, padding: 0, content: '', arrowStyle: 0,
-                      borderWidth: 1, shadowStyle: 1, borderRadius: 2, minWidth: 'auto', 
+                      borderWidth: 1, shadowStyle: 1, borderRadius: 2, minWidth: 'auto',
                       maxWidth: 'auto', minHeight: 'auto', maxHeight: 'auto',
                       borderColor: 'rgba(39, 40, 34, .7)', backgroundClassName: ''
                     });
@@ -158,11 +158,11 @@ $(function() {
       },
       {
         latLng: new google.maps.LatLng (23.56835344215955, 120.3036618232727),
-        
+
       },
     ];
     setMapData ('ni19', points, markers, 1/4, 'rgba(166, 27, 74, .6)');
-    
+
     $loading.fadeOut (function () {
       $(this).hide ();
     });
@@ -173,7 +173,7 @@ $(function() {
   $('.buttons button').OAripple ().OAjelly ().click (function () {
     $(this).addClass ('active').siblings ().removeClass ('active');
   });
-  
+
   $('.buttons .pm19').click (function () {
     turnOn ('pm19');
   });
