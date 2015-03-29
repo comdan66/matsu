@@ -62,10 +62,13 @@
 #container {
   padding: 30px 15px;
 }
+#container #history .title {
+  margin-top: 0;
+}
 #container .title {
   text-align: left;
   font-weight: bold;
-  margin-top: 0px;
+  margin-top: 40px;
 }
 @media screen and (min-width: 0px) and (max-width: 559px) {
   #container .title {
@@ -78,9 +81,6 @@
     font-size: x-large;
     letter-spacing: 3px;
   }
-}
-#container .title:not(:first-child) {
-  margin-top: 40px;
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
   #container .title {

@@ -7,11 +7,15 @@
 
 #container {
   padding: 30px 15px;
-
+  #history {
+    .title {
+      margin-top: 0;
+    }
+  }
   .title {
     text-align: left;
     font-weight: bold;
-    margin-top: 0px;
+    margin-top: 40px;
     @media screen and (min-width: 0px) and (max-width: #{$mediaTabletWidth - 1px}) {
       font-size: larger;
       letter-spacing: 2px;
@@ -19,9 +23,6 @@
     @media screen and (min-width: #{$mediaTabletWidth}) {
       font-size: x-large;
       letter-spacing: 3px;
-    }
-    &:not(:first-child) {
-      margin-top: 40px;
     }
     @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
       margin-bottom: 25px;
