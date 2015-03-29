@@ -151,28 +151,28 @@
 #container .sub_title:after {
   margin-left: 3px;
 }
-#container .time {
+#container .time, #container .sort {
   *zoom: 1;
 }
-#container .time:after {
+#container .time:after, #container .sort:after {
   display: table;
   content: "";
   line-height: 0;
   clear: both;
 }
-#container .time .l, #container .time .r {
+#container .time .l, #container .time .r, #container .sort .l, #container .sort .r {
   float: left;
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  #container .time .l, #container .time .r {
+  #container .time .l, #container .time .r, #container .sort .l, #container .sort .r {
     width: 100%;
   }
-  #container .time .r {
+  #container .time .r, #container .sort .r {
     margin-top: 25px;
   }
 }
 @media screen and (min-width: 769px) {
-  #container .time .l, #container .time .r {
+  #container .time .l, #container .time .r, #container .sort .l, #container .sort .r {
     width: 50%;
   }
 }

@@ -61,7 +61,7 @@
  */
 @font-face {
   font-family: "Monaco";
-  src: url('/matsu/c/./font/monaco/monaco.ttf?1427296730') format('truetype'), url('/matsu/c/./font/monaco/monaco.otf?1427296730') format('opentype');
+  src: url('/matsu/2015/./font/monaco/monaco.ttf?1419473027') format('truetype'), url('/matsu/2015/./font/monaco/monaco.otf?1419473027') format('opentype');
 }
 * {
   vertical-align: top;
@@ -97,7 +97,7 @@ html body {
   margin: 0;
   width: 100%;
   height: 100%;
-  background: #fff8ff url('/matsu/c/./img/bg/grunge.png');
+  background: #fff8ff url('/matsu/2015/./img/bg/grunge.png');
   color: rgba(50, 50, 50, 0.8);
   -moz-osx-font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
