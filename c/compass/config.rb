@@ -2,17 +2,12 @@ require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 
 # Set this to the root of your project when deployed:
-
-http_path = "/matsu/c"
-
-fonts_dir = "./font"
+http_path = "/matsu/2015"
+fonts_dir = "font/"
 fonts_path = "../font/"
 
-images_dir = "./img"
-images_path = "../img/"
-
 css_dir = "../css/"
-sass_dir = "../scss/"
+sass_dir = "../css/"
 
 add_import_path = "./imports"
 additional_import_paths = ["./imports"]

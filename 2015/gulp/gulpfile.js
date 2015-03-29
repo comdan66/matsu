@@ -1,14 +1,12 @@
 var gulp = require ('gulp'),
-    notify = require('gulp-notify'),
-    uglifyJS = require ('gulp-uglify'),
     livereload = require('gulp-livereload'),
-    minifyHTML = require('gulp-minify-html'),
-    del = require('del');
+    uglifyJS = require ('gulp-uglify'),
+    del = require('del'),
+    htmlmin = require('gulp-html-minifier');
 
 gulp.task ('default', function () {
   livereload.listen ();
 
-  // ['./root/**/*.+(css|js|html)'].forEach (function (t) {
   ['./root/*.html', './root/css/**/*.css', './root/res/**/*.js', './root/js/**/*.js'].forEach (function (t) {
     gulp.watch (t).on ('change', function () {
       gulp.run ('reload');
@@ -24,7 +22,9 @@ gulp.task ('reload', function () {
 gulp.task ('minify', function () {
   gulp.run ('js-uglify');
   gulp.run ('res-uglify');
-});
+  gulp.run ('minify-html');
+}); 
+
 gulp.task ('gh-pages', function () {
   del (['./root']);
 });
@@ -32,6 +32,11 @@ gulp.task ('js-uglify', function () {
   gulp.src ('./root/js/*.js')
       .pipe (uglifyJS ())
       .pipe (gulp.dest ('./root/js/'));
+});
+gulp.task ('minify-html', function () {
+  gulp.src ('./root/*.html')
+    .pipe (htmlmin ({collapseWhitespace: true}))
+    .pipe (gulp.dest ('./root/'));
 });
 gulp.task ('res-uglify', function () {
   gulp.src ('./root/res/**/*.js')
