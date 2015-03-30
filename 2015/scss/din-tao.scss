@@ -7,11 +7,15 @@
 
 #container {
   padding: 30px 15px;
-  #history {
-    .title {
-      margin-top: 0;
+
+  & > div {
+    &:first-child {
+      .title {
+        margin-top: 0;
+      } 
     }
   }
+
   .title {
     text-align: left;
     font-weight: bold;

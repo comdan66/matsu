@@ -62,7 +62,7 @@
 #container {
   padding: 30px 15px;
 }
-#container #history .title {
+#container > div:first-child .title {
   margin-top: 0;
 }
 #container .title {

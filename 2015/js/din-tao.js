@@ -4,7 +4,15 @@
  */
 
 $(function () {
-  var $history = $('#history');
+  var $container = $('#container');
+  
+  var $history = $('<div />').append ($('<h2 />').addClass ('title').text ('沿革簡介')).appendTo ($container);
+  var $go_time = $('<div />').append ($('<h2 />').addClass ('title').text ('出巡時間')).appendTo ($container);
+  var $path = $('<div />').append ($('<h2 />').addClass ('title').text ('繞境路關')).appendTo ($container);
+  var $note = $('<div />').addClass ('note').text ('繞境行程如遇特殊情況，總領隊得視實際情況變更之。').appendTo ($container);
+  var $sort = $('<div />').append ($('<h2 />').addClass ('title').text ('陣頭順序')).appendTo ($container);
+  var $precaution = $('<div />').append ($('<h2 />').addClass ('title').text ('繞境注意事項')).appendTo ($container);
+
   var histories = [
         '清康熙卅三（公元一六九四年），福建湄洲朝天閣高僧樹璧奉請媽祖神尊來台，於農曆三月十九日午時登陸笨港（即今北港），神顯是永駐笨港，庇佑萬民，遂立祠奉祀，自此香火日盛。',
         '地方信眾為感念媽祖聖德，例由笨港渡海回湄洲謁祖，回程在台南安平登陸，三月十九日鑾駕回抵笨港，同時舉行盛大慶典與繞境。嗣因甲午戰爭後，清廷日漸衰弱，列強環伺，台灣割讓日本，海疆日險，謁祖行程因而停止，惟地方信眾為紀念此一例行謁祖活動，仍於每年十九日、二十日迎請聖母舉行繞境，祈求風調雨順、國泰民安，此即本盛會之由來。',
@@ -13,7 +21,6 @@ $(function () {
         $history.append ($('<section />').addClass ('values').text (t));
       });
 
-  var $go_time = $('#go_time');
   var go_times = {
         _19: [{ t: '三月十九日 日間',
                 vs: [
@@ -46,7 +53,6 @@ $(function () {
     return $('<h3 />').addClass ('sub_title').text (t.t).add ($('<ul />').addClass ('values').append (t.vs.map (function (t) { return $('<li>').text (t); })));
   }))));
 
-  var $path = $('#path');
   var paths = [
         { t: '三月十九日 上午九點',
           vs: [
@@ -358,7 +364,6 @@ $(function () {
     })));
   }));
 
-  var $sort = $('#sort');
   var sorts = {
         local: {
           t: '地方陣頭',
@@ -428,7 +433,6 @@ $(function () {
     return $('<li />').text (t);
   })))));
 
-  var $precaution = $('#precaution');
   var precautions = [
         '今年聖母繞境爰例於農曆三月十九、二十日舉行兩天。',
         '神轎路經街道兩旁，各商家佃戶請勿曝曬衣物於明顯處，以免有失觀瞻及對媽祖不敬。',
