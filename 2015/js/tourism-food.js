@@ -17,6 +17,7 @@ $(function () {
     {
       t: '美食文章',
       vs: [
+        {p: true, t: '[食記] 北港 小籠湯包', h: 'https://www.ptt.cc/bbs/Yunlin/M.1296565841.A.4BC.html'},
         {p: true, t: '[食記] 雲林北港 福安鴨肉飯', h: 'http://douglas82328.pixnet.net/blog/post/109564667'},
         {p: true, t: '[食記] 雲林北港。老受鴨肉飯', h: 'http://windko0813.pixnet.net/blog/post/107795083'},
         {p: true, t: '[食記] 雲林北港 北港圓仔湯', h: 'http://sam76227.pixnet.net/blog/post/106376858'},
