@@ -134,6 +134,7 @@
   padding-bottom: 3px;
   padding-top: 5px;
   color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
   background-color: transparent;
   overflow: hidden;
   text-overflow: ellipsis;
