@@ -6,10 +6,14 @@
 $(function () {
   var $rightSlide = $('#right_slide');
   var $slideCover = $('#slide_cover');
-  var $headerLeft = $('#header .l');
   var $subItems = $('#sub_items');
-  var $option = $('#option');
   var $items = $('<div />').addClass ('items').appendTo ($rightSlide);
+
+  var $header = $('#header');
+  var $headerLeft = $('<div />').addClass ('l').append ($('<a />').addClass ('home').addClass ('icon-home')).appendTo ($header);
+  var $headerCenter = $('<div />').addClass ('c').text ('北港迓媽祖').appendTo ($header);
+  var $headerRight = $('<div />').addClass ('r').appendTo ($header);
+  var $option = $('<div />').addClass ('option').append ($('<div />')).appendTo ($headerRight);
 
   var overflow = $('body').css ('overflow');
   var now = document.URL.replace (/^.*[\\\/]/, '');

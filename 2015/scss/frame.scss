@@ -280,7 +280,7 @@ html {
       width: 50px;
       text-align: center;
 
-      #option {
+      .option {
         @include option();
         margin-top: 7px;
       }
