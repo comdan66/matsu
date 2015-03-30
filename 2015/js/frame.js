@@ -8,8 +8,8 @@ $(function () {
   var $slideCover = $('#slide_cover');
   var $headerLeft = $('#header .l');
   var $subItems = $('#sub_items');
-  var $items = $rightSlide.children ('.items');
   var $option = $('#option');
+  var $items = $('<div />').addClass ('items').appendTo ($rightSlide);
 
   var overflow = $('body').css ('overflow');
   var now = document.URL.replace (/^.*[\\\/]/, '');
