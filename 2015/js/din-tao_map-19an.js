@@ -41,7 +41,7 @@ $(function () {
           position: t.latLng,
           icon: t.icon
         });
-      // t.marker.set
+
       t.infoWindow = new InfoBubble ({
                       margin: 0, padding: 0, content: '', arrowStyle: 0,
                       borderWidth: 1, shadowStyle: 1, borderRadius: 2, minWidth: 'auto',
@@ -69,9 +69,6 @@ $(function () {
 
     window['line_' + key].setMap (map);
 
-
-
-
     window['markers_' + key].forEach (function (t) {
       t.marker.setMap (map);
       t.infoWindow.close ();
@@ -92,9 +89,6 @@ $(function () {
     }
   }
 
-
-
-
   function initialize () {
     var h = ($subItems.is (':visible') ? parseFloat ($subItems.height ()) + parseFloat ($subItems.css ('padding-top')) + parseFloat ($subItems.css ('padding-bottom')) : 0) + parseFloat ($container.css ('margin-top')) * 2;
     $container.css ({height: 'calc(100% - ' + h + 'px)'});
@@ -105,7 +99,6 @@ $(function () {
       zoom = 16;
       latLng = new google.maps.LatLng (23.569396231491233, 120.3030703338623);
     }
-
 
     var mapOptions = {
       zoom: zoom,
@@ -185,27 +178,26 @@ $(function () {
     // setTimeout (function () {
     //   console.info (google.maps.geometry.spherical.computeLength (points));
     // },1000);
-console.info (points[0]);
 
     var markers = [
       {
         latLng: points[0],
-        icon: 'img/icon/spotlight-poi-blue.png',
+        icon: 'img/icon/spotlight-poi_hdpi.png',
         src: 'img/site/chao-tian/01-02.jpg',
         title: '歲次乙未年 農曆三月十九下午繞境起點',
         items: [
           {item: '三月十九下午繞境起點'},
         ]
       },
-      // {
-      //   latLng: new google.maps.LatLng (23.564535998777593, 120.30400179326534),
-      //   src: 'img/site/chao-tian/01-02.jpg',
-      //   title: '終點',
-      //   items: [
-      //     {item: 'aa'},
-      //     {item: 'sss'},
-      //   ]
-      // }
+      {
+        latLng: new google.maps.LatLng (23.564535998777593, 120.30400179326534),
+        icon: 'img/icon/spotlight-poi-blue.png',
+        title: '終點',
+        items: [
+          {item: 'aa'},
+          {item: 'sss'},
+        ]
+      }
     ];
 
     setMapData ('pm19', lineSymbols, points, markers, 1/4, 'rgba(0, 130, 0, 1)');
