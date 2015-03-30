@@ -5,22 +5,19 @@
 
 $(function () {
   var map = null;
-  var $map = $('#map');
+  var $map = null;
   var $subItems = $('#sub_items');
   var $container = $('#container');
-  var $length = $('#length');
+  var $pagination = $('#pagination');
   var keys = [];
 
   var _info_bubble = $('#_info_bubble').html ();
   var _items = $('#_items').html ();
   var _item = $('#_item').html ();
 
-  function circlePath (cx, cy, r) {
-    return 'M ' + cx + ' ' + cy + ' m -' + r + ', 0 a ' + r + ',' + r + ' 0 1,0 ' + (r * 2) + ',0 a ' + r + ',' + r + ' 0 1,0 -' + (r * 2) + ',0';
-  }
-  function arrowPath (w, h, q) {
-    return 'M -' + (w / 2) + ' ' + (h / 2) + 'l ' + (w / 2) + ' -' + h + ' l ' + (w / 2) + ' ' + h + ' q -' + (w / 2) + ' -' + q + ' -' + w + ' 0';
-  }
+  function circlePath (cx, cy, r) { return 'M ' + cx + ' ' + cy + ' m -' + r + ', 0 a ' + r + ',' + r + ' 0 1,0 ' + (r * 2) + ',0 a ' + r + ',' + r + ' 0 1,0 -' + (r * 2) + ',0'; }
+  function arrowPath (w, h, q) { return 'M -' + (w / 2) + ' ' + (h / 2) + 'l ' + (w / 2) + ' -' + h + ' l ' + (w / 2) + ' ' + h + ' q -' + (w / 2) + ' -' + q + ' -' + w + ' 0'; }
+  
   function setInfoWindow (t) {
     var items = t.items ? t.items.map (function (u) { return _.template (_item, u) (u); }).join ('') : [];
     t._items = items.length ? _.template (_items, {items: items}) ({items: items}) : '';
@@ -90,7 +87,7 @@ $(function () {
   }
 
   function initialize () {
-    var h = ($subItems.is (':visible') ? parseFloat ($subItems.height ()) + parseFloat ($subItems.css ('padding-top')) + parseFloat ($subItems.css ('padding-bottom')) : 0) + parseFloat ($container.css ('margin-top')) * 2;
+    var h = ($subItems.is (':visible') ? parseFloat ($subItems.height ()) + parseFloat ($subItems.css ('padding-top')) + parseFloat ($subItems.css ('padding-bottom')) : 0) + parseFloat ($container.css ('margin-top')) + parseFloat ($pagination.css ('margin-top')) + parseFloat ($pagination.css ('padding-top')) + parseFloat ($pagination.find ('.oa-jelly').height ()) / 4 * 3;
     $container.css ({height: 'calc(100% - ' + h + 'px)'});
 
     var zoom = 16;
@@ -193,6 +190,7 @@ $(function () {
         latLng: new google.maps.LatLng (23.564535998777593, 120.30400179326534),
         icon: 'img/icon/spotlight-poi-blue.png',
         title: '終點',
+        src: 'img/site/chao-tian/01-02.jpg',
         items: [
           {item: 'aa'},
           {item: 'sss'},
@@ -202,7 +200,6 @@ $(function () {
 
     setMapData ('pm19', lineSymbols, points, markers, 1/4, 'rgba(0, 130, 0, 1)');
 
-
     $('#loading').fadeOut (function () {
       $(this).hide (function () {
         $(this).remove ();
@@ -210,5 +207,6 @@ $(function () {
     });
   }
 
+  $map = $('<div />').appendTo ($('<div />').addClass ('map').append (Array.prototype.map.call ('1234', function (t) {return $('<i />');})).appendTo ($container));
   google.maps.event.addDomListener (window, 'load', initialize);
 });
