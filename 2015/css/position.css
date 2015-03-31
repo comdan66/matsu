@@ -61,43 +61,44 @@
 #container {
   padding: 30px 15px;
 }
-#container .title {
+#container .t {
   text-align: left;
   font-weight: bold;
   margin-top: 0px;
 }
 @media screen and (min-width: 0px) and (max-width: 559px) {
-  #container .title {
+  #container .t {
     font-size: larger;
     letter-spacing: 2px;
   }
 }
 @media screen and (min-width: 560px) {
-  #container .title {
+  #container .t {
     font-size: x-large;
     letter-spacing: 3px;
   }
 }
-#container .title:not(:first-child) {
+#container .t:not(:first-child) {
   margin-top: 40px;
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  #container .title {
+  #container .t {
     margin-bottom: 25px;
   }
 }
 @media screen and (min-width: 769px) {
-  #container .title {
+  #container .t {
     margin-bottom: 20px;
   }
 }
-#container .title:before, #container .title:after {
+#container .t:before, #container .t:after {
   content: '';
   display: inline-block;
   width: 12px;
   height: 12px;
   border: 4px solid rgba(30, 40, 170, 0.6);
   background-color: white;
+  vertical-align: middle;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
   -moz-transform: rotate(45deg);
@@ -108,34 +109,34 @@
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-#container .title:before {
+#container .t:before {
   margin-right: 7px;
 }
-#container .title:after {
+#container .t:after {
   margin-left: 5px;
 }
-#container .values {
+#container .vs {
   text-align: left;
   padding-left: 40px;
   margin: 0;
 }
-#container .values li {
+#container .vs li {
   text-align: left;
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  #container .values li {
+  #container .vs li {
     margin-top: 20px;
   }
 }
 @media screen and (min-width: 769px) {
-  #container .values li {
+  #container .vs li {
     margin-top: 15px;
   }
 }
-#container .values li b {
+#container .vs li b {
   color: #bc4846;
 }
-#container .values li a {
+#container .vs li a {
   display: inline-block;
   color: rgba(100, 110, 170, 0.8);
   font-weight: bold;
@@ -146,15 +147,16 @@
   transition: all 0.3s;
   border-bottom: 1px solid transparent;
 }
-#container .values li a:hover {
+#container .vs li a:hover {
   color: #646eaa;
   border-bottom: 1px solid #646eaa;
 }
-#container .values li a:before {
+#container .vs li a:before {
   font-family: 'icomoon';
   font-size: large;
   margin-right: 2px;
+  font-weight: normal;
 }
-#container .values li a + a {
+#container .vs li a + a {
   margin-left: 10px;
 }

@@ -103,8 +103,8 @@ $(function () {
   }
 
   $('#container').append (datas.map (function (t) {
-    return $('<h2 />').addClass ('title').append (t.t).add (
-      $('<ol />').addClass ('values').append (t.vs.map (function (u) {
+    return $('<h2 />').addClass ('t').append (t.t).add (
+      $('<ol />').addClass ('vs').append (t.vs.map (function (u) {
         return $('<li />').append (u.t).append (u.as.map (function (v) {
           return setObjFeature ($('<a />').addClass (v.p !== 'iframe' ? v.p !== 'pic' ? 'icon-link-external' : 'icon-map' : 'fancybox.iframe icon-location').attr ('title', $('<p />').html (u.t).text ()).attr ('href', v.h).attr ('target', v.p !== 'link' ? '_self' : '_blank').text (v.t));
         }));

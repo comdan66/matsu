@@ -6,19 +6,19 @@
 $(function () {
   var $container = $('#container');
   
-  var $history = $('<div />').append ($('<h2 />').addClass ('title').text ('沿革簡介')).appendTo ($container);
-  var $go_time = $('<div />').append ($('<h2 />').addClass ('title').text ('出巡時間')).appendTo ($container);
-  var $path = $('<div />').append ($('<h2 />').addClass ('title').text ('繞境路關')).appendTo ($container);
-  var $note = $('<div />').addClass ('note').text ('繞境行程如遇特殊情況，總領隊得視實際情況變更之。').appendTo ($container);
-  var $sort = $('<div />').append ($('<h2 />').addClass ('title').text ('陣頭順序')).appendTo ($container);
-  var $precaution = $('<div />').append ($('<h2 />').addClass ('title').text ('繞境注意事項')).appendTo ($container);
+  var $history = $('<div />').append ($('<h2 />').addClass ('t').text ('沿革簡介')).appendTo ($container);
+  var $go_time = $('<div />').append ($('<h2 />').addClass ('t').text ('出巡時間')).appendTo ($container);
+  var $path = $('<div />').append ($('<h2 />').addClass ('t').text ('繞境路關')).appendTo ($container);
+  var $note = $('<div />').addClass ('n').text ('繞境行程如遇特殊情況，總領隊得視實際情況變更之。').appendTo ($container);
+  var $sort = $('<div />').append ($('<h2 />').addClass ('t').text ('陣頭順序')).appendTo ($container);
+  var $precaution = $('<div />').append ($('<h2 />').addClass ('t').text ('繞境注意事項')).appendTo ($container);
 
   var histories = [
         '清康熙卅三（公元一六九四年），福建湄洲朝天閣高僧樹璧奉請媽祖神尊來台，於農曆三月十九日午時登陸笨港（即今北港），神顯是永駐笨港，庇佑萬民，遂立祠奉祀，自此香火日盛。',
         '地方信眾為感念媽祖聖德，例由笨港渡海回湄洲謁祖，回程在台南安平登陸，三月十九日鑾駕回抵笨港，同時舉行盛大慶典與繞境。嗣因甲午戰爭後，清廷日漸衰弱，列強環伺，台灣割讓日本，海疆日險，謁祖行程因而停止，惟地方信眾為紀念此一例行謁祖活動，仍於每年十九日、二十日迎請聖母舉行繞境，祈求風調雨順、國泰民安，此即本盛會之由來。',
         '北港媽祖出巡繞境活動，經行政院文化部於民國九十九年六月十八日依據文化資產保存法第五十九條指定「北港朝天宮迎媽祖」為我國重要民俗。',
       ].forEach (function (t) {
-        $history.append ($('<section />').addClass ('values').text (t));
+        $history.append ($('<section />').addClass ('vs').text (t));
       });
 
   var go_times = {
@@ -47,10 +47,10 @@ $(function () {
                   '晚間八點整出廟。',
                 ]}]};
 
-  $go_time.append ($('<div />').addClass ('time').append ($('<div />').addClass ('l').append (go_times._19.map (function (t) {
-    return $('<h3 />').addClass ('sub_title').text (t.t).add ($('<ul />').addClass ('values').append (t.vs.map (function (t) { return $('<li>').text (t); })));
+  $go_time.append ($('<div />').addClass ('p').append ($('<div />').addClass ('l').append (go_times._19.map (function (t) {
+    return $('<h3 />').addClass ('st').text (t.t).add ($('<ul />').addClass ('vs').append (t.vs.map (function (t) { return $('<li>').text (t); })));
   }))).append ($('<div />').addClass ('r').append (go_times._20.map (function (t) {
-    return $('<h3 />').addClass ('sub_title').text (t.t).add ($('<ul />').addClass ('values').append (t.vs.map (function (t) { return $('<li>').text (t); })));
+    return $('<h3 />').addClass ('st').text (t.t).add ($('<ul />').addClass ('vs').append (t.vs.map (function (t) { return $('<li>').text (t); })));
   }))));
 
   var paths = [
@@ -359,7 +359,7 @@ $(function () {
         }
       ];
   $path.append (paths.map (function (t) {
-    return $('<h3 />').addClass ('sub_title').text (t.t).add ($('<section />').addClass ('values').addClass ('path').append (t.vs.map (function (t) {
+    return $('<h3 />').addClass ('st').text (t.t).add ($('<section />').addClass ('vs').addClass ('p').append (t.vs.map (function (t) {
       return $('<span >').attr ('title', t.t !== '' ? '(' + t.t + ')' : '').text (t.v);
     })));
   }));
@@ -414,7 +414,7 @@ $(function () {
             '太子爺金垂髫轎班會',
             '虎爺',
             '笨港境主、福德正神金福綏轎班會',
-            '註生娘娘',
+            '註生娘娘 金瑞昭轎班會',
             '莊儀團、千里眼、順風耳將軍',
             '六媽金順崇轎班會',
             '五媽金風隆轎班會',
@@ -427,9 +427,9 @@ $(function () {
           ]
         }
       };
-  $sort.append ($('<div />').addClass ('sort').append ($('<div />').addClass ('l').append ($('<h3 />').addClass ('sub_title').text (sorts.local.t)).append ($('<ol />').addClass ('values').append (sorts.local.vs.map (function (t) {
+  $sort.append ($('<div />').addClass ('p').append ($('<div />').addClass ('l').append ($('<h3 />').addClass ('st').text (sorts.local.t)).append ($('<ol />').addClass ('vs').append (sorts.local.vs.map (function (t) {
     return $('<li />').text (t);
-  })))).append ($('<div />').addClass ('r').append ($('<h3 />').addClass ('sub_title').text (sorts.official.t)).append ($('<ol />').addClass ('values').append (sorts.official.vs.map (function (t) {
+  })))).append ($('<div />').addClass ('r').append ($('<h3 />').addClass ('st').text (sorts.official.t)).append ($('<ol />').addClass ('vs').append (sorts.official.vs.map (function (t) {
     return $('<li />').text (t);
   })))));
 
@@ -452,7 +452,7 @@ $(function () {
         '參加遊行藝閣或花車應注意安全設施，各單位事前應派員驗收，對車輛之性能、燈光、電氣安全性人員乘坐安全性，如有不妥之處，應儘速請作者改善，同時要求作者每部車輛各自配備滅火器及絕緣材質高桿各兩支以上以備之用。',
         '藝閣在遊行中嚴禁丟擲糖果，以免造成意外。如遇下雨應切斷藝閣車輛總電源，以維護人員乘坐之安全。'
       ];
-  $precaution.append ($('<ol />').addClass ('values').append (precautions.map (function (t) {
+  $precaution.append ($('<ol />').addClass ('vs').append (precautions.map (function (t) {
     return $('<li />').text (t);
   })));
 

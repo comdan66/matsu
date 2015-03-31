@@ -57,11 +57,11 @@ $(function () {
   ];
 
   $('#container').append (datas.map (function (t) {
-    return $('<h3 />').addClass ('title').text (t.t).add ($('<ol />').addClass ('values').append (t.vs.map (function (t) {
+    return $('<h3 />').addClass ('t').text (t.t).add ($('<ol />').addClass ('vs').append (t.vs.map (function (t) {
       return $('<li />').append ($('<a />').attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank').text (t.t)).append (t.p ? $('<i />').addClass ('icon-fire') : null);
     })));
   })).append (references.map (function (t) {
-    return $('<div />').addClass ('reference').append (t);
+    return $('<div />').addClass ('r').append (t);
   }));
 
   $('#loading').fadeOut (function () {

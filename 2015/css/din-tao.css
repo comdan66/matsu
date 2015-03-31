@@ -62,37 +62,37 @@
 #container {
   padding: 30px 15px;
 }
-#container > div:first-child .title {
+#container > div:first-child .t {
   margin-top: 0;
 }
-#container .title {
+#container .t {
   text-align: left;
   font-weight: bold;
   margin-top: 40px;
 }
 @media screen and (min-width: 0px) and (max-width: 559px) {
-  #container .title {
+  #container .t {
     font-size: larger;
     letter-spacing: 2px;
   }
 }
 @media screen and (min-width: 560px) {
-  #container .title {
+  #container .t {
     font-size: x-large;
     letter-spacing: 3px;
   }
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  #container .title {
+  #container .t {
     margin-bottom: 25px;
   }
 }
 @media screen and (min-width: 769px) {
-  #container .title {
+  #container .t {
     margin-bottom: 20px;
   }
 }
-#container .title:before, #container .title:after {
+#container .t:before, #container .t:after {
   content: '';
   display: inline-block;
   width: 12px;
@@ -109,28 +109,28 @@
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-#container .title:before {
+#container .t:before {
   margin-right: 7px;
 }
-#container .title:after {
+#container .t:after {
   margin-left: 5px;
 }
-#container .sub_title {
+#container .st {
   text-align: left;
   font-weight: bold;
   margin-top: 0px;
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  #container .sub_title {
+  #container .st {
     margin-bottom: 15px;
   }
 }
 @media screen and (min-width: 769px) {
-  #container .sub_title {
+  #container .st {
     margin-bottom: 10px;
   }
 }
-#container .sub_title:before, #container .sub_title:after {
+#container .st:before, #container .st:after {
   content: '';
   display: inline-block;
   width: 10px;
@@ -148,112 +148,112 @@
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-#container .sub_title:after {
+#container .st:after {
   margin-left: 3px;
 }
-#container .time, #container .sort {
+#container .p {
   *zoom: 1;
 }
-#container .time:after, #container .sort:after {
+#container .p:after {
   display: table;
   content: "";
   line-height: 0;
   clear: both;
 }
-#container .time .l, #container .time .r, #container .sort .l, #container .sort .r {
+#container .p .l, #container .p .r {
   float: left;
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  #container .time .l, #container .time .r, #container .sort .l, #container .sort .r {
+  #container .p .l, #container .p .r {
     width: 100%;
   }
-  #container .time .r, #container .sort .r {
+  #container .p .r {
     margin-top: 25px;
   }
 }
 @media screen and (min-width: 769px) {
-  #container .time .l, #container .time .r, #container .sort .l, #container .sort .r {
+  #container .p .l, #container .p .r {
     width: 50%;
   }
 }
-#container .values {
+#container .vs {
   text-align: left;
   margin: 0;
   line-height: 22px;
   text-indent: 33px;
 }
-#container .values.path {
+#container .vs.p {
   padding-left: 30px;
   text-indent: 0;
 }
-#container .values b {
+#container .vs b {
   color: #bc4846;
 }
-#container .values li {
+#container .vs li {
   text-align: left;
   text-indent: 0;
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  #container .values li {
+  #container .vs li {
     margin-top: 10px;
   }
 }
 @media screen and (min-width: 769px) {
-  #container .values li {
+  #container .vs li {
     margin-top: 5px;
   }
 }
-#container .values > ul > li:not(:first-child) {
+#container .vs > ul > li:not(:first-child) {
   margin-top: 10px;
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  #container .values ~ .sub_title {
+  #container .vs ~ .st {
     margin-top: 25px;
   }
 }
 @media screen and (min-width: 769px) {
-  #container .values ~ .sub_title {
+  #container .vs ~ .st {
     margin-top: 20px;
   }
 }
-#container .values span:first-child {
+#container .vs span:first-child {
   font-weight: bold;
   margin-right: 5px;
 }
-#container .values span:first-child:after {
+#container .vs span:first-child:after {
   content: "：";
 }
-#container .values span:not(:first-child) + span:before {
+#container .vs span:not(:first-child) + span:before {
   content: "\e608";
   font-family: 'icomoon';
   margin: 0 4px;
   margin-left: 1px;
 }
-#container .values span:after {
+#container .vs span:after {
   font-size: smaller;
   color: rgba(50, 50, 50, 0.6);
   text-indent: 0;
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  #container .values span:after {
+  #container .vs span:after {
     content: '';
   }
 }
 @media screen and (min-width: 769px) {
-  #container .values span:after {
+  #container .vs span:after {
     content: attr(title);
   }
 }
-#container .values + .values {
+#container .vs + .vs {
   margin-top: 12px;
 }
-#container .note {
+#container .n {
   text-align: right;
   margin-top: 40px;
   font-style: italic;
   color: rgba(50, 50, 50, 0.7);
 }
-#container .note a {
+#container .n a {
   display: inline-block;
   color: rgba(100, 110, 170, 0.7);
   font-weight: bold;
@@ -266,20 +266,20 @@
   font-style: italic;
   margin: 0 3px;
 }
-#container .note a:hover {
+#container .n a:hover {
   color: rgba(100, 110, 170, 0.9);
   border-bottom: 1px solid rgba(100, 110, 170, 0.9);
 }
-#container .note:before {
+#container .n:before {
   content: "\e609";
   font-family: 'icomoon';
   margin-right: 5px;
   color: rgba(50, 50, 50, 0.3);
 }
-#container .note + .note {
+#container .n + .n {
   margin-top: 2px;
   font-size: small;
 }
-#container .note + .note:before {
+#container .n + .n:before {
   content: "";
 }
