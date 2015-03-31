@@ -182,6 +182,13 @@
   color: #646eaa;
   border-bottom: 1px solid #646eaa;
 }
+#container .vs li a:before {
+  font-family: 'icomoon';
+  content: "\e608";
+  font-weight: normal;
+  margin-right: 5px;
+  color: rgba(50, 50, 50, 0.6);
+}
 #container .vs li > div {
   overflow: hidden;
   text-overflow: ellipsis;

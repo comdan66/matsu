@@ -131,7 +131,7 @@ html {
         border: 4px solid rgba(85, 80, 140, 1);
         background-color: rgba(230, 230, 230, 1);
         vertical-align: middle;
-        
+
         @include opacity(.2);
         @include border-radius(50%);
         @include transition(all .5s);
@@ -173,7 +173,7 @@ html {
       &:before {
         left: 20px;
         @include rotate(45deg);
-        @include border-radius(0);
+        @include border-radius(2px);
       }
       &:after {
         display: none;

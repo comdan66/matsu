@@ -92,6 +92,14 @@
         vertical-align: bottom;
         max-width: 100%;
         @include overflow-docx3();
+
+        &:before {
+          font-family: 'icomoon';
+          content: "\e608";
+          font-weight: normal;
+          margin-right: 5px;
+          color: rgba(50, 50, 50, 0.6);
+        }
       }
       & > div {
         @include overflow-docx3();
