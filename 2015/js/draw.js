@@ -92,7 +92,8 @@ $(function() {
       return 'new google.maps.LatLng (' + t.getPosition ().k + ', ' + t.getPosition ().D + ')';
     }).join (', ') + '\n];';
 
-    $('.console-log textarea').text (str);
+
+    $('.console-log textarea').text (str).focus ();
     $('.console-log').addClass ('show');
   });
   
