@@ -64,7 +64,8 @@
 #container .t {
   text-align: left;
   font-weight: bold;
-  margin-top: 0px;
+  margin: 0;
+  border-bottom: 5px solid rgba(129, 129, 129, 0.2);
 }
 @media screen and (min-width: 0px) and (max-width: 559px) {
   #container .t {
@@ -79,16 +80,18 @@
   }
 }
 #container .t:not(:first-child) {
-  margin-top: 40px;
+  margin-top: 50px;
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
   #container .t {
     margin-bottom: 25px;
+    padding-bottom: 10px;
   }
 }
 @media screen and (min-width: 769px) {
   #container .t {
     margin-bottom: 20px;
+    padding-bottom: 5px;
   }
 }
 #container .t:before, #container .t:after {

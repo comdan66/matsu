@@ -87,17 +87,16 @@ $(function () {
   ];
 
   $('#container').append ($('<div />').addClass ('p').append ($('<div />').addClass ('l').append (datas.l.map (function (t) {
-    return $('<h2 />').addClass ('t').text (t.t).add ($('<ol />').addClass ('vs').append (t.vs.map (function (t) {
+    return $('<h2 />').addClass ('t').text (t.t).add ($('<ul />').addClass ('vs').append (t.vs.map (function (t) {
       return $('<li />').append ($('<div />').text (t.t)).append ($('<a />').text (t.h).attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank'));
     })));
   }))).append ($('<div />').addClass ('r').append (datas.r.map (function (t) {
-    return $('<h2 />').addClass ('t').text (t.t).add ($('<ol />').addClass ('vs').append (t.vs.map (function (t) {
+    return $('<h2 />').addClass ('t').text (t.t).add ($('<ul />').addClass ('vs').append (t.vs.map (function (t) {
       return $('<li />').append ($('<div />').text (t.t)).append ($('<a />').text (t.h).attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank'));
     })));
-  })))).append (
-    references.map (function (t) {
-      return $('<div />').addClass ('rs').html (t);
-    }));
+  })))).append (references.map (function (t) {
+    return $('<div />').addClass ('rs').html (t);
+  }));
 
 
 

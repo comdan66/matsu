@@ -11,7 +11,10 @@
   .t {
     text-align: left;
     font-weight: bold;
-    margin-top: 0px;
+    margin: 0;
+
+    border-bottom: 5px solid rgba(129, 129, 129, .2);
+
     @media screen and (min-width: 0px) and (max-width: #{$mediaTabletWidth - 1px}) {
       font-size: larger;
       letter-spacing: 2px;
@@ -21,13 +24,15 @@
       letter-spacing: 3px;
     }
     &:not(:first-child) {
-      margin-top: 40px;
+      margin-top: 50px;
     }
     @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
       margin-bottom: 25px;
+      padding-bottom: 10px;
     }
     @media screen and (min-width: #{$mediaMobileWidth}) {
       margin-bottom: 20px;
+      padding-bottom: 5px;
     }
     &:before, &:after {
       content: '';

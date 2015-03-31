@@ -190,6 +190,8 @@
   color: rgba(50, 50, 50, 0.6);
 }
 #container .vs li > div {
+  display: inline-block;
+  width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

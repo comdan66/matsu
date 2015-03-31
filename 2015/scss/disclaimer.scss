@@ -6,36 +6,33 @@
 @import "_oa";
 
 #container {
-  padding: 30px 15px;
-
   .t {
-    text-align: left;
+    position: relative;
+    font-size: x-large;
     font-weight: bold;
-    margin: 0;
-
+    display: block;
     border-bottom: 5px solid rgba(129, 129, 129, .2);
+    
+    margin: 0;
+    margin-top: 50px;
+    padding: 0;
 
-    @media screen and (min-width: 0px) and (max-width: #{$mediaTabletWidth - 1px}) {
-      font-size: larger;
-      letter-spacing: 2px;
-    }
-    @media screen and (min-width: #{$mediaTabletWidth}) {
-      font-size: x-large;
-      letter-spacing: 3px;
-    }
-    &:not(:first-child) {
-      margin-top: 50px;
-    }
     @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
-      margin-bottom: 25px;
+      text-align: center;
       padding-bottom: 10px;
     }
     @media screen and (min-width: #{$mediaMobileWidth}) {
-      margin-bottom: 20px;
+      text-align: left;
       padding-bottom: 5px;
     }
+
+    &:first-child {
+      margin-top: 30px;
+    }
+
     &:before, &:after {
       content: '';
+      position: relative;
       display: inline-block;
       width: 12px;
       height: 12px;
@@ -46,65 +43,42 @@
       @include opacity(.3);
       @include rotate(45deg);
       @include border-radius(2px);
+
     }
     &:before {
-      margin-right: 7px;
-    }
-    &:after {
-      margin-left: 5px;
-    }
-  }
-  .vs {
-    text-align: left;
-    padding-left: 40px;
-    margin: 0;
-
-    li {
-      text-align: left;
-
       @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
-        margin-top: 20px;
+        margin-right: 22px;
       }
       @media screen and (min-width: #{$mediaMobileWidth}) {
-        margin-top: 15px;
+        margin-right: 12px;
       }
-
-      i {
-        position: relative;
-        color: rgba(219, 73, 72, 1);
-        display: inline-block;
-        margin-left: 3px;
-        margin-top: -8px;
-
-        &:before, &:after {
-          font-size: x-small;
-        }
-        &:before {
-          font-family: 'icomoon';
-          font-style: italic;
-        }
-        &:after {
-          content: '推薦';
-          margin-left: 3px;
-          font-style: italic;
-        }
+    }
+    &:after {
+      @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
+        margin-left: 20px;
       }
-
-      b {
-        color: rgba(188, 72, 70, 1);
+      @media screen and (min-width: #{$mediaMobileWidth}) {
+        margin-left: 10px;
       }
-      a {
-        @include a(rgba(100, 110, 170, .8), rgba(100, 110, 170, 1));
-        &:before {
-          font-family: 'icomoon';
-          font-size: large;
-          margin-right: 2px;
-        }
+    }
+  }
+  .v {
+    text-align: left;
+    line-height: 23px;
+    text-indent: 33px;
 
-        & + a {
-          margin-left: 10px;
-        }
-      }
+    @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
+      margin-top: 20px;
+    }
+    @media screen and (min-width: #{$mediaMobileWidth}) {
+      margin-top: 10px;
+    }
+    a {
+      @include a(rgba(100, 110, 170, .8), rgba(100, 110, 170, 1));
+      text-indent: 0;
+    }
+    & + .v {
+      margin-top: 20px;
     }
   }
   .r {
