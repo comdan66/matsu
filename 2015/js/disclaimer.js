@@ -26,7 +26,7 @@ $(function () {
   ];
   
   var references = [
-    '最後更新日期 2014.03.31'
+    '最後更新日期 2015.03.31'
   ];
 
   $('#container').append (datas.map (function (t) {

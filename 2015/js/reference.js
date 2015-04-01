@@ -83,7 +83,7 @@ $(function () {
 
   var references = [
     "以上鏈結如有錯誤或有相關意見歡迎<a href='mailto:comdan66@gmail.com?subject=關於北港迓媽祖網頁的參考資料..&body=Hi OA,%0d%0a%0d%0a    關於北港迓媽祖網頁的參考資料..'>來信</a>告知。",
-    '2014.03.31'
+    '2015.03.31'
   ];
 
   $('#container').append ($('<div />').addClass ('p').append ($('<div />').addClass ('l').append (datas.l.map (function (t) {
@@ -97,8 +97,6 @@ $(function () {
   })))).append (references.map (function (t) {
     return $('<div />').addClass ('rs').html (t);
   }));
-
-
 
   $('#loading').fadeOut (function () {
     $(this).hide (function () {
