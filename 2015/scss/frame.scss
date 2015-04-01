@@ -562,6 +562,8 @@ html {
     padding: 0 15px;
   }
   #pagination {
+    display: inline-block;
+    width: 100%;
     max-width: $mainWidth;
     padding: 0 15px;
     margin-left: auto;
