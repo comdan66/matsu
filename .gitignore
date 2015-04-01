@@ -7,8 +7,8 @@ sftp-config*
 2015/gulp/.sass-cache/*
 2015/gulp/npm-debug.log
 
-c/compass/.sass-cache/*
+temp/compass/.sass-cache/*
 
-c/gulp/node_modules/*
-c/gulp/.sass-cache/*
-c/gulp/npm-debug.log
+temp/gulp/node_modules/*
+temp/gulp/.sass-cache/*
+temp/gulp/npm-debug.log
