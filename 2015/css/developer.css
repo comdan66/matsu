@@ -127,31 +127,6 @@
     height: 150px;
   }
 }
-#container .user .l .avatar:before, #container .user .l .avatar:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(155, 155, 155, 0.5);
-  z-index: -1;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-#container .user .l .avatar:before {
-  -moz-animation: avatar-pulse 2s infinite linear;
-  -webkit-animation: avatar-pulse 2s infinite linear;
-  animation: avatar-pulse 2s infinite linear;
-}
-#container .user .l .avatar:after {
-  -moz-animation: avatar-pulse 2s 1s infinite linear;
-  -webkit-animation: avatar-pulse 2s 1s infinite linear;
-  animation: avatar-pulse 2s 1s infinite linear;
-}
 #container .user .l .name {
   margin-top: 30px;
   font-weight: bold;
