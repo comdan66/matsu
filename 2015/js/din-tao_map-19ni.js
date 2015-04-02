@@ -86,11 +86,11 @@ $(function () {
     var h = ($subItems.is (':visible') ? parseFloat ($subItems.height ()) + parseFloat ($subItems.css ('padding-top')) + parseFloat ($subItems.css ('padding-bottom')) : 0) + parseFloat ($container.css ('margin-top')) + parseFloat ($pagination.css ('margin-top')) + parseFloat ($pagination.css ('padding-top')) + parseFloat ($pagination.find ('.oa-jelly').height ()) / 4 * 3;
     $container.css ({height: 'calc(100% - ' + h + 'px)'});
 
-    var zoom = 16;
-    var latLng = new google.maps.LatLng (23.569396231491233, 120.3010703338623);
+    var zoom = 17;
+    var latLng = new google.maps.LatLng (23.5677996231491233, 120.3040703338623);
     if ($(window).width () < 560) {
       zoom = 16;
-      latLng = new google.maps.LatLng (23.569396231491233, 120.3030703338623);
+      latLng = new google.maps.LatLng (23.5669996231491233, 120.3035703338623);
     }
 
     var mapOptions = {
@@ -138,24 +138,23 @@ $(function () {
         latLng: points[0],
         icon: 'img/icon/spotlight-poi_hdpi.png',
         src: 'img/site/chao-tian/01-02.jpg',
-        title: '歲次乙未年 農曆三月十九下午繞境起點',
+        title: '歲次乙未年 十九晚間繞境起馬',
         items: [
-          {item: '三月十九下午繞境起點'},
+          {item: '農曆三月十九晚間繞境起馬'},
         ]
       },
       {
-        latLng: new google.maps.LatLng (23.564535998777593, 120.30400179326534),
-        icon: 'img/icon/spotlight-poi-blue.png',
-        title: '終點',
+        latLng: points[points.length - 1],
+        icon: 'img/icon/spotlight-poi_hdpi.png',
         src: 'img/site/chao-tian/01-02.jpg',
+        title: '歲次乙未年 十九晚間繞境落馬',
         items: [
-          {item: 'aa'},
-          {item: 'sss'},
+          {item: '農曆十九晚間繞境落馬'},
         ]
       }
     ];
 
-    setMapData ('19ni', lineSymbols, points, markers, 1/3, 'rgba(0, 130, 0, 1)');
+    setMapData ('19ni', lineSymbols, points, markers, 1 / 4, 'rgba(0, 130, 0, 1)');
 
     $('#loading').fadeOut (function () {
       $(this).hide (function () {

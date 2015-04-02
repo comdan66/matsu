@@ -138,9 +138,9 @@ $(function () {
         latLng: points[0],
         icon: 'img/icon/spotlight-poi_hdpi.png',
         src: 'img/site/chao-tian/01-02.jpg',
-        title: '歲次乙未年 農曆三月十九下午繞境起點',
+        title: '歲次乙未年 二十下午繞境起馬',
         items: [
-          {item: '三月十九下午繞境起點'},
+          {item: '農曆二十下午繞境起馬'},
         ]
       },
       {
@@ -152,10 +152,19 @@ $(function () {
           {item: 'aa'},
           {item: 'sss'},
         ]
+      },
+      {
+        latLng: points[points.length - 1],
+        icon: 'img/icon/spotlight-poi_hdpi.png',
+        src: 'img/site/chao-tian/01-02.jpg',
+        title: '歲次乙未年 二十下午繞境落馬',
+        items: [
+          {item: '農曆二十下午繞境落馬'},
+        ]
       }
     ];
 
-    setMapData ('19an', lineSymbols, points, markers, 1/4, 'rgba(0, 130, 0, 1)');
+    setMapData ('20an', lineSymbols, points, markers, 1 / 4, 'rgba(0, 130, 0, 1)');
 
     $('#loading').fadeOut (function () {
       $(this).hide (function () {
