@@ -14,7 +14,7 @@ $(function () {
   var $headerCenter = $('<div />').addClass ('c').text ('北港迎媽祖').appendTo ($header);
   var $headerRight = $('<div />').addClass ('r').appendTo ($header);
   var $option = $('<div />').addClass ('option').append ($('<div />')).appendTo ($headerRight);
-
+  
   var overflow = $('body').css ('overflow');
   var now = document.URL.replace (/^.*[\\\/]/, '');
   var timer = null;
@@ -77,7 +77,8 @@ $(function () {
 
       if (t.active)
         t.sub.forEach (function (u) {
-          $subItems.append ($('<a />').addClass (u.active ? 'active' : null).attr ('href', u.name).append (u.titles.map (function (v) {return $('<div />').text (v);})));});
+          // $subItems.append ($('<a />').addClass (u.active ? 'active' : null).attr ('href', u.name).append (u.titles.map (function (v) {return $('<div />').text (v);})));
+        });
 
       return t.sub;
     } else {
@@ -107,7 +108,6 @@ $(function () {
       $('body').css ('overflow', overflow);
       $option.removeClass ('close');
     }
-
   });
   $slideCover.click (function () {
     if (!$rightSlide.hasClass ('close')) {

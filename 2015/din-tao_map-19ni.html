@@ -16,6 +16,7 @@
     <link href="css/map.css" rel="stylesheet" type="text/css">
 
     <script src="js/ga.js" language="javascript" type="text/javascript" ></script>
+    <script src="js/facebook.js" language="javascript" type="text/javascript" ></script>
     <script src="res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" ></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=zh-TW" language="javascript" type="text/javascript"></script>
     <script src="res/infobubble-v3/infobubble-compiled.js" language="javascript" type="text/javascript"></script>
@@ -38,10 +39,14 @@
 
     <div id='container'></div>
 
+    <div id='comments'><div class="fb-comments" data-href="http://comdan66.github.io/matsu/2015/din-tao_map-19ni.html" data-numposts="5" data-order_by="reverse_time" data-width="100%" data-colorscheme="light"></div></div>
+
     <div id='pagination'></div>
 
     <div id='loading'><div></div></div>
 
+    <div id='fb-root'></div>
+    
     <script id='_info_bubble' type='text/x-html-template'><div class='info_bubble'><div class='img'><img src='<%=src%>' /><div class='title'><%=title%></div></div><%=_items%><div class='delete'>&#10006;</div></div></script>
     <script id='_items' type='text/x-html-template'><div class='items'><%=items%></div></script>
     <script id='_item' type='text/x-html-template'><div class='item'><%=item%></div></script>
