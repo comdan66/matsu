@@ -5,6 +5,16 @@
 
 @import "_oa";
 
+$mainWidth: 1024px;
+
+#sub_items {
+  max-width: $mainWidth;
+  .l {
+    a {
+      padding: 3px 10px 5px 10px;
+    } 
+  }
+}
 #container {
   padding: 30px 15px;
 

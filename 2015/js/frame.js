@@ -6,7 +6,7 @@
 $(function () {
   var $rightSlide = $('#right_slide');
   var $slideCover = $('#slide_cover');
-  var $subItems = $('#sub_items');
+  var $subItemsLeft = $('#sub_items .l');
   var $items = $('<div />').addClass ('items').appendTo ($rightSlide);
 
   var $header = $('#header');
@@ -77,7 +77,7 @@ $(function () {
 
       if (t.active)
         t.sub.forEach (function (u) {
-          // $subItems.append ($('<a />').addClass (u.active ? 'active' : null).attr ('href', u.name).append (u.titles.map (function (v) {return $('<div />').text (v);})));
+          $subItemsLeft.append ($('<a />').addClass (u.active ? 'active' : null).attr ('href', u.name).append (u.titles.map (function (v) {return $('<div />').text (v);})));
         });
 
       return t.sub;
