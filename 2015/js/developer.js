@@ -11,7 +11,7 @@ $(function () {
       t: '網站作者',
       s: '01-01.jpg',
       is: [
-        {t: '信箱', v: 'comdan66@gmail.com', h: 'mailto:comdan66@gmail.com?subject=關於北港迓媽祖網頁..&body=Hi OA,%0d%0a%0d%0a    關於北港迓媽祖網頁，我有些相關問題..'},
+        {t: '信箱', v: 'comdan66@gmail.com', h: 'mailto:comdan66@gmail.com?subject=關於北港迎媽祖網頁..&body=Hi OA,%0d%0a%0d%0a    關於北港迎媽祖網頁，我有些相關問題..'},
         {t: '臉書', v: 'https://www.facebook.com/comdan66', h: 'https://www.facebook.com/comdan66'},
         {t: '相簿', v: 'https://www.flickr.com/photos/comdan66', h: 'https://www.flickr.com/photos/comdan66'},
         {t: '網站', v: 'http://www.ioa.tw', h: 'http://www.ioa.tw'},

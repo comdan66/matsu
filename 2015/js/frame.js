@@ -11,7 +11,7 @@ $(function () {
 
   var $header = $('#header');
   var $headerLeft = $('<div />').addClass ('l').append ($('<a />').addClass ('home').addClass ('icon-home')).appendTo ($header);
-  var $headerCenter = $('<div />').addClass ('c').text ('北港迓媽祖').appendTo ($header);
+  var $headerCenter = $('<div />').addClass ('c').text ('北港迎媽祖').appendTo ($header);
   var $headerRight = $('<div />').addClass ('r').appendTo ($header);
   var $option = $('<div />').addClass ('option').append ($('<div />')).appendTo ($headerRight);
 
@@ -93,7 +93,7 @@ $(function () {
 
   $('#pagination').append ($('<div />').addClass ('l').append ($('<a />').attr ('href', prev.name).append ($('<div />').addClass ('a')).append ($('<div />').addClass ('v').append ($('<div />').text ('上一頁')).append ($('<div />').text (prev.titles.join (' '))))))
                   .append ($('<div />').addClass ('r').append ($('<a />').attr ('href', next.name).append ($('<div />').addClass ('a')).append ($('<div />').addClass ('v').append ($('<div />').text ('下一頁')).append ($('<div />').text (next.titles.join (' '))))))
-                  .append ($('<div />').addClass ('c').append ($('<div />').text ('Beigang Matsu © 2015')).append ($('<div />').text ('如有相關問題歡迎').append ($('<a />').attr ('href', 'mailto:comdan66@gmail.com?subject=關於北港迓媽祖網頁..&body=Hi OA,%0d%0a%0d%0a    關於北港迓媽祖網頁，我有些相關問題..').text ('來信')).append ('或至').append ($('<a />').attr ('href', 'https://www.facebook.com/comdan66').text ('作者臉書')).append ('留言。')));
+                  .append ($('<div />').addClass ('c').append ($('<div />').text ('Beigang Matsu © 2015')).append ($('<div />').text ('如有相關問題歡迎').append ($('<a />').attr ('href', 'mailto:comdan66@gmail.com?subject=關於北港迎媽祖網頁..&body=Hi OA,%0d%0a%0d%0a    關於北港迎媽祖網頁，我有些相關問題..').text ('來信')).append ('或至').append ($('<a />').attr ('href', 'https://www.facebook.com/comdan66').text ('作者臉書')).append ('留言。')));
 
   $('a.icon-home').attr ('href', subs[0].name);
 
