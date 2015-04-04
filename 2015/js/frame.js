@@ -36,14 +36,14 @@ $(function () {
     ]},
 
     {'titles': ['藝閣遊行'], 'sub': [
-      {'name': 'i-ko.html', 'titles': ['藝閣路關', '路關總覽']},
-      {'name': 'i-ko_map-19an.html', 'titles': ['十九下午', '繞境地圖']},
-      {'name': 'i-ko_map-19ni.html', 'titles': ['十九晚間', '繞境地圖']},
-      {'name': 'i-ko_map-20an.html', 'titles': ['二十下午', '繞境地圖']},
-      {'name': 'i-ko_map-20ni.html', 'titles': ['二十晚間', '繞境地圖']},
-      {'name': 'i-ko_map-21ni.html', 'titles': ['廿一晚間', '繞境地圖']},
-      {'name': 'i-ko_map-22ni.html', 'titles': ['廿二晚間', '繞境地圖']},
-      {'name': 'i-ko_map-23ni.html', 'titles': ['廿三晚間', '繞境地圖']}
+      {'name': 'i-ko.html', 'titles': ['藝閣路關', '路線總覽']},
+      {'name': 'i-ko_map-19an.html', 'titles': ['十九下午', '遊行地圖']},
+      {'name': 'i-ko_map-19ni.html', 'titles': ['十九晚間', '遊行地圖']},
+      {'name': 'i-ko_map-20an.html', 'titles': ['二十下午', '遊行地圖']},
+      {'name': 'i-ko_map-20ni.html', 'titles': ['二十晚間', '遊行地圖']},
+      {'name': 'i-ko_map-21ni.html', 'titles': ['廿一晚間', '遊行地圖']},
+      {'name': 'i-ko_map-22ni.html', 'titles': ['廿二晚間', '遊行地圖']},
+      {'name': 'i-ko_map-23ni.html', 'titles': ['廿三晚間', '遊行地圖']}
     ]},
 
     {'titles': ['網站聲明'], 'sub': [

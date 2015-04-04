@@ -1,0 +1,83 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+
+@import "_oa";
+
+* {
+  &, &:after, &:before {
+    vertical-align: top;
+    @include box-sizing(border-box);
+  }
+}
+body {
+  background-color: rgba(0, 0, 255, 0.2);
+}
+.bg {
+  position: relative;
+  margin-top: 100px;
+  margin-left: 100px;
+  width: 1200px;
+  height: 630px;
+  overflow: hidden;
+
+  & > div {
+    position: absolute;
+    display: inline-block;
+    border: 10px solid rgba(255, 255, 255, .9);
+    @include border-radius(2px);
+    @include box-shadow(0 0 10px 1px rgba(0, 0, 0, .5), inset 0 0 5px 1px rgba(0, 0, 0, .8));
+  }
+  .p1 {
+    top: 80px;
+    left: 490px;
+    width: 620px;
+    height: 550px;
+    @include rotate(8deg);
+  }
+  .p2 {
+    top: 30px;
+    left: 550px;
+    width: 620px;
+    height: 550px;
+    @include rotate(15deg);
+  }
+  .p4 {
+    top: 340px;
+    left: 580px;
+    height: 260px;
+    width: 450px;
+  }
+
+  // .p1 {
+  //   top: 80px;
+  //   left: 50px;
+  //   width: 420px;
+  //   height: 250px;
+  //   border: 5px solid rgba(255, 255, 255, .9);
+  //   @include border-radius(3px);
+  //   @include rotate(-6deg);
+  //   @include box-shadow(0 0 10px rgba(0, 0, 0, .5), inset 0 0 5px rgba(0, 0, 0, .8));
+  // }
+  // .p2 {
+  //   top: 40px;
+  //   left: 620px;
+  //   width: 430px;
+  //   height: 260px;
+  //   border: 5px solid rgba(255, 255, 255, .9);
+  //   @include border-radius(3px);
+  //   @include rotate(6deg);
+  //   @include box-shadow(0 0 10px rgba(0, 0, 0, .5), inset 0 0 5px rgba(0, 0, 0, .8));
+  // }
+  // .p4 {
+  //   top: 300px;
+  //   left: 680px;
+  //   width: 430px;
+  //   height: 260px;
+  //   border: 5px solid rgba(255, 255, 255, .9);
+  //   @include border-radius(3px);
+  //   @include rotate(-8deg);
+  //   @include box-shadow(0 0 10px rgba(0, 0, 0, .5), inset 0 0 5px rgba(0, 0, 0, .8));
+  // }
+}
