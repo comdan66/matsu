@@ -50,6 +50,8 @@ $(function () {
         vs: [
           {t: '北港朝天宮 Wiki', h: 'http://zh.wikipedia.org/wiki/北港朝天宮'},
           {t: '北港朝天宮 官網', h: 'http://www.matsu.org.tw'},
+          {t: '報爆北港 - 北港簡介(朝天宮) 01', h: 'https://www.youtube.com/watch?v=LNbxEOW7f90'},
+          {t: '報爆北港 - 北港簡介(朝天宮) 02', h: 'https://www.youtube.com/watch?v=oA6zb9WuYt0'},
           {t: '台灣厝仔 - 雲林縣北港朝天宮媽祖遶境', h: 'http://www.old-taiwan.as2.net'},
           {t: '鄭煌霖 - 臺灣三大炮之北港迎媽祖 報告文件', h: 'http://www.shs.edu.tw/works/essay/2011/03/2011032809444385.pdf'},
           {t: '蕃薯藤 - 2014 北港媽祖活動', h: 'http://event6.yam.com/matsu/contest.php'}
@@ -61,6 +63,7 @@ $(function () {
           {t: 'Monkeyy Dai - Flickr', h: 'https://www.flickr.com/photos/lifegoseon'},
           {t: 'Kenny Mao - Flickr', h: 'https://www.flickr.com/photos/kenny6606'},
           {t: 'OA - Flickr', h: 'https://www.flickr.com/photos/comdan66'},
+          {t: '北港迓媽祖 - 動態相片', h: 'https://www.facebook.com/pages/北港迓媽祖/115131071836739'},
           {t: '蕃薯藤 - 2014 北港媽祖活動', h: 'http://event6.yam.com/matsu/contest.php'}
         ]
       },

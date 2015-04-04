@@ -31,6 +31,9 @@ $mediaTabletWidth: 720px;
       line-height: 30px;
     }
 
+    a {
+      @include a(rgba(100, 110, 170, .8), rgba(100, 110, 170, 1));
+    }
     span {
       @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
         padding-left: 38px;
