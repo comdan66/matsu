@@ -177,7 +177,7 @@ $(function () {
       });
     });
     
-    setTimeout (calculateLength.bind (this, points), 1000);
+    setTimeout (calculateLength.bind (this, points), 1800);
   }
 
   $map = $('#map');
