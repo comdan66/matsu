@@ -8,7 +8,7 @@ http_path = "/matsu/2015"
 fonts_dir = "./font"
 fonts_path = "../font/"
 
-images_dir = "./img"
+images_dir = "img"
 images_path = "../img/"
 
 css_dir = "../css/"

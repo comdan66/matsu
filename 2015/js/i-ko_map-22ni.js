@@ -11,21 +11,12 @@ $(function () {
   var $pagination = $('#pagination');
   var keys = [];
 
-  var _info_bubble = $('#_info_bubble').html ();
-  var _items = $('#_items').html ();
-  var _item = $('#_item').html ();
-
   function circlePath (cx, cy, r) { return 'M ' + cx + ' ' + cy + ' m -' + r + ', 0 a ' + r + ',' + r + ' 0 1,0 ' + (r * 2) + ',0 a ' + r + ',' + r + ' 0 1,0 -' + (r * 2) + ',0'; }
   function arrowPath (w, h, q) { return 'M -' + (w / 2) + ' ' + (h / 2) + 'l ' + (w / 2) + ' -' + h + ' l ' + (w / 2) + ' ' + h + ' q -' + (w / 2) + ' -' + q + ' -' + w + ' 0'; }
   
   function setInfoWindow (t) {
-    var items = t.items ? t.items.map (function (u) { return _.template (_item, u) (u); }).join ('') : [];
-    t._items = items.length ? _.template (_items, {items: items}) ({items: items}) : '';
-
-    var obj = $(_.template (_info_bubble, t) (t));
-    obj.find ('.delete').click (function () { t.infoWindow.close (); });
-
-    t.infoWindow.setContent (obj.get (0));
+    var $obj = $('<div />').addClass ('info_bubble').append ($('<div />').addClass ('img').append ($('<img />').attr ('src', t.src).attr ('alt', t.title).attr ('alt', t.title)).append ($('<div />').addClass ('title').text (t.title))).append (t.items.length ? $('<div />').addClass ('items').append (t.items.map (function (u) {return $('<div />').addClass ('item').html (u.item);})) : null).append ($('<div />').addClass ('delete').html ('&#10006;').click (function () { t.infoWindow.close (); }));
+    t.infoWindow.setContent ($obj.get (0));
     t.infoWindow.open (map, t.marker);
   }
 
