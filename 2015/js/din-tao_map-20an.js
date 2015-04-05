@@ -29,6 +29,11 @@ $(function () {
     t.infoWindow.open (map, t.marker);
   }
 
+  function calculateLength (points) {
+    var size = Math.pow (10, 2);
+    $container.find ('.map .d').addClass ('show').find ('span').text (Math.round (google.maps.geometry.spherical.computeLength (points) / 1000 * size) / size);
+  }
+
   function setMapData (key, lineSymbols, points, markers, speed, lineColor) {
     keys.push (key);
 
@@ -171,8 +176,10 @@ $(function () {
         $(this).remove ();
       });
     });
+    
+    setTimeout (calculateLength.bind (this, points), 1000);
   }
 
-  $map = $('<div />').appendTo ($('<div />').addClass ('map').append (Array.prototype.map.call ('1234', function (t) {return $('<i />');})).appendTo ($container));
+  $map = $('#map');
   google.maps.event.addDomListener (window, 'load', initialize);
 });
