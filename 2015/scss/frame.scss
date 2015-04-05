@@ -350,6 +350,12 @@ html {
   #sub_items {
     display: none;
   }
+  #like_box {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    max-width: $mainWidth;
+    overflow: hidden;
+  }
   #container {
     max-width: $mainWidth;
     margin-top: 15px;
@@ -491,6 +497,9 @@ html {
   }
 }
 @media screen and (min-width: #{$mediaMobileWidth}) {
+  #like_box {
+    display: none;
+  }
   #sub_items {
     margin: 0 auto;
     padding: 0 15px;
