@@ -24,7 +24,7 @@ $(function () {
       {'name': 'chao-tian.html', 'titles': ['朝天宮']},
       {'name': '03-19.html', 'titles': ['三月十九']},
       {'name': 'position.html', 'titles': ['交通資訊']},
-      {'name': 'tourism-food.html', 'titles': ['旅遊美食']}
+      {'name': 'food.html', 'titles': ['旅遊美食']}
     ]},
 
     {'titles': ['百年藝陣'], 'sub': [
