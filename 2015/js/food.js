@@ -97,19 +97,7 @@ $(function () {
             borderColor: 'rgba(39, 40, 34, .7)', backgroundClassName: ''
           });
 
-          var $obj = $('<div />').addClass ('info_bubble').append (
-                        $('<div />').addClass ('img').append (
-                        $('<a />').attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank').append ($('<img />').attr ('src', t.s).attr ('alt', t.t).attr ('alt', t.t))
-                          ).append (
-                        $('<a />').attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank').append ($('<div />').addClass ('title').text (t.t))
-                        ))
-          .append (
-            $('<div />').addClass ('desc').append (t.d)
-            )
-          .append (
-            $('<div />').addClass ('link').append ($('<a />').attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank').append ('繼續閱讀'))
-          ).append (
-                        $('<div />').addClass ('delete').html ('&#10006;').click (function () { infoWindow.close (); }));
+          var $obj = $('<div />').addClass ('info_bubble').append ($('<div />').addClass ('img').append ($('<a />').attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank').append ($('<img />').attr ('src', t.s).attr ('alt', t.t).attr ('alt', t.t))).append ($('<a />').attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank').append ($('<div />').addClass ('title').text (t.t)))).append ($('<div />').addClass ('desc').append (t.d)).append ($('<div />').addClass ('link').append ($('<a />').attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank').append ('繼續閱讀'))).append ($('<div />').addClass ('delete').html ('&#10006;').click (function () { infoWindow.close (); }));
           
           infoWindow.setContent ($obj.get (0));
           infos.push (infoWindow);
