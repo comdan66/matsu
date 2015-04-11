@@ -133,7 +133,7 @@ $(function () {
       {
         latLng: points[0],
         icon: 'img/icon/spotlight-poi_hdpi.png',
-        src: 'img/site/chao-tian/01-02.jpg',
+        src: 'img/site/din-tao/19ni-01.jpg',
         title: '歲次乙未年 十九晚間繞境起馬',
         items: [
           {item: '農曆三月十九晚間繞境起馬'},
@@ -142,10 +142,20 @@ $(function () {
       {
         latLng: points[points.length - 1],
         icon: 'img/icon/spotlight-poi_hdpi.png',
-        src: 'img/site/chao-tian/01-02.jpg',
+        src: 'img/site/din-tao/19ni-02.jpg',
         title: '歲次乙未年 十九晚間繞境落馬',
         items: [
           {item: '農曆十九晚間繞境落馬'},
+        ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.56838724610545, 120.30243270099163),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/19ni-03.jpg',
+        title: '頑皮炮場',
+        items: [
+          {item: '地點：義民路、民主路交叉路口'},
+          {item: '時間：下午５點正式開始'},
         ]
       }
     ];
