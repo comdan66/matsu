@@ -134,7 +134,7 @@ $(function () {
       {
         latLng: points[0],
         icon: 'img/icon/spotlight-poi_hdpi.png',
-        src: 'img/site/din-tao/19an-01.jpg',
+        src: 'img/site/din-tao/an-start.jpg',
         title: '歲次乙未年 十九晚間繞境起馬',
         items: [
           {item: '農曆三月十九晚間繞境起馬'},
@@ -143,7 +143,7 @@ $(function () {
       {
         latLng: points[points.length - 1],
         icon: 'img/icon/spotlight-poi_hdpi.png',
-        src: 'img/site/din-tao/19an-02.jpg',
+        src: 'img/site/din-tao/an-end.jpg',
         title: '歲次乙未年 十九晚間繞境落馬',
         items: [
           {item: '農曆十九晚間繞境落馬'},

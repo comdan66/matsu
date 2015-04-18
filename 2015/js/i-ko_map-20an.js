@@ -133,7 +133,7 @@ $(function () {
       {
         latLng: points[0],
         icon: 'img/icon/spotlight-poi_hdpi.png',
-        src: 'img/site/chao-tian/01-02.jpg',
+        src: 'img/site/i-ko/start.jpg',
         title: '歲次乙未年 二十下午遊行出發',
         items: [
           {item: '農曆三月二十下午遊行出發'},
@@ -142,7 +142,7 @@ $(function () {
       {
         latLng: points[points.length - 1],
         icon: 'img/icon/spotlight-poi_hdpi.png',
-        src: 'img/site/chao-tian/01-02.jpg',
+        src: 'img/site/i-ko/end.jpg',
         title: '歲次乙未年 二十下午遊行出發',
         items: [
           {item: '農曆三月二十下午遊行出發'},

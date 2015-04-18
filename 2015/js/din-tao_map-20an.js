@@ -133,26 +133,16 @@ $(function () {
       {
         latLng: points[0],
         icon: 'img/icon/spotlight-poi_hdpi.png',
-        src: 'img/site/chao-tian/01-02.jpg',
+        src: 'img/site/din-tao/an-start.jpg',
         title: '歲次乙未年 二十下午繞境起馬',
         items: [
           {item: '農曆二十下午繞境起馬'},
         ]
       },
       {
-        latLng: new google.maps.LatLng (23.564535998777593, 120.30400179326534),
-        icon: 'img/icon/spotlight-poi-blue.png',
-        title: '終點',
-        src: 'img/site/chao-tian/01-02.jpg',
-        items: [
-          {item: 'aa'},
-          {item: 'sss'},
-        ]
-      },
-      {
         latLng: points[points.length - 1],
         icon: 'img/icon/spotlight-poi_hdpi.png',
-        src: 'img/site/chao-tian/01-02.jpg',
+        src: 'img/site/din-tao/an-end.jpg',
         title: '歲次乙未年 二十下午繞境落馬',
         items: [
           {item: '農曆二十下午繞境落馬'},
