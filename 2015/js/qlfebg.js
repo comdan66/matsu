@@ -120,7 +120,9 @@ $(function () {
     $headerLeft.append ($('<a />').addClass (t.active ? 'active' : null).attr ('href', t.name).text (t.titles.join (' ')));
 
     if (t.sub && t.sub.length) {
-      t.sub.forEach (function (u) {$items.append ($('<a />').addClass ('sub').addClass (u.active ? 'active' : null).attr ('href', u.name).text (u.titles.join (' ')));});
+      t.sub.forEach (function (u) {$items.append ($('<a />').addClass ('sub').addClass (u.active ? 'active' : null).attr ('href', u.name).text (u.titles.join (' ')).click (function () {
+        ga ('send', 'event', 'mobile', 'sub', $(this).attr ('href'));
+      }));});
 
       if (t.active)
         t.sub.forEach (function (u) {
@@ -150,10 +152,12 @@ $(function () {
       $rightSlide.removeClass ('close');
       $('body').css ('overflow', 'hidden');
       $option.addClass ('close');
+      ga ('send', 'event', 'mobile', 'option', 'open');
     } else {
       $rightSlide.addClass ('close');
       $('body').css ('overflow', overflow);
       $option.removeClass ('close');
+      ga ('send', 'event', 'mobile', 'option', 'close');
     }
   });
   $slideCover.click (function () {
@@ -161,12 +165,15 @@ $(function () {
       $rightSlide.addClass ('close');
       $('body').css ('overflow', overflow);
       $option.removeClass ('close');
+      ga ('send', 'event', 'mobile', 'cover', 'click');
     }
   });
 
   $('#sub_items a').OAjelly ().click (function (e) {
     $(this).siblings ().removeClass ('active');
     clearTimeout (timer);
+    ga ('send', 'event', 'site', 'sub_item', $(this).attr ('href'));
+
     timer = setTimeout (function () {
       window.location.assign ($(this).attr ('href'));
     }.bind ($(this)), 500);
@@ -175,6 +182,8 @@ $(function () {
 
   $('#pagination .l a, #pagination .r a').OAjelly ().click (function (e) {
     clearTimeout (timer);
+    ga ('send', 'event', 'pagination', $(this).attr ('href'));
+
     timer = setTimeout (function () {
       window.location.assign ($(this).attr ('href'));
     }.bind ($(this)), 550);
