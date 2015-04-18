@@ -719,24 +719,32 @@ html {
         display: none;
 
         &.home {
-          margin-top: 4px;
-          display: inline-block;
           text-decoration: none;
-          color: rgba(50, 60, 135, 1);
-          @include text-shadow(0 0 1px rgba(255, 255, 255, 1), 0 0 1px rgba(255, 255, 255, 1));
+          width: 60px;
+          display: inline-block;
+          border: 2px solid rgba(50, 60, 135, .8);
+          margin-top: 5px;
+          @include border-radius(4px);
 
-          &:before {
-            font-size: xx-large;
-            font-family: 'icomoon';
-            color: rgba(50, 60, 135, 1);
-            @include transition(all .3s);
-          }
-          &:hover {
-            color: rgba(40, 50, 125, 1);
+            padding: 3px 0;
+            font-size: 20px;
+            font-weight: bolder;
+            color: rgba(30, 40, 115, 1);
+            @include text-shadow(0 0 1px rgba(255, 255, 255, .3), 0 0 1px rgba(255, 255, 255, 1));
+
             &:before {
-              color: rgba(40, 50, 125, 1);
+              font-size: xx-large;
+              font-family: 'icomoon';
+              color: rgba(50, 60, 135, 1);
+              @include transition(all .3s);
             }
-          }
+            &:hover {
+              color: rgba(40, 50, 125, 1);
+              &:before {
+                color: rgba(40, 50, 125, 1);
+              }
+            }
+
         }
       }
     }
@@ -747,7 +755,7 @@ html {
       padding-top: 6px;
       font-size: x-large;
       letter-spacing: 5px;
-      
+
       @include text-shadow(0 1px 5px rgba(0, 0, 0, .4), 0 0 2px rgba(40, 50, 125, 1));
       @include background-image(radial-gradient(50% 50%, rgba(255, 255, 255, .3) 0px, transparent 100%));
     }
@@ -756,6 +764,7 @@ html {
       text-align: center;
 
       .option {
+        width: 60px;
         border: 2px solid rgba(50, 60, 135, .8);
         margin-top: 5px;
         @include border-radius(4px);
