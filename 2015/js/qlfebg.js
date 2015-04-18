@@ -58,9 +58,9 @@ $(function () {
 
   var $header = $('#header');
   var $headerLeft = $('<div />').addClass ('l').append ($('<a />').addClass ('home').addClass ('icon-home')).appendTo ($header);
-  var $headerCenter = $('<div />').addClass ('c').text ('北港迎媽祖').appendTo ($header);
+  var $headerCenter = $('<div />').addClass ('c').text ('北港迎媽祖').click (function () {$("html, body").stop ().animate ({ scrollTop: 0 - 50 }, 500);}).appendTo ($header);
   var $headerRight = $('<div />').addClass ('r').appendTo ($header);
-  var $option = $('<div />').addClass ('option').append ($('<div />')).appendTo ($headerRight);
+  var $option = $('<div />').addClass ('option').append ($('<div />').append ('選單')).appendTo ($headerRight);
   
   var overflow = $('body').css ('overflow');
   var now = document.URL.replace (/^.*[\\\/]/, '');
