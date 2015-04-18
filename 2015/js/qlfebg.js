@@ -121,7 +121,7 @@ $(function () {
 
     if (t.sub && t.sub.length) {
       t.sub.forEach (function (u) {$items.append ($('<a />').addClass ('sub').addClass (u.active ? 'active' : null).attr ('href', u.name).text (u.titles.join (' ')).click (function () {
-        ga ('send', 'event', 'mobile', 'sub', $(this).attr ('href'));
+        ga ('send', 'event', 'frame', 'sub', $(this).attr ('href'));
       }));});
 
       if (t.active)
@@ -149,31 +149,30 @@ $(function () {
 
   $option.click (function () {
     if ($rightSlide.hasClass ('close')) {
+      ga ('send', 'event', 'frame', 'option', 'open');
       $rightSlide.removeClass ('close');
       $('body').css ('overflow', 'hidden');
       $option.addClass ('close');
-      ga ('send', 'event', 'mobile', 'option', 'open');
     } else {
+      ga ('send', 'event', 'frame', 'option', 'close');
       $rightSlide.addClass ('close');
       $('body').css ('overflow', overflow);
       $option.removeClass ('close');
-      ga ('send', 'event', 'mobile', 'option', 'close');
     }
   });
   $slideCover.click (function () {
     if (!$rightSlide.hasClass ('close')) {
+      ga ('send', 'event', 'frame', 'cover', 'click');
       $rightSlide.addClass ('close');
       $('body').css ('overflow', overflow);
       $option.removeClass ('close');
-      ga ('send', 'event', 'mobile', 'cover', 'click');
     }
   });
 
   $('#sub_items a').OAjelly ().click (function (e) {
+    ga ('send', 'event', 'frame', 'sub_item', $(this).attr ('href'));
     $(this).siblings ().removeClass ('active');
     clearTimeout (timer);
-    ga ('send', 'event', 'site', 'sub_item', $(this).attr ('href'));
-
     timer = setTimeout (function () {
       window.location.assign ($(this).attr ('href'));
     }.bind ($(this)), 500);
@@ -181,9 +180,8 @@ $(function () {
   });
 
   $('#pagination .l a, #pagination .r a').OAjelly ().click (function (e) {
+    ga ('send', 'event', 'frame', 'pagination', $(this).attr ('href'));
     clearTimeout (timer);
-    ga ('send', 'event', 'pagination', $(this).attr ('href'));
-
     timer = setTimeout (function () {
       window.location.assign ($(this).attr ('href'));
     }.bind ($(this)), 550);

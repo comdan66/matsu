@@ -97,7 +97,10 @@ $(function () {
             borderColor: 'rgba(39, 40, 34, .7)', backgroundClassName: ''
           });
 
-          var $obj = $('<div />').addClass ('info_bubble').append ($('<div />').addClass ('img').append ($('<a />').attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank').append ($('<img />').attr ('src', t.s).attr ('alt', t.t).attr ('alt', t.t))).append ($('<a />').attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank').append ($('<div />').addClass ('title').text (t.t)))).append ($('<div />').addClass ('desc').append (t.d)).append ($('<div />').addClass ('link').append ($('<a />').attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank').append ('繼續閱讀'))).append ($('<div />').addClass ('delete').html ('&#10006;').click (function () { infoWindow.close (); }));
+          var $obj = $('<div />').addClass ('info_bubble').append ($('<div />').addClass ('img').append ($('<a />').attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank').append ($('<img />').attr ('src', t.s).attr ('alt', t.t).attr ('alt', t.t))).append ($('<a />').attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank').append ($('<div />').addClass ('title').text (t.t)))).append ($('<div />').addClass ('desc').append (t.d)).append ($('<div />').addClass ('link').append ($('<a />').attr ('href', t.h).attr ('title', t.t).attr ('target', '_blank').append ('繼續閱讀'))).append ($('<div />').addClass ('delete').html ('&#10006;').click (function () {
+            infoWindow.close ();
+            ga ('send', 'event', 'food', 'close_info_window');
+          }));
           
           infoWindow.setContent ($obj.get (0));
           infos.push (infoWindow);
@@ -105,12 +108,15 @@ $(function () {
           google.maps.event.addListener (marker, 'click', function (e) {
             infos.forEach (function (u) { u.close (); });
             infoWindow.open (map, marker);
+            ga ('send', 'event', 'food', 'click_marker', t.t);
           });
 
           marker.setMap (map);
         }
 
         return $('<div />').addClass ('i').append (t.p ? $('<span />').addClass ('icon-fire') : null).append (t.t).click (function () {
+          ga ('send', 'event', 'food', 'menu_click', t.t);
+
           if ((t.d !== undefined) && (t.s !== undefined) && (t.l !== undefined)) {
             infos.forEach (function (u) { u.close (); });
             infoWindow.open (map, marker);

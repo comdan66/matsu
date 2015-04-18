@@ -15,7 +15,10 @@ $(function () {
   function arrowPath (w, h, q) { return 'M -' + (w / 2) + ' ' + (h / 2) + 'l ' + (w / 2) + ' -' + h + ' l ' + (w / 2) + ' ' + h + ' q -' + (w / 2) + ' -' + q + ' -' + w + ' 0'; }
   
   function setInfoWindow (t) {
-    var $obj = $('<div />').addClass ('info_bubble').append ($('<div />').addClass ('img').append ($('<img />').attr ('src', t.src).attr ('alt', t.title).attr ('alt', t.title)).append ($('<div />').addClass ('title').text (t.title))).append (t.items.length ? $('<div />').addClass ('items').append (t.items.map (function (u) {return $('<div />').addClass ('item').html (u.item);})) : null).append ($('<div />').addClass ('delete').html ('&#10006;').click (function () { t.infoWindow.close (); }));
+    var $obj = $('<div />').addClass ('info_bubble').append ($('<div />').addClass ('img').append ($('<img />').attr ('src', t.src).attr ('alt', t.title).attr ('alt', t.title)).append ($('<div />').addClass ('title').text (t.title))).append (t.items.length ? $('<div />').addClass ('items').append (t.items.map (function (u) {return $('<div />').addClass ('item').html (u.item);})) : null).append ($('<div />').addClass ('delete').html ('&#10006;').click (function () {
+      t.infoWindow.close ();
+      ga ('send', 'event', 'i-ko_map-23ni', 'close_info_window');
+    }));
     t.infoWindow.setContent ($obj.get (0));
     t.infoWindow.open (map, t.marker);
   }
@@ -45,6 +48,7 @@ $(function () {
       google.maps.event.addListener (t.marker, 'click', function (e) {
         window['markers_' + key].forEach (function (u) { u.infoWindow.close (); });
         setInfoWindow (t);
+        ga ('send', 'event', 'i-ko_map-23ni', 'click_marker', t.title);
       });
       return t;
     });
