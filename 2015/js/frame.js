@@ -98,7 +98,14 @@ $(function () {
                   .append ($('<div />').addClass ('r').append ($('<a />').attr ('href', next.name).append ($('<div />').addClass ('a')).append ($('<div />').addClass ('v').append ($('<div />').text ('下一頁')).append ($('<div />').text (next.titles.join (' '))))))
                   .append ($('<div />').addClass ('c').append ($('<div />').text ('Beigang Matsu © 2015')).append ($('<div />').text ('如有相關問題歡迎').append ($('<a />').attr ('href', 'mailto:comdan66@gmail.com?subject=關於北港迎媽祖網頁..&body=Hi OA,%0d%0a%0d%0a    關於北港迎媽祖網頁，我有些相關問題..').text ('來信')).append ('或至').append ($('<a />').attr ('href', 'https://www.facebook.com/comdan66').text ('作者臉書')).append ('留言。')));
 
-  $('a.home').attr ('href', subs[0].name);
+  $('a.home').attr ('href', subs[0].name).click (function () {
+    ga ('send', 'event', 'frame', 'home', 'click');
+    clearTimeout (timer);
+    
+    timer = setTimeout (function () {
+      window.location.assign (subs[0].name);
+    }.bind ($(this)), 500);
+  });
 
   $option.click (function () {
     if ($rightSlide.hasClass ('close')) {
