@@ -38,7 +38,7 @@ $(function () {
         '<span>唱班</span>代表整個繞境活動的開始，借由<a href="https://www.youtube.com/embed/v_ecOgzU-SU" class="fancybox fancybox.iframe" title="北港農曆三月十九 媽祖祈福遶境 出廟嗆班">唱班</a>儀式來為轎班弟兄們打氣以及祈求接下來的兩天兩夜的繞境順利平安！',
         '<br />',
         '<br />',
-        '<span>碰、碰、碰</span>三聲通天巨響的起馬炮響玩，隊伍就出發了，可以看到<a href="https://www.facebook.com/groups/golden.prince" target="_blank">先鋒太子爺金垂髫</a>的小朋友們扛著小小神轎走第一！嗶嗶、咚咚聲的<a href="https://www.youtube.com/embed/LXLjNcxuA34" class="fancybox fancybox.iframe" title="北港迎媽祖 虎爺320週年新轎第一堆炮">虎爺</a>也跟著起轎，吃完三堆炮後，緩緩往中山路尾移動，福德正神等神轎也相繼出發！',
+        '<span>碰、碰、碰</span>三聲通天巨響的起馬炮響完，隊伍就出發了，可以看到<a href="https://www.facebook.com/groups/golden.prince" target="_blank">先鋒太子爺金垂髫</a>的小朋友們扛著小小神轎走第一！嗶嗶、咚咚聲的<a href="https://www.youtube.com/embed/LXLjNcxuA34" class="fancybox fancybox.iframe" title="北港迎媽祖 虎爺320週年新轎第一堆炮">虎爺</a>也跟著起轎，吃完三堆炮後，緩緩往中山路尾移動，福德正神等神轎也相繼出發！',
         '<br />',
         '<br />',
         '<span>廟門</span>開！首先出來的是莊儀團四小將，可愛模樣成為了瞬間焦點！鏘鏘鏘，千里眼、順風耳將軍扎實的步伐，大搖大擺展現出威風領領的姿態，後面出來的神轎也依序登場了！',
