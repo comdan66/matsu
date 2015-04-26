@@ -162,6 +162,16 @@ $(function () {
           {item: '地點：義民路、民主路交叉路口'},
           {item: '時間：下午５點正式開始'},
         ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.573761962830662, 120.30280016362667),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/19an-04.jpg',
+        title: '頑皮炮場',
+        items: [
+          {item: '地點：義民路、民主路交叉路口'},
+          {item: '時間：下午５點正式開始'},
+        ]
       }
     ];
 

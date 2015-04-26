@@ -151,6 +151,26 @@ $(function () {
         items: [
           {item: '農曆二十下午繞境落馬'},
         ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.57869765813369, 120.30099838972092),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/20an-01.jpg',
+        title: '富威菸酒 炮讚',
+        items: [
+          {item: '地點：公園路、文人路交叉路口'},
+          {item: '時間：約下午３點正式開始'},
+        ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.57541520480969, 120.30248366296291),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/20an-02.jpg',
+        title: '富威菸酒 炮讚',
+        items: [
+          {item: '地點：北港鎮公所'},
+          {item: '時間：約下午３點正式開始'},
+        ]
       }
     ];
 
