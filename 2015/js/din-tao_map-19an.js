@@ -237,6 +237,15 @@ $(function () {
           {item: '地點：中山路(廟口)'},
           {item: '時間：上午７點正式開始'}
         ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.57691170887412, 120.30061952769756),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/19an-12.jpg',
+        title: '名昇水族生活館 炮場',
+        items: [
+          {item: '地點：吉祥路、文星路交叉路口'}
+        ]
       }
     ];
 
