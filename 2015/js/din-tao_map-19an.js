@@ -200,6 +200,43 @@ $(function () {
         items: [
           {item: '地點：公園路田中麵攤'}
         ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.57310987913627, 120.3034358471632),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/19an-08.jpg',
+        title: '北港代天宮太子會',
+        items: [
+          {item: '地點：文化路、民族路交叉路口(三角圓環旁)'}
+        ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.56924463418811, 120.30283235013485),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/19an-09.jpg',
+        title: '六，七年級的聯合炮場',
+        items: [
+          {item: '地點：義民路、中正路交叉路口(福泰飯店)'}
+        ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.568682876607042, 120.30134841799736),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/19an-10.jpg',
+        title: '萬民瘋媽祖',
+        items: [
+          {item: '地點：文化路、民主路交叉路口(北港圓環)'}
+        ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.56724835564608, 120.30451476573944),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/19an-11.jpg',
+        title: '高興 炮場',
+        items: [
+          {item: '地點：中山路(廟口)'},
+          {item: '時間：上午７點正式開始'}
+        ]
       }
     ];
 
