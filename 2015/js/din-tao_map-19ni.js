@@ -161,6 +161,15 @@ $(function () {
           {item: '地點：義民路、民主路交叉路口'},
           {item: '時間：下午５點正式開始'},
         ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.56924463418811, 120.30283235013485),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/19ni-04.jpg',
+        title: '六，七年級的聯合炮場',
+        items: [
+          {item: '地點：義民路、中正路交叉路口(福泰飯店)'}
+        ]
       }
     ];
 

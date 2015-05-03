@@ -172,6 +172,34 @@ $(function () {
           {item: '地點：民有路、公園路交叉路口(大利士)'},
           {item: '時間：下午３點正式開始'},
         ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.56848497019104, 120.3048399835825),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/19an-05.jpg',
+        title: '出外ㄟ北港囝仔',
+        items: [
+          {item: '地點：仁和路上(朝天宮正後方)'},
+          {item: '時間：下午１點正式開始'},
+        ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.57121322521548, 120.30255876481533),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/19an-06.jpg',
+        title: '尚榮會社',
+        items: [
+          {item: '地點：大同路、文化路交叉路口'}
+        ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.575286142058566, 120.30222550034523),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/19an-07.jpg',
+        title: '公園路田中麵攤',
+        items: [
+          {item: '地點：公園路田中麵攤'}
+        ]
       }
     ];
 

@@ -156,20 +156,48 @@ $(function () {
         latLng: new google.maps.LatLng (23.57869765813369, 120.30099838972092),
         icon: 'img/icon/spotlight-ad.png',
         src: 'img/site/din-tao/20an-01.jpg',
-        title: '富威菸酒 炮讚',
+        title: '富成菸酒 炮讚',
         items: [
           {item: '地點：公園路、文人路交叉路口'},
-          {item: '時間：約下午３點正式開始'},
+          {item: '時間：約下午２點正式開始'},
         ]
       },
       {
         latLng: new google.maps.LatLng (23.57541520480969, 120.30248366296291),
         icon: 'img/icon/spotlight-ad.png',
         src: 'img/site/din-tao/20an-02.jpg',
-        title: '富威菸酒 炮讚',
+        title: '世界迎媽祖',
         items: [
           {item: '地點：北港鎮公所'},
-          {item: '時間：約下午３點正式開始'},
+          {item: '時間：約下午２點正式開始'},
+        ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.579331891666722, 120.30312739312649),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/20an-03.jpg',
+        title: '北港保安會',
+        items: [
+          {item: '地點：北辰路、文人路交叉路口'},
+          {item: '時間：約下午２點正式開始'},
+        ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.569534731254187, 120.30412584543228),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/20an-04.jpg',
+        title: '好住民宿前十字路口',
+        items: [
+          {item: '地點：公民路、博愛路交叉路口(好住民宿)'}
+        ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.56488203790543, 120.30238509178162),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/20an-05.jpg',
+        title: '民生路橋下',
+        items: [
+          {item: '地點：民生路橋下'}
         ]
       }
     ];

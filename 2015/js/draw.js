@@ -89,7 +89,7 @@ $(function() {
 
   $('#log').click (function () {
     var str = 'var points = [\n  ' + markers.map (function (t) {
-      return 'new google.maps.LatLng (' + t.getPosition ().k + ', ' + t.getPosition ().D + ')';
+      return 'new google.maps.LatLng (' + t.getPosition ().A + ', ' + t.getPosition ().F + ')';
     }).join (', ') + '\n];';
 
 

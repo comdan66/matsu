@@ -151,6 +151,15 @@ $(function () {
         items: [
           {item: '農曆二十晚間繞境落馬'},
         ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.57054207604807, 120.30225567519665),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/20ni-01.jpg',
+        title: '北港寶玄堂炮場',
+        items: [
+          {item: '地點：文化路嘉義客運旁'}
+        ]
       }
     ];
 
