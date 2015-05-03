@@ -218,6 +218,16 @@ $(function () {
         items: [
           {item: '地點：文化路、民主路交叉路口(北港圓環)'}
         ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.568682876607042, 120.30134841799736),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/20an-08.jpg',
+        title: '麻吉家族炮場',
+        items: [
+          {item: '地點：北港中山路尾(聖保羅麵包店門口)'},
+          {item: '時間：約下午２點正式開始(20下午出廟)'},
+        ]
       }
     ];
 
