@@ -160,6 +160,16 @@ $(function () {
         items: [
           {item: '地點：文化路嘉義客運旁'}
         ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.571552486126855, 120.30180841684341),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/20an-06.jpg',
+        title: '彰化囝仔炮場',
+        items: [
+          {item: '地點：大同路、新民路交叉路口'},
+          {item: '時間：約下午６點正式開始'},
+        ]
       }
     ];
 
