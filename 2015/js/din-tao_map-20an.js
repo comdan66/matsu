@@ -209,6 +209,15 @@ $(function () {
           {item: '地點：大同路、新民路交叉路口'},
           {item: '時間：約下午６點正式開始'},
         ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.568682876607042, 120.30134841799736),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/20an-07.jpg',
+        title: '嘉北會炮場',
+        items: [
+          {item: '地點：文化路、民主路交叉路口(北港圓環)'}
+        ]
       }
     ];
 
