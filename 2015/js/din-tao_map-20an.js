@@ -220,7 +220,7 @@ $(function () {
         ]
       },
       {
-        latLng: new google.maps.LatLng (23.568682876607042, 120.30134841799736),
+        latLng: new google.maps.LatLng (23.564547676844693, 120.30401788651943),
         icon: 'img/icon/spotlight-ad.png',
         src: 'img/site/din-tao/20an-08.jpg',
         title: '麻吉家族炮場',
