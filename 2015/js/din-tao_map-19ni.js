@@ -171,6 +171,15 @@ $(function () {
         items: [
           {item: '地點：義民路、中正路交叉路口(福泰飯店)'}
         ]
+      },
+      {
+        latLng: new google.maps.LatLng (23.568682876607042, 120.30134841799736),
+        icon: 'img/icon/spotlight-ad.png',
+        src: 'img/site/din-tao/19an-10.jpg',
+        title: '萬民瘋媽祖',
+        items: [
+          {item: '地點：文化路、民主路交叉路口(北港圓環)'}
+        ]
       }
     ];
 
