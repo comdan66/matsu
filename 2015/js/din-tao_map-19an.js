@@ -35,6 +35,7 @@ $(function () {
       t.marker = new google.maps.Marker ({
           draggable: false,
           position: t.latLng,
+          animation: google.maps.Animation.DROP,
           icon: t.icon
         });
 
