@@ -19,7 +19,8 @@ $(function() {
     });
 
     google.maps.event.addListener (marker, 'dblclick', function () {
-      var latLng = new google.maps.LatLng (marker.getPosition ().k - 0.0001, marker.getPosition ().D - 0.0001);
+      console.error (marker.getPosition ().lat);
+      var latLng = new google.maps.LatLng (marker.getPosition ().lat () - 0.0001, marker.getPosition ().lng () - 0.0001);
       
       initMarker (new google.maps.Marker ({
         map: map,
