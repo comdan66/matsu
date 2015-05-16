@@ -36,6 +36,33 @@
       margin-top: 60px;
     }
 
+    .n {
+      text-align: right;
+      margin-top: 10px;
+      font-style: italic;
+      color: rgba(50, 50, 50, 0.7);
+
+      a {
+        @include a(rgba(100, 110, 170, .7), rgba(100, 110, 170, .9));
+        font-style: italic;
+        margin: 0 3px;
+      }
+
+      &:before {
+        content: "\e609";
+        font-family: 'icomoon';
+        margin-right: 5px;
+        color: rgba(50, 50, 50, 0.3);
+      }
+      & + .n {
+        margin-top: 2px;
+        font-size: small;
+
+        &:before {
+          content: "";
+        }
+      }
+    }
     section {
       margin-top: 5px;
       text-indent: 33px;
