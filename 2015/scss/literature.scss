@@ -13,6 +13,14 @@
   min-height: 100%;
   text-align: left;
 
+  @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
+    margin-top: 10px;
+  }
+  @media screen and (min-width: #{$mediaTabletWidth}) {
+    margin-top: 30px;
+  }
+
+
   k {
     color: rgba(188, 72, 70, 1);
   }
@@ -50,7 +58,14 @@
     }
     h2 {
       margin: 0;
+
+  @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
       font-size: larger;
+  }
+  @media screen and (min-width: #{$mediaTabletWidth}) {
+      font-size: x-large;
+  }
+
       padding-bottom: 4px;
       border-bottom: 4px solid rgba(39, 40, 34, .1);
       margin-bottom: 4px;
