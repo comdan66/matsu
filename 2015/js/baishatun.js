@@ -76,7 +76,7 @@ $(function () {
           return ;
 
         latlngs = result.map (function (t) {
-          return {id: t.id, lat: t.lat, lng: t.lng};
+          return {id: t.id, lat: t.lat, lng: t.lng, time: t.time};
         });
 
         if (!map)
@@ -104,7 +104,8 @@ $(function () {
                   var marker = new google.maps.Marker ({
                       map: map,
                       draggable: false,
-                      zIndex: i == latlngs.length - 1 ? 99999 : t.id,
+                      zIndex: t.id,
+                      optimized: false,
                       position: new google.maps.LatLng (t.lat, t.lng),
                       icon: i == latlngs.length - 1 ? 'img/icon/mon.png' : {
                         path: circlePath (10),
@@ -114,6 +115,24 @@ $(function () {
                         fillOpacity: 0.5
                       }
                     });
+
+                    if (($loading || (i % 3 === 0)) && (i !== latlngs.length - 1))
+                      new MarkerWithLabel ({
+                        position: new google.maps.LatLng (t.lat, t.lng),
+                        draggable: false,
+                        raiseOnDrag: true,
+                        map: map,
+                        labelContent: '' + $.timeago (t.time),
+                        labelAnchor: new google.maps.Point (0, 0),
+                        labelClass: "marker_label",
+                        icon: {
+                          path: 'M 0 0',
+                          strokeColor: 'rgba(249, 39, 114, 0)',
+                          strokeWeight: 1,
+                          fillColor: 'rgba(249, 39, 114, 0)',
+                          fillOpacity: 0
+                        }
+                      });
 
                   google.maps.event.addListener (marker, 'click', function (e) {
                     console.error (t.id);
