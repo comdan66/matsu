@@ -104,6 +104,7 @@ $(function () {
                   var marker = new google.maps.Marker ({
                       map: map,
                       draggable: false,
+                      zIndex: t.id,
                       position: new google.maps.LatLng (t.lat, t.lng),
                       icon: i == latlngs.length - 1 ? 'img/icon/mon.png' : {
                         path: circlePath (10),
