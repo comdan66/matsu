@@ -61,7 +61,7 @@ $(function () {
   var $headerCenter = $('<div />').addClass ('c').text ('北港迎媽祖').click (function () {$("html, body").stop ().animate ({ scrollTop: 0 - 50 }, 500);}).appendTo ($header);
   var $headerRight = $('<div />').addClass ('r').appendTo ($header);
   var $option = $('<div />').addClass ('option').append ($('<div />').append ('選單')).appendTo ($headerRight);
-  
+
   var overflow = $('body').css ('overflow');
   var now = document.URL.replace (/^.*[\\\/]/, '');
   var timer = null;
@@ -69,6 +69,7 @@ $(function () {
   var menu = [
     {'titles': ['北港媽祖'], 'sub': [
       {'name': 'chao-tian.html', 'titles': ['朝天宮']},
+      {'name': 'baishatun.html', 'titles': ['白沙屯即時']},
       {'name': 'literature.html', 'titles': ['部分文獻']},
       {'name': '03-19.html', 'titles': ['三月十九']},
       {'name': 'position.html', 'titles': ['交通資訊']},
@@ -149,7 +150,7 @@ $(function () {
   $('a.home').attr ('href', subs[0].name).click (function () {
     ga ('send', 'event', 'frame', 'home', 'click');
     clearTimeout (timer);
-    
+
     timer = setTimeout (function () {
       window.location.assign (subs[0].name);
     }.bind ($(this)), 500);

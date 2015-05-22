@@ -43,7 +43,7 @@
         @include border-radius(2px);
         @include transition(all .3s);
         @include box-shadow(0 0 15px 1px rgba(0, 0, 0, 0.2));
-        
+
         &, span {
           font-size: small;
           font-weight: bold;
@@ -58,6 +58,24 @@
         &.show {
           @include opacity(1);
         }
+      }
+      .b {
+        position: absolute;
+        display: block;
+        width: calc(100% - 20px);
+        right: 10px;
+        bottom: 10px;
+        text-align: center;
+        overflow: hidden;
+        border: 1px solid rgba(39, 40, 34, .4);
+        background-color: rgba(255, 255, 255, .8);
+        @include border-radius(2px);
+        @include transition(all .3s);
+        @include box-shadow(0 0 15px 1px rgba(0, 0, 0, 0.2));
+        padding: 5px 10px;
+        font-size: small;
+        font-weight: bold;
+        color: rgba(50, 50, 50, 0.6);
       }
     }
     @media screen and (min-width: #{$mediaMobileWidth}) {
@@ -78,7 +96,7 @@
         @include border-radius(2px);
         @include transition(all .3s);
         @include box-shadow(0 0 15px 1px rgba(0, 0, 0, 0.2));
-        
+
         &, span {
           font-size: large;
           font-weight: bold;
@@ -93,6 +111,21 @@
         &.show {
           @include opacity(1);
         }
+      }
+      .b {
+        position: absolute;
+        display: block;
+        width: calc(100% - 30px);
+        right: 15px;
+        bottom: 15px;
+        text-align: center;
+        overflow: hidden;
+        border: 1px solid rgba(39, 40, 34, .4);
+        background-color: rgba(255, 255, 255, .8);
+        @include border-radius(2px);
+        @include transition(all .3s);
+        @include box-shadow(0 0 15px 1px rgba(0, 0, 0, 0.2));
+        padding: 10px 15px;
       }
     }
     i {
