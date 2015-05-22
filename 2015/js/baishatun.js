@@ -10,7 +10,7 @@ $(function () {
 
   var map = null;
   var latlngs = [];
-  var merks = [];
+  var marks = [];
   var polyline = null;
   var $loading = null;
 
@@ -91,8 +91,8 @@ $(function () {
               center: new google.maps.LatLng (latlngs[latlngs.length - 1].lat, latlngs[latlngs.length - 1].lng)
             });
 
-        if (merks.length)
-          merks[merks.length - 1].setIcon ({
+        if (marks.length)
+          marks[marks.length - 1].setIcon ({
             path: circlePath (10),
             strokeColor: 'rgba(249, 39, 114, 1)',
             strokeWeight: 1,
@@ -100,20 +100,25 @@ $(function () {
             fillOpacity: 0.5
           });
 
-        merks = merks.concat (latlngs.map (function (t, i) {
-                        return new google.maps.Marker ({
-                            map: map,
-                            draggable: false,
-                            position: new google.maps.LatLng (t.lat, t.lng),
-                            icon: i == latlngs.length - 1 ? 'img/icon/gps.png' : {
-                              path: circlePath (10),
-                              strokeColor: 'rgba(249, 39, 114, 1)',
-                              strokeWeight: 1,
-                              fillColor: 'rgba(249, 39, 114, .8)',
-                              fillOpacity: 0.5
-                            }
-                          });
-                      }));
+        marks = marks.concat (latlngs.map (function (t, i) {
+                  var x = new google.maps.Marker ({
+                      map: map,
+                      draggable: false,
+                      position: new google.maps.LatLng (t.lat, t.lng),
+                      icon: i == latlngs.length - 1 ? 'img/icon/mon.png' : {
+                        path: circlePath (10),
+                        strokeColor: 'rgba(249, 39, 114, 1)',
+                        strokeWeight: 1,
+                        fillColor: 'rgba(249, 39, 114, .8)',
+                        fillOpacity: 0.5
+                      }
+                    });
+
+                  google.maps.event.addListener (x, 'click', function (e) {
+                    console.error (t.id);
+                  });
+                  return x;
+                }));
 
         if (!polyline)
           polyline = new google.maps.Polyline ({
@@ -121,7 +126,7 @@ $(function () {
             strokeColor: 'rgba(249, 39, 114, .15)',
             strokeWeight: 10
           });
-        polyline.setPath (merks.map (function (t) { return t.position; }));
+        polyline.setPath (marks.map (function (t) { return t.position; }));
 
         if (!$loading)
           $loading = $('#loading').fadeOut (function () {
@@ -132,7 +137,7 @@ $(function () {
         else
           mapGo (new google.maps.LatLng (latlngs[latlngs.length - 1].lat, latlngs[latlngs.length - 1].lng));
 
-        setTimeout (calculateLength.bind (this, merks.map (function (t) { return t.position; })), 1800);
+        setTimeout (calculateLength.bind (this, marks.map (function (t) { return t.position; })), 1800);
 
       });
     };
