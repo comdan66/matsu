@@ -116,14 +116,14 @@ $(function () {
                       }
                     });
 
-                    if (($loading || (i % 3 === 0)) && (i !== latlngs.length - 1))
+                    if (($loading || (i % 5 === 0)) && (i !== latlngs.length - 1))
                       new MarkerWithLabel ({
                         position: new google.maps.LatLng (t.lat, t.lng),
                         draggable: false,
                         raiseOnDrag: true,
                         map: map,
                         labelContent: '' + $.timeago (t.time),
-                        labelAnchor: new google.maps.Point (0, 0),
+                        labelAnchor: new google.maps.Point (50, 0),
                         labelClass: "marker_label",
                         icon: {
                           path: 'M 0 0',
