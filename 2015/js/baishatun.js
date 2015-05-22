@@ -138,7 +138,7 @@ $(function () {
     };
 
     reload ();
-    setInterval (reload, 30000);
+    setInterval (reload, 60000);
   }
 
   $map = $('#map');
