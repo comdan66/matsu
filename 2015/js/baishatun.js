@@ -123,7 +123,7 @@ $(function () {
                         raiseOnDrag: true,
                         map: map,
                         labelContent: '' + $.timeago (t.time),
-                        labelAnchor: new google.maps.Point (50, 0),
+                        labelAnchor: new google.maps.Point (0, 0),
                         labelClass: "marker_label",
                         icon: {
                           path: 'M 0 0',
