@@ -175,7 +175,9 @@ $(function () {
         setTimeout (calculateLength.bind (this, markers.map (function (t) { return t.position; })), 1800);
 
         $('.map .my').click (function () {
+            console.error ('a');
           navigator.geolocation.getCurrentPosition (function (location) {
+            console.error ('b');
             if (!myMarker)
               myMarker = new google.maps.Marker ({
                   map: map,
