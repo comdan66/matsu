@@ -185,7 +185,7 @@ $(function () {
 
             myMarker.setPosition (new google.maps.LatLng (location.coords.latitude, location.coords.longitude));
             myMarker.setIcon ({
-                    path: myPositionPath (location.coords.accuracy),
+                    path: myPositionPath (50),
                     strokeColor: 'rgba(174, 129, 255, .8)',
                     strokeWeight: 3,
                     fillColor: 'rgba(174, 129, 255, .5)',
