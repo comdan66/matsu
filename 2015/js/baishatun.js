@@ -72,7 +72,8 @@ $(function () {
 
   function calculateLength (points) {
     var size = Math.pow (10, 2);
-    $container.find ('.map .d').addClass ('show').find ('span').text (Math.round (google.maps.geometry.spherical.computeLength (points) / 1000 * size) / size);
+    if (google.maps.geometry.spherical)
+      $container.find ('.map .d').addClass ('show').find ('span').text (Math.round (google.maps.geometry.spherical.computeLength (points) / 1000 * size) / size);
   }
 
   function initialize () {
