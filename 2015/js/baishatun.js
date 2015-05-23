@@ -9,6 +9,7 @@ $(function () {
   var $pagination = $('#pagination');
 
   var map = null;
+  var timer = null;
   var latlngs = [];
   var markers = [];
   var polyline = null;
@@ -79,7 +80,7 @@ $(function () {
           return {id: t.id, lat: t.lat, lng: t.lng, time: t.time};
         });
 
-        if (!map)
+        if (!map) {
           map = new google.maps.Map ($map.get (0), {
               zoom: 16,
               scaleControl: true,
@@ -90,6 +91,13 @@ $(function () {
               streetViewControl: false,
               center: new google.maps.LatLng (latlngs[latlngs.length - 1].lat, latlngs[latlngs.length - 1].lng)
             });
+          google.maps.event.addListener (map, 'zoom_changed', function () {
+            clearTimeout (timer);
+            timer = setTimeout (function () {
+              $('img[src="img/icon/mon.png"]').parents ('.gmnoprint').css ({'opacity': 1});
+            }, 500);
+          });
+        }
 
         if (markers.length)
           markers[markers.length - 1].setIcon ({
@@ -101,21 +109,6 @@ $(function () {
           });
 
         markers = markers.concat (latlngs.map (function (t, i) {
-                  var marker = new google.maps.Marker ({
-                      map: map,
-                      draggable: false,
-                      zIndex: t.id,
-                      optimized: false,
-                      position: new google.maps.LatLng (t.lat, t.lng),
-                      icon: i == latlngs.length - 1 ? 'img/icon/mon.png' : {
-                        path: circlePath (10),
-                        strokeColor: 'rgba(249, 39, 114, 1)',
-                        strokeWeight: 1,
-                        fillColor: 'rgba(249, 39, 114, .8)',
-                        fillOpacity: 0.5
-                      }
-                    });
-
                     if (($loading || (i % 5 === 0)) && (i !== latlngs.length - 1))
                       new MarkerWithLabel ({
                         position: new google.maps.LatLng (t.lat, t.lng),
@@ -134,17 +127,32 @@ $(function () {
                         }
                       });
 
-                  google.maps.event.addListener (marker, 'click', function (e) {
-                    console.error (t.id);
-                  });
-                  return marker;
+                    var marker = new google.maps.Marker ({
+                        map: map,
+                        draggable: false,
+                        zIndex: t.id,
+                        optimized: false,
+                        position: new google.maps.LatLng (t.lat, t.lng),
+                        icon: i == latlngs.length - 1 ? 'img/icon/mon.png' : {
+                          path: circlePath (6),
+                          strokeColor: 'rgba(249, 39, 114, .4)',
+                          strokeWeight: 1,
+                          fillColor: 'rgba(249, 39, 114, .5)',
+                          fillOpacity: 0.5
+                        }
+                      });
+
+                    google.maps.event.addListener (marker, 'click', function (e) {
+                      console.error (t.id);
+                    });
+                    return marker;
                 }));
 
         if (!polyline)
           polyline = new google.maps.Polyline ({
             map: map,
-            strokeColor: 'rgba(249, 39, 114, .15)',
-            strokeWeight: 10
+            strokeColor: 'rgba(249, 39, 114, .35)',
+            strokeWeight: 5
           });
         polyline.setPath (markers.map (function (t) { return t.position; }));
 

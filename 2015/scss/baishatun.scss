@@ -20,8 +20,12 @@
   padding: 3px 5px;
   width: 100px;
   font-size: small;
+  @include opacity(.8);
   @include overflow-docx3();
-  @include border-radius(2px);
+  @include border-radius(3px);
   @include transition(all .3s);
   @include box-shadow(0 0 15px 1px rgba(0, 0, 0, 0.2));
+}
+.gmnoprint {
+  @include opacity(1);
 }
