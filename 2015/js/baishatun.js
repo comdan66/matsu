@@ -170,14 +170,9 @@ $(function () {
           $loading = $('#loading').fadeOut (function () { $(this).hide (function () { $(this).remove (); }); });
         else
           mapGo (new google.maps.LatLng (latlngs[latlngs.length - 1].lat, latlngs[latlngs.length - 1].lng));
-        
-
-        setTimeout (calculateLength.bind (this, markers.map (function (t) { return t.position; })), 1800);
 
         $('.map .my').click (function () {
-            console.error ('a');
           navigator.geolocation.getCurrentPosition (function (location) {
-            console.error ('b');
             if (!myMarker)
               myMarker = new google.maps.Marker ({
                   map: map,
@@ -201,6 +196,9 @@ $(function () {
         $('.map .mazu').click (function () {
           mapGo (new google.maps.LatLng (latlngs[latlngs.length - 1].lat, latlngs[latlngs.length - 1].lng));
         }).OAjelly ();
+
+        setTimeout (calculateLength.bind (this, markers.map (function (t) { return t.position; })), 1800);
+
       });
     };
 
