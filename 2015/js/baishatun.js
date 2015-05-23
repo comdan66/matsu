@@ -173,13 +173,16 @@ $(function () {
           mapGo (new google.maps.LatLng (latlngs[latlngs.length - 1].lat, latlngs[latlngs.length - 1].lng));
 
         $('.map .my').click (function () {
+   console.error ('a');
           navigator.geolocation.getCurrentPosition (function (location) {
+   console.error ('b');
             if (!myMarker)
               myMarker = new google.maps.Marker ({
                   map: map,
                   draggable: false,
                   optimized: false,
                 });
+   console.error ('c');
 
             myMarker.setPosition (new google.maps.LatLng (location.coords.latitude, location.coords.longitude));
             myMarker.setIcon ({
