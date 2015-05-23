@@ -7,9 +7,33 @@
 
 #container {
   .map {
+
     @media screen and (min-width: 0px) and (max-width: #{$mediaMobileWidth - 1px}) {
       .d {
         bottom: 45px;
+      }
+      .button {
+        @include button();
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: small;
+
+        &.my {
+          top: 40px;
+        }
+      }
+    }
+    @media screen and (min-width: #{$mediaMobileWidth}) {
+      .button {
+        @include button();
+        position: absolute;
+        top: 65px;
+        right: 15px;
+
+        &.my {
+          top: 100px;
+        }
       }
     }
   }

@@ -14,11 +14,21 @@ $(function () {
   var markers = [];
   var polyline = null;
   var $loading = null;
+  var myMarker = null;
 
   function circlePath (r) {
     return 'M 0 0 m -' + r + ', 0 '+
            'a ' + r + ',' + r + ' 0 1,0 ' + (r * 2) + ',0 ' +
            'a ' + r + ',' + r + ' 0 1,0 -' + (r * 2) + ',0';
+  }
+  function myPositionPath (r) {
+    return 'M 0 0 m -' + r + ', 0 '+
+           'a ' + r + ',' + r + ' 0 1,0 ' + (r * 2) + ',0 ' +
+           'a ' + r + ',' + r + ' 0 1,0 -' + (r * 2) + ',0' +
+           'M -' + (r + r / 2) + ' 0 L -' + (r / 2) + ' 0' +
+           'M 0 -' + (r + r / 2) + ' L 0 -' + (r / 2) +
+           'M ' + (r + r / 2) + ' 0 L ' + (r / 2) + ' 0' +
+           'M 0 ' + (r + r / 2) + ' L 0 ' + (r / 2);
   }
 
   var getUnit = function (will, now) {
@@ -66,7 +76,7 @@ $(function () {
   }
 
   function initialize () {
-    var h = ($subItems.is (':visible') ? parseFloat ($subItems.height ()) + parseFloat ($subItems.css ('padding-top')) + parseFloat ($subItems.css ('padding-bottom')) : 0) + parseFloat ($container.css ('margin-top')) + parseFloat ($pagination.css ('margin-top')) + parseFloat ($pagination.css ('padding-top')) + parseFloat ($pagination.find ('.oa-jelly').height ());
+    var h = ($subItems.is (':visible') ? parseFloat ($subItems.height ()) + parseFloat ($subItems.css ('padding-top')) + parseFloat ($subItems.css ('padding-bottom')) : -50) + parseFloat ($container.css ('margin-top')) + parseFloat ($pagination.css ('margin-top')) + parseFloat ($pagination.css ('padding-top')) + parseFloat ($pagination.find ('.oa-jelly').height ());
     $container.css ({height: 'calc(100% - ' + h + 'px)'});
 
     var reload = function () {
@@ -157,16 +167,38 @@ $(function () {
         polyline.setPath (markers.map (function (t) { return t.position; }));
 
         if (!$loading)
-          $loading = $('#loading').fadeOut (function () {
-            $(this).hide (function () {
-              $(this).remove ();
-            });
-          });
+          $loading = $('#loading').fadeOut (function () { $(this).hide (function () { $(this).remove (); }); });
         else
           mapGo (new google.maps.LatLng (latlngs[latlngs.length - 1].lat, latlngs[latlngs.length - 1].lng));
+        
 
         setTimeout (calculateLength.bind (this, markers.map (function (t) { return t.position; })), 1800);
 
+        $('.map .my').click (function () {
+          navigator.geolocation.getCurrentPosition (function (location) {
+            if (!myMarker)
+              myMarker = new google.maps.Marker ({
+                  map: map,
+                  draggable: false,
+                  optimized: false,
+                });
+
+            myMarker.setPosition (new google.maps.LatLng (location.coords.latitude, location.coords.longitude));
+            myMarker.setIcon ({
+                    path: myPositionPath (location.coords.accuracy),
+                    strokeColor: 'rgba(174, 129, 255, .8)',
+                    strokeWeight: 3,
+                    fillColor: 'rgba(174, 129, 255, .5)',
+                    fillOpacity: 0.2
+                  });
+            
+            mapGo (new google.maps.LatLng (location.coords.latitude, location.coords.longitude));
+          });
+        }).OAjelly ();
+
+        $('.map .mazu').click (function () {
+          mapGo (new google.maps.LatLng (latlngs[latlngs.length - 1].lat, latlngs[latlngs.length - 1].lng));
+        }).OAjelly ();
       });
     };
 
