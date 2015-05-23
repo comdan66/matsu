@@ -196,8 +196,10 @@ $(function () {
             mapGo (new google.maps.LatLng (location.coords.latitude, location.coords.longitude));
           });
         }).OAjelly ();
+   console.error ('e');
 
         $('.map .mazu').click (function () {
+   console.error ('d');
           mapGo (new google.maps.LatLng (latlngs[latlngs.length - 1].lat, latlngs[latlngs.length - 1].lng));
         }).OAjelly ();
 
