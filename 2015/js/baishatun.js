@@ -189,8 +189,8 @@ $(function () {
                     fillColor: 'rgba(174, 129, 255, .5)',
                     fillOpacity: 0.2
                   });
-            
-            mapGo (new google.maps.LatLng (location.coords.latitude, location.coords.longitude));
+            map.setCenter ((new google.maps.LatLng (location.coords.latitude, location.coords.longitude));
+            // mapGo (new google.maps.LatLng (location.coords.latitude, location.coords.longitude));
           });
         }).OAjelly ();
 
