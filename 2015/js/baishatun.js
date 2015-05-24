@@ -112,7 +112,7 @@ $(function () {
 
         if (markers.length)
           markers[markers.length - 1].setIcon ({
-            path: circlePath (10),
+            path: circlePath (6),
             strokeColor: 'rgba(249, 39, 114, 1)',
             strokeWeight: 1,
             fillColor: 'rgba(249, 39, 114, .8)',
@@ -183,7 +183,7 @@ $(function () {
 
             myMarker.setPosition (new google.maps.LatLng (location.coords.latitude, location.coords.longitude));
             myMarker.setIcon ({
-                    path: myPositionPath (50),
+                    path: myPositionPath (30),
                     strokeColor: 'rgba(174, 129, 255, .8)',
                     strokeWeight: 3,
                     fillColor: 'rgba(174, 129, 255, .5)',
