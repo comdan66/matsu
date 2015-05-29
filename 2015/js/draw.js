@@ -21,7 +21,7 @@ $(function() {
     google.maps.event.addListener (marker, 'dblclick', function () {
       console.error (marker.getPosition ().lat);
       var latLng = new google.maps.LatLng (marker.getPosition ().lat () - 0.0001, marker.getPosition ().lng () - 0.0001);
-      
+
       initMarker (new google.maps.Marker ({
         map: map,
         draggable: true,
@@ -90,14 +90,14 @@ $(function() {
 
   $('#log').click (function () {
     var str = 'var points = [\n  ' + markers.map (function (t) {
-      return 'new google.maps.LatLng (' + t.getPosition ().A + ', ' + t.getPosition ().F + ')';
+      return 'new google.maps.LatLng (' + t.getPosition ().lat () + ', ' + t.getPosition ().lng () + ')';
     }).join (', ') + '\n];';
 
 
     $('.console-log textarea').text (str).focus ();
     $('.console-log').addClass ('show');
   });
-  
+
   $('#input').click (function () {
     var input = $(this).prev ().val ()
                 .match (/[0-9.]+\s*,\s*[0-9.]+/g);
