@@ -5,10 +5,23 @@
 
 $(function() {
   var $map = $('#map');
+  var $length = $('.length');
   var map = null;
   var markers = [];
   var Polyline = null;
+  var timer = null;
 
+  function calculateLength (points) {
+    var size = Math.pow (10, 2);
+    if (google.maps.geometry.spherical)
+      $length.html (Math.round (google.maps.geometry.spherical.computeLength (points) / 1000 * size) / size);
+  }
+  function length () {
+    clearTimeout (timer);
+    timer = setTimeout (calculateLength.bind (this, markers.map (function (t) {
+      return t.getPosition ();
+    })), 1800);
+  }
   function initMarker (marker, index) {
     google.maps.event.addListener (marker, 'dragend', function () {
       map.panTo (marker.getPosition ());
@@ -16,6 +29,8 @@ $(function() {
       Polyline.setPath (markers.map (function (t) {
         return t.getPosition ();
       }));
+
+      length ();
     });
 
     google.maps.event.addListener (marker, 'dblclick', function () {
@@ -37,6 +52,9 @@ $(function() {
       Polyline.setPath (markers.map (function (t) {
         return t.getPosition ();
       }));
+
+      length ();
+
     });
 
     if (index)
@@ -47,6 +65,9 @@ $(function() {
     Polyline.setPath (markers.map (function (t) {
       return t.getPosition ();
     }));
+
+    length ();
+
     return marker;
   }
 
