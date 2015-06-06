@@ -96,9 +96,9 @@ $(function () {
     ]},
 
     {'titles': ['馬拉松'], 'sub': [
+      {'name': 'marathon5.html', 'titles': ['5公里健康馬']},
       {'name': 'marathon21.html', 'titles': ['21公里半馬']},
       {'name': 'marathon42.html', 'titles': ['42公里全馬']},
-      {'name': 'marathon5.html', 'titles': ['5公里健康馬']},
     ]},
 
     {'titles': ['網站聲明'], 'sub': [
