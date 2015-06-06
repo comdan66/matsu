@@ -95,6 +95,12 @@ $(function () {
       {'name': 'i-ko_map-23ni.html', 'titles': ['廿三晚間', '遊行地圖']}
     ]},
 
+    {'titles': ['馬拉松'], 'sub': [
+      {'name': 'marathon21.html', 'titles': ['21公里半馬']},
+      {'name': 'marathon42.html', 'titles': ['42公里全馬']},
+      {'name': 'marathon5.html', 'titles': ['5公里健康馬']},
+    ]},
+
     {'titles': ['網站聲明'], 'sub': [
       {'name': 'reference.html', 'titles': ['參考資料']},
       {'name': 'disclaimer.html', 'titles': ['分享聲明']},
