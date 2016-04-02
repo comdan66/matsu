@@ -70,7 +70,7 @@ $(function () {
     {'titles': ['北港媽祖'], 'sub': [
       {'name': 'chao-tian.html', 'titles': ['朝天宮']},
       {'name': 'baishatun.html', 'titles': ['白沙屯即時']},
-      {'name': 'literature.html', 'titles': ['部分文獻']},
+      // {'name': 'literature.html', 'titles': ['部分文獻']},
       {'name': '03-19.html', 'titles': ['三月十九']},
       {'name': 'position.html', 'titles': ['交通資訊']},
       {'name': 'food.html', 'titles': ['旅遊美食']}
