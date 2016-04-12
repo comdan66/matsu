@@ -3,7 +3,7 @@
  * @copyright   Copyright (c) 2015 OA Wu Design
  */
 
-window.location.replace ("http://comdan66.github.io/baishatun/index.html");
+window.location.replace ('http://mazu.ioa.tw/');
 $(function () {
   var $subItems = $('#sub_items');
   var $container = $('#container');
