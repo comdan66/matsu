@@ -3,7 +3,7 @@
  * @copyright   Copyright (c) 2015 OA Wu Design
  */
 
-window.location.replace ('http://mazu.ioa.tw/');
+window.location.replace ('http://mazu.ioa.tw/maps/dintao/');
 $(function () {
   var $subItems = $('#sub_items');
   var $container = $('#container');
